@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="GymFitFinal.resetPassword.ResetSuccessful">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <Image Source="check.png" 
+                   AbsoluteLayout.LayoutBounds="0.5,0.2,0.5,0.1"
+                   AbsoluteLayout.LayoutFlags="All"/>
+
+            <Label Text="Complimenti!"
+                   Font="19"
+                   AbsoluteLayout.LayoutBounds="0.5,0.4,0.4,0.1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   LineBreakMode="WordWrap"
+                   FontFamily="Montserrat-Bold.ttf#Montserrat"
+                   TextColor="#4a6572"/>
+
+            <Label Text="Controlla la tua casella di posta elettronica per resettare la password!"
+                   Font="13"
+                   HorizontalTextAlignment="Center"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.53, 0.7, 0.2"
+                   AbsoluteLayout.LayoutFlags="All"
+                   LineBreakMode="WordWrap"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"/>
+
+            
+
+            <Button BackgroundColor="#64B5F6"
+                    Font="13"
+                    TextColor="White"
+                    Text="Effettua il Login"
+                    CornerRadius="20"
+                    AbsoluteLayout.LayoutBounds="0.5,0.58,0.5,0.08"
+                    AbsoluteLayout.LayoutFlags="All"
+                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    Clicked="LoginLink"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

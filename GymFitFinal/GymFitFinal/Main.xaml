@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="GymFitFinal.Main">
+    <ContentPage.Content>
+        <Grid Margin="40,50,40,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.9*" />
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.4*" />
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*" />
+                <ColumnDefinition Width="0.4*" />
+            </Grid.ColumnDefinitions>
+            
+            
+
+            <Label Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Font="38"
+                   TextColor="#000000"
+                   Text="GymFit"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+            <Image Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Aspect="AspectFill"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Source="logo.png"/>
+
+
+
+            <StackLayout Grid.Row="2" Grid.ColumnSpan="2"  HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Start">
+
+                <Button 
+                   ContentLayout="Left, 5"
+                   ImageSource="icoEmail.png"
+                   Font="13"
+                   HeightRequest="45"
+                   TextColor="White"
+                   Text="Login via Email"
+                   BackgroundColor="#64B5F6"
+                   CornerRadius="20"
+                   Clicked="LoginEmail"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"/>
+
+
+                <Button 
+                  
+                   HeightRequest="45"
+                   ContentLayout="Left, 5"
+                   ImageSource="icoFacebook.png"
+                   Font="13"
+                   TextColor="White"
+                   Text="Login con Facebook"
+                   BackgroundColor="#3b5999" 
+                   CornerRadius="20"
+                   
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"/>
+
+               
+            </StackLayout>
+
+
+            <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="10,19,0,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand"
+                    Font="Bold,13"
+                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    TextColor="#4a6572"
+                    Text="Non hai un account?"
+                    />
+
+            <Label  x:Name="lblSignUp"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="10,19,10,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Font="Bold,13"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
+                    TextColor="#4a6572"
+                    Text="Creane uno"
+                    />
+
+
+            <Label Grid.Row="5"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Font="10"
+                   TextColor="#4a6572"
+                   Text="Continuando accetti i Termini di condizione"
+                   FontFamily="Montserrat-Italic.ttf#Montserrat"/>
+            
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

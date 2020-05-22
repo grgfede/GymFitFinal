@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="GymFitFinal.LoginWithEmail">
+
+    <Grid Margin="40,50,40,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.2*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition  Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout Grid.ColumnSpan="2">
+           <BoxView AbsoluteLayout.LayoutBounds="0.1,0.52,0.2,0.008"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.89,0.52,0.2,0.008"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+        </AbsoluteLayout>
+
+        <Label Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Font="38"
+                   TextColor="#000000"
+                   Text="GymFit"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+
+
+        <StackLayout Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Start">
+            <Entry 
+                   x:Name="lblEmail"
+                   PlaceholderColor="#4a6572"
+                   Placeholder="Email"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"/>
+
+            <Entry     
+                   x:Name="lblPassword"
+                   IsPassword="True"
+                   PlaceholderColor="#4a6572"
+                   Placeholder="Password"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"/>
+        </StackLayout>
+       
+
+        <Label Grid.Row="2"
+               x:Name="lblForgotPass"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,9,0,0"
+                   Font="Bold, 13"
+                   TextColor="#4a6572"
+                   FontFamily="Montserrat-Bold.ttf#Montserrat"
+                   Text="Password Dimenticata?">
+                       
+        </Label>
+
+        <Button Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="#64B5F6"
+                    Font="13"
+                    TextColor="White"
+                    Text="Login"
+                    CornerRadius="20"
+                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    Clicked="DoLogin"/>
+    </Grid>
+
+
+</ContentPage>

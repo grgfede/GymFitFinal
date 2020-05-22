@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="GymFitFinal.SignUp.signUp">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <AbsoluteLayout>
+                <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.5,0.1,0.3,0.06"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="38"
+                   TextColor="#000000"
+                   Text="GymFit"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+                <BoxView AbsoluteLayout.LayoutBounds="0.12,0.19,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+                <BoxView AbsoluteLayout.LayoutBounds="0.89,0.19,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+
+                <BoxView AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.5"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#64B5F6"
+                     CornerRadius="20"
+                     Opacity="0.6"
+                     
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"/>
+
+                <Label Text="Registrati, è gratis"
+                   Font="13"
+                   HorizontalTextAlignment="Center"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.22, 0.7, 0.2"
+                   AbsoluteLayout.LayoutFlags="All"
+                   LineBreakMode="WordWrap"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"/>
+
+                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Nome"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,0.7,0.45"/>
+
+                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Cognome"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.7,0.7,0.45"/>
+
+                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Email"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.9,0.7,0.45"/>
+
+                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Password"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,1.1,0.7,0.45"/>
+
+
+                <Entry x:Name="txtNome"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.31,0.7,0.08"/>
+
+                <Entry x:Name="txtCognome"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.43,0.7,0.1"/>
+
+                <Entry x:Name="txtEmail"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.55,0.7,0.1"/>
+
+                <Entry x:Name="txtPass"
+                   IsPassword="True"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.67,0.7,0.1"/>
+
+
+                <CheckBox x:Name="chkTerm"
+                      Color="#64B5F6"
+                      AbsoluteLayout.LayoutFlags="All"
+                      AbsoluteLayout.LayoutBounds="0.5,0.85,0.7,0.1"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start"/>
+
+                <Label x:Name="lblTerm"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Accetto i Termini e Condizioni d'uso"
+                   Font="12"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.6,0.852,0.6,0.09"/>
+
+
+                <Button BackgroundColor="#64B5F6"
+                    Font="13"
+                    TextColor="White"
+                    Text="Invio"
+                    CornerRadius="20"
+                    AbsoluteLayout.LayoutBounds="0.5,0.95,0.5,0.08"
+                    AbsoluteLayout.LayoutFlags="All"
+                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    Clicked="DoSignUpMethod"
+                    />
+            </AbsoluteLayout>
+        </ScrollView>
+       
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "378024675357",
+    "firebase_url": "https://gymfitt-2b845.firebaseio.com",
+    "project_id": "gymfitt-2b845",
+    "storage_bucket": "gymfitt-2b845.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378024675357:android:d6c6507dc7622419515ef4",
+        "android_client_info": {
+          "package_name": "com.companyname.gymfitfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378024675357-nqd4egjb8jq8i81o0dstjf68lk8uajdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE2Umvv6bVU-YI5HHxLKRWEvKll1VTEo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378024675357-nqd4egjb8jq8i81o0dstjf68lk8uajdu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
