@@ -59,7 +59,7 @@ namespace GymFitFinal
             else if (Token.Contains("ERROR_EMAIL_OR_PASSWORD_MISSING"))
             {
                 Token = "Email o Password mancanti!";
-                DisplayAlert("Attenzione", Token, "Riprova");
+                DisplayAlert("Attenzione", Token, "Riprova"); 
             }
 
 
