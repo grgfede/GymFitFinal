@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="GymFitFinal.SignUp.signUp">
     <ContentPage.Content>
         <ScrollView VerticalOptions="FillAndExpand">
@@ -17,6 +18,9 @@
                    TextColor="#000000"
                    Text="GymFit"
                    FontFamily="BebasKai.ttf#BebasKai"/>
+
+                
+
 
                 <BoxView AbsoluteLayout.LayoutBounds="0.12,0.19,0.2,0.002"
                      AbsoluteLayout.LayoutFlags="All"
@@ -47,6 +51,9 @@
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"/>
 
+
+
+                
                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Nome"

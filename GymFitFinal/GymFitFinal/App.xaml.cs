@@ -25,7 +25,7 @@ namespace GymFitFinal
             }
             else
             {
-                MainPage = new NavigationPage(new Main());
+                MainPage = new NavigationPage(new home.Home());
             }
 
             

@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace GymFitFinal.home.navBar
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Profilo : TabbedPage
+    public partial class Profilo : ContentPage
     {
         public Profilo()
         {
