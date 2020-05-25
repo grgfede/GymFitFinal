@@ -62,7 +62,7 @@
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"/>
         </StackLayout>
-       
+
 
         <Label Grid.Row="2"
                x:Name="lblForgotPass"
@@ -74,11 +74,11 @@
                    TextColor="#4a6572"
                    FontFamily="Montserrat-Bold.ttf#Montserrat"
                    Text="Password Dimenticata?">
-                       
-        </Label>
 
+        </Label>
         <Button Grid.Row="3"
                     Grid.ColumnSpan="2"
+                    x:Name="btn_login"
                     VerticalOptions="Start"
                     HorizontalOptions="FillAndExpand"
                     BackgroundColor="#64B5F6"
@@ -88,7 +88,10 @@
                     CornerRadius="20"
                     FontFamily="Montserrat-Regular.ttf#Montserrat"
                     Clicked="DoLogin"/>
+        
     </Grid>
+    
+    
 
 
 </ContentPage>

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:gymfit="clr-namespace:GymFitFinal.home.navBar;assembly=GymFitFinal"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
              x:Class="GymFitFinal.home.Home">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="lblWelcome"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+  
+        <gymfit:Palestra Title="Palestra"></gymfit:Palestra>
+        <gymfit:Profilo Title="Profilo"></gymfit:Profilo>
+
+</TabbedPage>

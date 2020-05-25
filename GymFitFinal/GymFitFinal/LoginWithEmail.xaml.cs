@@ -18,6 +18,7 @@ namespace GymFitFinal
         public LoginWithEmail()
         {
             InitializeComponent();
+
             lblPsswdClick();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
         }
@@ -26,6 +27,8 @@ namespace GymFitFinal
 
         public async void DoLogin(object sender, EventArgs e)
         {
+            
+
             string email = lblEmail.Text;
             string password = lblPassword.Text;
 

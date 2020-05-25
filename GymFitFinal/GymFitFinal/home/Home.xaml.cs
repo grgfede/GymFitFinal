@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace GymFitFinal.home
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Home : ContentPage
+    public partial class Home : TabbedPage
     {
         private IFirebaseAuthenticator _auth;
         private List<User> lstPersons;
@@ -22,23 +22,10 @@ namespace GymFitFinal.home
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            getInfo(uid);   
+           // getInfo(uid);   
         }
 
-        public async void esegui (Object args, EventArgs e)
-        {
-            await _auth.DeletePerson();
-        }
-
-
-
-
-
-
-
-
-
-        public async void getInfo(string uid)
+        /*public async void getInfo(string uid)
         {
 
             var person = await _auth.GetPerson(uid);
@@ -53,7 +40,7 @@ namespace GymFitFinal.home
                 DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
                 Navigation.RemovePage(this);
                 Navigation.PopAsync();
-            }
+            }*/
                
                 
             
@@ -63,18 +50,6 @@ namespace GymFitFinal.home
 
 
 
-       
-
-
-        private async Task FetchAllPersons()
-        {
-            var allPersons = await _auth.GetAllPerson();
-
-        }
-
-
-
-
-    }
+    
         
 }
