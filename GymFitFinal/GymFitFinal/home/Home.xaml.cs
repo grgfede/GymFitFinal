@@ -14,34 +14,15 @@ namespace GymFitFinal.home
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : TabbedPage
     {
-        private IFirebaseAuthenticator _auth;
-        private List<User> lstPersons;
-        string uid = App.uid;
+       
 
         public Home()
         {
             InitializeComponent();
-            _auth = DependencyService.Get<IFirebaseAuthenticator>();
-           // getInfo(uid);   
+            
         }
 
-        /*public async void getInfo(string uid)
-        {
-
-            var person = await _auth.GetPerson(uid);
-
-            if (person != null)
-            {
-                lblWelcome.Text = person.Nome;
-                lblWelcome.Text += person.Cognome;
-            }
-            else
-            {
-                DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
-                Navigation.RemovePage(this);
-                Navigation.PopAsync();
-            }*/
-               
+       
                 
             
 

@@ -12,6 +12,6 @@
 
         <gymfit:Palestra Title="Palestra" Icon="navbarGym.png"></gymfit:Palestra> 
         <gymfit:Profilo Title="Profilo" Icon="navbarProfile.png"></gymfit:Profilo>
-
+       
 
 </TabbedPage>
