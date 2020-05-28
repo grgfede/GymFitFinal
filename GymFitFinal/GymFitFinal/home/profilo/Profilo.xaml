@@ -4,16 +4,26 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             
+             Title="Profilo"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="GymFitFinal.home.navBar.Profilo">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Prova"></ToolbarItem>
-        
+        <ToolbarItem IconImageSource="gear_profile.png"
+                     Clicked="ToolbarItem_Impostazioni"/>
+
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         
     <AbsoluteLayout>
+
+            <Picker x:Name="picker" SelectedItem="myPickerSelectedIndexChanged" Title="Impostazioni" Grid.Column="1" IsVisible="True" AbsoluteLayout.LayoutBounds="0.5,0.5,0.5,0.5">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Modifica Profilo</x:String>
+                        <x:String>Logout</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
 
 
@@ -27,7 +37,15 @@
                     AbsoluteLayout.LayoutBounds="0.5,0.1,0.5,0.2" 
                     AbsoluteLayout.LayoutFlags="All"/>
 
-
+            <Label x:Name="lblNomeCognome"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.5, 0.5"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="15"
+                   TextColor="#000000"
+                  
+                   FontFamily="Montserrat-Light.ttf#Montserrat"/>
 
 
             <Image 
@@ -66,15 +84,7 @@
                          AbsoluteLayout.LayoutFlags="All"/>
 
 
-            <Label x:Name="lblNomeCognome"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.5, 0.5"
-                   AbsoluteLayout.LayoutFlags="All"
-                   Font="15"
-                   TextColor="#000000"
-                  
-                   FontFamily="Montserrat-Light.ttf#Montserrat"/>
+            
 
           <!--  <Button AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.5, 0.5"
                     AbsoluteLayout.LayoutFlags="All"

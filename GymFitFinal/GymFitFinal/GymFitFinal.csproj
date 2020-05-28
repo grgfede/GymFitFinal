@@ -27,7 +27,10 @@
     <EmbeddedResource Update="home\navBar\Palestra.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="home\navBar\Profilo.xaml">
+    <EmbeddedResource Update="home\profilo\ModificaProfilo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="home\profilo\Profilo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Main.xaml">

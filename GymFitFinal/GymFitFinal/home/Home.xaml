@@ -7,7 +7,7 @@
              xmlns:gymfit="clr-namespace:GymFitFinal.home.navBar;assembly=GymFitFinal"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            NavigationPage.HasNavigationBar="False"
+            
              x:Class="GymFitFinal.home.Home">
 
         <gymfit:Palestra Title="Palestra" Icon="navbarGym.png"></gymfit:Palestra> 

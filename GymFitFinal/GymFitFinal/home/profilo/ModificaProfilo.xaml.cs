@@ -3,35 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GymFitFinal.Interfaces;
-
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GymFitFinal.home
+namespace GymFitFinal.home.profilo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Home : TabbedPage
+    public partial class ModificaProfilo : ContentPage
     {
-       
-
-        public Home()
+        public ModificaProfilo()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, false);
-
         }
-
-       
-                
-            
-
-        }
-
-
-
-
-    
-        
+    }
 }

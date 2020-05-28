@@ -1,4 +1,5 @@
 ﻿using Firebase.Storage;
+using GymFitFinal.home.profilo;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -32,17 +33,55 @@ namespace GymFitFinal.home.navBar
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
             getInfo(uid);
+           
+            picker.SelectedIndexChanged += async (sender, args) =>
+            {               
+                if (picker.SelectedIndex == -1)
+                {
+                    
+                }
+                else
+                {
+                    string colorName = picker.Items[picker.SelectedIndex];
+                    picker.SelectedItem = -1;
+                    if (colorName.Equals("Modifica Profilo"))
+                    {
+                        await Navigation.PushAsync(new ModificaProfilo());
+                    } else
+                    {
+                        DisplayAlert("Logout", "Logout", "Ok");
+
+                    }
+                }
+            };
         }
 
 
         protected async override void OnAppearing()
         {
-
             base.OnAppearing();
-
         }
 
 
+        /*
+         * Metodo che fa "visualizzare" il picker una volta premuto l'icona della gear presente nella toolbar
+         */
+        public void ToolbarItem_Impostazioni(Object sender, EventArgs e)
+        {
+            picker.Focus();  
+            
+        }
+
+
+
+    
+
+        /*
+         * Metodo per recuperare le informazioni dell'utente.
+         * Nella variabile _auth abbiamo tutti i metodi di connessione al database firebase.
+         * In questo caso utilizziamo il metodo GetPerson che restituisce un oggetto "User" specifico grazie all'uid.
+         * In questo modo possiamo recuperare il nome e cognome grazie ai metodi get della classe User.
+         */
         public async void getInfo(string uid)
         {
 
@@ -63,7 +102,15 @@ namespace GymFitFinal.home.navBar
 
 
 
-            public async void btnPick_Clicked(object sender, EventArgs e)
+
+        /*
+         * Metodo per recuperare un file multimediale (foto) dalla galleria del telefono
+         * Prima di tutto controlla se ha i permessi per accedere nello storage interno
+         * Se non dovesse avere i permessi, chiede all'utente di garantirli.
+         * Una volta avuto i permessi, crea una variabile che conterrà il file multimediale scelto dall'utente
+         * Per poi visualizzare questo file nell'apposito pictureBox
+         */
+        public async void btnPick_Clicked(object sender, EventArgs e)
             {
                 var permission = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
                 if (permission != Xamarin.Essentials.PermissionStatus.Granted)
@@ -106,7 +153,7 @@ namespace GymFitFinal.home.navBar
                 pictureBox.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
             }
 
-            
+      
     }
 
 }
