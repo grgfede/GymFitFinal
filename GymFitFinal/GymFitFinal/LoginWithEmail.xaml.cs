@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace GymFitFinal
@@ -37,6 +38,8 @@ namespace GymFitFinal
             //var Token = info[0];
             if (!Token.Contains("ERROR"))
             {
+
+                Preferences.Set("logged", true);
                 //Der er logget ind og returneret et token
                 App.IsUserLoggedIn = true;
                 App.Token = Token;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymFitFinal.Interfaces;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,7 +9,7 @@ namespace GymFitFinal
     public partial class App : Application
     {
         internal static string Token;
-        
+        private readonly IFirebaseAuthenticator _auth;
 
         public static bool IsUserLoggedIn { get; set; }
         public static string uid { get; set; }
@@ -16,19 +17,17 @@ namespace GymFitFinal
 
         public App()
         {
+            
             InitializeComponent();
-            
+            _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
-            if (IsUserLoggedIn)
-            {
+            
+            if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
                 MainPage = new NavigationPage(new home.Home());
-            }
             else
-            {
                 MainPage = new NavigationPage(new Main());
-            }
 
-            
+
 
         }
 

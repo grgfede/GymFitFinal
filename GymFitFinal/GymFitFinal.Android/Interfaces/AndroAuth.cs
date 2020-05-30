@@ -25,7 +25,7 @@ namespace GymFitFinal.Droid.Interfaces
 {
 
    
-    public class AndroAuth : GymFitFinal.Interfaces.IFirebaseAuthenticator
+    public class AndroAuth : IFirebaseAuthenticator
     {
         private readonly string ChildName = "utenti";
 
@@ -75,13 +75,30 @@ namespace GymFitFinal.Droid.Interfaces
                         var uid = currentuser.Uid;
                         App.uid = uid;
 
-                        App.IsUserLoggedIn = true;
+                       
                     }
                 });
                 return _result;
             }
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
+
+
+
+        public bool IsUserLoggedIn() {
+            if(FirebaseAuth.Instance.CurrentUser != null)
+            {
+                var currentuser = FirebaseAuth.Instance.CurrentUser;
+                var uid = currentuser.Uid;
+                App.uid = uid;
+                return true;
+            }else
+            {
+                return false;
+            }
+            
+        }
+
 
         public async Task<string> DoSignUp(string email, string password, string nome, string cognome)
         {
@@ -163,6 +180,9 @@ namespace GymFitFinal.Droid.Interfaces
             await firebase.Child(ChildName).Child(uid).DeleteAsync();
         }
 
-
+        public void Logout()
+        {
+            FirebaseAuth.Instance.SignOut();
+        }
     }
 }

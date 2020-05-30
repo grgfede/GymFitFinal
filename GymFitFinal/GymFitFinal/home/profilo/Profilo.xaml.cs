@@ -49,7 +49,9 @@ namespace GymFitFinal.home.navBar
                         await Navigation.PushAsync(new ModificaProfilo());
                     } else
                     {
-                        DisplayAlert("Logout", "Logout", "Ok");
+                        _auth.Logout();
+                        Navigation.InsertPageBefore(new Main(), Navigation.NavigationStack[0]);
+                        await Navigation.PopToRootAsync();
 
                     }
                 }
@@ -74,7 +76,7 @@ namespace GymFitFinal.home.navBar
 
 
 
-    
+
 
         /*
          * Metodo per recuperare le informazioni dell'utente.

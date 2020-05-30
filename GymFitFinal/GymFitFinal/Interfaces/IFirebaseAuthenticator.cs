@@ -15,6 +15,9 @@ namespace GymFitFinal.Interfaces
         Task<User> GetPerson(string uid);
         Task<List<User>> GetAllPerson();
         Task DeletePerson();
+        bool IsUserLoggedIn();
+
+        void Logout();
     }
 }
 
