@@ -1,4 +1,5 @@
-﻿using GymFitFinal.Interfaces;
+﻿using GymFitFinal.home;
+using GymFitFinal.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,9 +44,12 @@ namespace GymFitFinal
                 //Der er logget ind og returneret et token
                 App.IsUserLoggedIn = true;
                 App.Token = Token;
-               
-                Navigation.InsertPageBefore(new home.Home(), this);
-                await Navigation.PopAsync();
+
+                Application.Current.MainPage = new NavigationPage(new Home());
+
+                
+                this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 1]);
+                await Navigation.PushAsync(new home.Home());
             }
             else if (Token.Contains("ERROR_USER_NOT_FOUND"))
             {

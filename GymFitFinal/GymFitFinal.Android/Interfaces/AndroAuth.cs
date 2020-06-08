@@ -18,6 +18,8 @@ using Firebase.Firestore;
 using Firebase;
 using Firebase.Database.Query;
 using GymFitFinal.Interfaces;
+using Firebase.Storage;
+using Android.Media;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -34,6 +36,10 @@ namespace GymFitFinal.Droid.Interfaces
        
 
 
+        public async Task refreshUser()
+        {
+            await FirebaseAuth.Instance.CurrentUser.ReloadAsync();
+        }
 
    
 
@@ -46,6 +52,22 @@ namespace GymFitFinal.Droid.Interfaces
 
             await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
 
+        }
+
+        public async Task<bool> UpdatePerson(string nome, string cognome)
+        {
+            bool success = false;
+            var uid = App.uid;
+            App.loggedUser.Nome = nome;
+            App.loggedUser.Cognome = cognome;
+            string ChildNameAdd = ChildName + "/" + uid ;
+            await firebase.Child(ChildNameAdd).PutAsync<User>(App.loggedUser).ContinueWith(async task =>
+            {
+                if (!task.IsFaulted)
+                    success = true; ;
+
+            });
+            return success;
         }
 
 
@@ -68,14 +90,24 @@ namespace GymFitFinal.Droid.Interfaces
                     {
                         // Login lykkedes - returner Token
                         var token = await task.Result.User.GetIdTokenAsync(false);
-                        //var token2 = await task.Result.User.Uid();
                         _result = token.Token;
 
                         var currentuser = FirebaseAuth.Instance.CurrentUser;
+                        var loggedEmail = currentuser.Email;
+                       
                         var uid = currentuser.Uid;
                         App.uid = uid;
+                        App.loggedEmail = loggedEmail;
+                        App.password = password;
 
-                       
+                        //RECUPERO L'IMMAGINE PROFILO
+                        var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                        .Child(uid)
+                        .Child("profilePic")
+                        .GetDownloadUrlAsync();
+
+                        App.loggedUser.profilePic = storageImage;
+
                     }
                 });
                 return _result;
@@ -90,7 +122,9 @@ namespace GymFitFinal.Droid.Interfaces
             {
                 var currentuser = FirebaseAuth.Instance.CurrentUser;
                 var uid = currentuser.Uid;
+                var loggedEmail = currentuser.Email;
                 App.uid = uid;
+                App.loggedEmail = loggedEmail;
                 return true;
             }else
             {
@@ -99,6 +133,39 @@ namespace GymFitFinal.Droid.Interfaces
             
         }
 
+        public async Task<string> UpdateEmail(string email)
+        {
+            string _result = null;
+            var currentUser = FirebaseAuth.Instance.CurrentUser;
+            var credentials = FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(App.loggedEmail, App.password).ContinueWith(async task =>{
+                await FirebaseAuth.Instance.CurrentUser.UpdateEmailAsync(email).ContinueWith(async task2 =>
+                {
+                    if (task2.IsFaulted)
+                        if (task2.Exception != null)
+                            _result = ((FirebaseAuthException)task2.Exception.GetBaseException()).ErrorCode;
+
+
+                });
+            });
+
+            
+            return _result;
+        }
+
+        public async Task<string> UpdatePassword(string password)
+        {
+            
+                string _result = null;
+            await FirebaseAuth.Instance.CurrentUser.UpdatePasswordAsync(password).ContinueWith(async task =>
+            {
+                if (task.IsFaulted)
+                    if (task.Exception != null)
+                        _result = ((FirebaseAuthException)task.Exception.GetBaseException()).ErrorCode;
+                    
+                    
+            });
+            return _result;
+        }
 
         public async Task<string> DoSignUp(string email, string password, string nome, string cognome)
         {
@@ -117,6 +184,7 @@ namespace GymFitFinal.Droid.Interfaces
                     {
                         var currentuser = FirebaseAuth.Instance.CurrentUser;
                         var uid = currentuser.Uid;
+                       
                         //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
                         AddPerson(nome, cognome, uid);
                     }
@@ -165,6 +233,7 @@ namespace GymFitFinal.Droid.Interfaces
         public async Task<User> GetPerson(string uid)
         {
            
+
 
             var allPersons = await GetAllPerson();
             await firebase

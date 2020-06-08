@@ -29,13 +29,13 @@
         <ScrollView Grid.Row="1" VerticalOptions="Center">
             <StackLayout>
                 <StackLayout>
-                    <Entry x:Name="Nome" Placeholder="Federico" Text="{Binding User.Email}" FontSize="Medium" />
-                    <Entry x:Name="Cognome" Placeholder="Frari" Text="{Binding User.Email}" FontSize="Medium" />
+                    <Entry x:Name="lblName" Text="{Binding User.Email}" FontSize="Medium" />
+                    <Entry x:Name="lblCognome" Text="{Binding User.Email}" FontSize="Medium" />
                 </StackLayout>
             
                 <StackLayout>
-                    <Entry x:Name="Email" Placeholder="Federico.frari1995@gmail.com" Text="{Binding User.Email}" FontSize="Medium" />
-                    <Entry x:Name="Password" Placeholder="Password" Text="{Binding User.Email}" FontSize="Medium" />
+                    <Entry x:Name="lblEmail"  Text="{Binding User.Email}" FontSize="Medium" />
+                    <Entry x:Name="lblPassword" Text="{Binding User.Email}" FontSize="Medium" />
                 </StackLayout>
                
                 
@@ -52,7 +52,8 @@
                 WidthRequest="200"
                 HorizontalOptions="Center"
                 Text="Modifica"
-                Margin="4" />
+                Margin="4"
+                Clicked="modificaCheck"/>
 
     </Grid>
     </ContentPage>

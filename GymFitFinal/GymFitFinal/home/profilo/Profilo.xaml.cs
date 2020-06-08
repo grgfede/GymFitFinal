@@ -23,6 +23,7 @@ namespace GymFitFinal.home.navBar
     {
         private IFirebaseAuthenticator _auth;
         private List<User> lstPersons;
+       
         string uid = App.uid;
 
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
@@ -32,6 +33,7 @@ namespace GymFitFinal.home.navBar
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+            
             getInfo(uid);
            
             picker.SelectedIndexChanged += async (sender, args) =>
@@ -62,6 +64,7 @@ namespace GymFitFinal.home.navBar
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            getInfo(uid);
         }
 
 
@@ -86,13 +89,21 @@ namespace GymFitFinal.home.navBar
          */
         public async void getInfo(string uid)
         {
-
             var person = await _auth.GetPerson(uid);
-
             if (person != null)
             {
                 lblNomeCognome.Text = person.Nome + " ";
                 lblNomeCognome.Text += person.Cognome;
+                App.loggedUser = person;
+                //PRENDO L'IMMAGINE PROFILO
+                var stroageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                       .Child(uid)
+                       .Child("profilePic.jpg")
+                       .GetDownloadUrlAsync();
+
+                string imgurl = stroageImage;
+                pictureBox.Source = imgurl;
+                App.loggedUser.profilePic = imgurl;
             }
             else
             {
@@ -105,55 +116,8 @@ namespace GymFitFinal.home.navBar
 
 
 
-        /*
-         * Metodo per recuperare un file multimediale (foto) dalla galleria del telefono
-         * Prima di tutto controlla se ha i permessi per accedere nello storage interno
-         * Se non dovesse avere i permessi, chiede all'utente di garantirli.
-         * Una volta avuto i permessi, crea una variabile che conterrà il file multimediale scelto dall'utente
-         * Per poi visualizzare questo file nell'apposito pictureBox
-         */
-        public async void btnPick_Clicked(object sender, EventArgs e)
-            {
-                var permission = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
-                if (permission != Xamarin.Essentials.PermissionStatus.Granted)
-                {
-                    permission = await Permissions.RequestAsync<Permissions.StorageRead>();
-                }
-                if (permission != Xamarin.Essentials.PermissionStatus.Granted)
-                {
-                    return;
-                }
-
-                //! added using Plugin.Media;
-                await CrossMedia.Current.Initialize();
-
-                //// if you want to take a picture use this
-                // if(!CrossMedia.Current.IsTakePhotoSupported || !CrossMedia.Current.IsCameraAvailable)
-                /// if you want to select from the gallery use this
-                if (!CrossMedia.Current.IsPickPhotoSupported)
-                {
-                    await DisplayAlert("Not supported", "Your device does not currently support this functionality", "Ok");
-                    return;
-                }
-
-                //! added using Plugin.Media.Abstractions;
-                // if you want to take a picture use StoreCameraMediaOptions instead of PickMediaOptions
-                var mediaOptions = new PickMediaOptions()
-                {
-                    //PhotoSize = PhotoSize.Medium,
-                    CustomPhotoSize = 50
-                };
-
-                // if you want to take a picture use TakePhotoAsync instead of PickPhotoAsync
-                var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
-
-                if (pictureBox == null)
-                {
-                    await DisplayAlert("Error", "Could not get the image, please try again.", "Ok");
-                    return;
-                }
-                pictureBox.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
-            }
+        
+       
 
       
     }
