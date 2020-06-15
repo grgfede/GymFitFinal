@@ -152,11 +152,6 @@ namespace GymFitFinal.home.profilo
                 }
                 string pic = await StoreImages(selectedImageFile.GetStream());
                 
-            await StoreImages(selectedImageFile.GetStream()).ContinueWith(async task =>
-            {
-                if (task.IsFaulted)
-                    DisplayAlert("Errore", "ok", "ok");
-            })
                 
                 App.loggedUser.profilePic = pic;
                 pictureBox.Source = App.loggedUser.profilePic;
