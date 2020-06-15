@@ -8,7 +8,8 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="GymFitFinal.SignUp.signUpGym">
     <ContentPage.Content>
-        <AbsoluteLayout>
+        <AbsoluteLayout 
+            BackgroundColor="#64B5F6">
             
             <Label HorizontalOptions="Center"
                    VerticalOptions="Center"
@@ -35,9 +36,9 @@
 
             <BoxView AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.5"
                      AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#64B5F6"
+                     BackgroundColor="White"
                      CornerRadius="20"
-                     Opacity="0.6"
+                     
                      
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"/>
@@ -83,7 +84,7 @@
                    Text="Email"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.9,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.93,0.7,0.45"/>
 
             <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
@@ -117,7 +118,7 @@
                    Text="Email"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.55,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.58,0.7,0.1"/>
 
             <Entry x:Name="txtPass"
                    IsPassword="True"
@@ -148,14 +149,14 @@
                    AbsoluteLayout.LayoutBounds="0.6,0.852,0.6,0.09"/>
 
 
-            <Button BackgroundColor="#64B5F6"
-                    Font="13"
-                    TextColor="White"
+            <Button BackgroundColor="White"
+                    Font="Bold,14"
+                    TextColor="#64B5F6"
                     Text="Invio"
                     CornerRadius="20"
-                    AbsoluteLayout.LayoutBounds="0.5,0.95,0.5,0.08"
+                    AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
-                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
                     
                     />
         </AbsoluteLayout>
