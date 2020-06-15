@@ -95,8 +95,8 @@ namespace GymFitFinal.home.navBar
                 lblNomeCognome.Text = person.Nome + " ";
                 lblNomeCognome.Text += person.Cognome;
                 App.loggedUser = person;
-                pictureBox.Source = App.loggedUser.profilePic;
-
+                pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
+                
             }
             else
             {

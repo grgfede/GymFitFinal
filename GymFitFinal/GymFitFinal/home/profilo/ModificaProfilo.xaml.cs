@@ -38,7 +38,7 @@ namespace GymFitFinal.home.profilo
             lblCognome.Placeholder = App.loggedUser.Cognome;
             lblName.Placeholder = App.loggedUser.Nome;
             lblEmail.Placeholder = App.loggedEmail;
-            pictureBox.Source = App.loggedUser.profilePic;
+            pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
         }
 
 
@@ -151,10 +151,10 @@ namespace GymFitFinal.home.profilo
                     return;
                 }
                 string pic = await StoreImages(selectedImageFile.GetStream());
-                
-                
+                Preferences.Set("profilePic", pic);
+                pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
                 App.loggedUser.profilePic = pic;
-                pictureBox.Source = App.loggedUser.profilePic;
+
                  
 
         }   
