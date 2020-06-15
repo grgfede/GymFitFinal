@@ -29,7 +29,7 @@ namespace GymFitFinal
             {
                 Command = new Command(() =>
                 {
-                    Navigation.PushAsync(new SignUp.signUp());
+                    Navigation.PushAsync(new SignUp.signUpGym());
                 })
             });
         }

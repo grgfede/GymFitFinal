@@ -20,6 +20,9 @@ using Firebase.Database.Query;
 using GymFitFinal.Interfaces;
 using Firebase.Storage;
 using Android.Media;
+using System.Drawing;
+using Image = Xamarin.Forms.Image;
+using GymFitFinal.home.navBar;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -105,7 +108,6 @@ namespace GymFitFinal.Droid.Interfaces
                         .Child(uid)
                         .Child("profilePic")
                         .GetDownloadUrlAsync();
-
                         App.loggedUser.profilePic = storageImage;
 
                     }
@@ -184,7 +186,8 @@ namespace GymFitFinal.Droid.Interfaces
                     {
                         var currentuser = FirebaseAuth.Instance.CurrentUser;
                         var uid = currentuser.Uid;
-                       
+
+                   
                         //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
                         AddPerson(nome, cognome, uid);
                     }

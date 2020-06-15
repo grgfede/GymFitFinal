@@ -48,6 +48,7 @@
                 <Button 
                    ContentLayout="Left, 5"
                    ImageSource="icoEmail.png"
+                    VerticalOptions="Center"
                    Font="13"
                    HeightRequest="45"
                    TextColor="White"
@@ -65,13 +66,13 @@
                    ImageSource="icoFacebook.png"
                    Font="13"
                    TextColor="White"
-                   Text="Login con Facebook"
+                   Text="Accedi come palestra"
                    BackgroundColor="#3b5999" 
                    CornerRadius="20"
                    
                    FontFamily="Montserrat-Regular.ttf#Montserrat"/>
 
-               
+
             </StackLayout>
 
 

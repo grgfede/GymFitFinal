@@ -1,4 +1,7 @@
-﻿using GymFitFinal.home;
+﻿using Firebase.Storage;
+using GymFitFinal.home;
+using GymFitFinal.home.navBar;
+using GymFitFinal.home.profilo;
 using GymFitFinal.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -45,6 +48,7 @@ namespace GymFitFinal
                 App.IsUserLoggedIn = true;
                 App.Token = Token;
 
+                //CAMBIO PAGINA
                 Application.Current.MainPage = new NavigationPage(new Home());
 
                 

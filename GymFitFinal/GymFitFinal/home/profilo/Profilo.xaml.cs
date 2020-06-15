@@ -95,15 +95,8 @@ namespace GymFitFinal.home.navBar
                 lblNomeCognome.Text = person.Nome + " ";
                 lblNomeCognome.Text += person.Cognome;
                 App.loggedUser = person;
-                //PRENDO L'IMMAGINE PROFILO
-                var stroageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
-                       .Child(uid)
-                       .Child("profilePic.jpg")
-                       .GetDownloadUrlAsync();
+                pictureBox.Source = App.loggedUser.profilePic;
 
-                string imgurl = stroageImage;
-                pictureBox.Source = imgurl;
-                App.loggedUser.profilePic = imgurl;
             }
             else
             {
@@ -112,14 +105,6 @@ namespace GymFitFinal.home.navBar
                 Navigation.PopAsync();
             }
         }
-
-
-
-
-        
-       
-
-      
     }
 
 }

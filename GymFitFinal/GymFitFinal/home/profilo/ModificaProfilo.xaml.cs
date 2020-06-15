@@ -141,16 +141,31 @@ namespace GymFitFinal.home.profilo
                 // if you want to take a picture use TakePhotoAsync instead of PickPhotoAsync
                 var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
 
+                if (selectedImageFile == null)
+                {
+                   pictureBox.Source = "defaultUser.png";
+                }
                 if (pictureBox == null)
                 {
                     await DisplayAlert("Error", "Could not get the image, please try again.", "Ok");
                     return;
                 }
                 string pic = await StoreImages(selectedImageFile.GetStream());
-                pictureBox.Source = pic;
+                
+            await StoreImages(selectedImageFile.GetStream()).ContinueWith(async task =>
+            {
+                if (task.IsFaulted)
+                    DisplayAlert("Errore", "ok", "ok");
+            })
+                
                 App.loggedUser.profilePic = pic;
+                pictureBox.Source = App.loggedUser.profilePic;
+                 
 
         }   
+
+
+
 
         private async Task<string> StoreImages(Stream imageStream)
         {
@@ -162,5 +177,13 @@ namespace GymFitFinal.home.profilo
             string imgurl = stroageImage;
             return imgurl;
         }
+
+
+
+
+       
+
+
+
     }
 }

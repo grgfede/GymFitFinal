@@ -16,8 +16,9 @@ namespace GymFitFinal
         public NavigationPage ContentPage { get; }
 
         public static User loggedUser { get; set; }     //loggedUser è un oggetto di tipo USER che contiene tutte le informazioni dell'utente loggato
-
+        
         public static string loggedEmail { get; set; }
+       
         public static string password { get; set; }
         public App()
         {
