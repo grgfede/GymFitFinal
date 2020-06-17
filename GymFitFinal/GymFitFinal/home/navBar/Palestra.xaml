@@ -7,6 +7,6 @@
              x:Class="GymFitFinal.home.navBar.Palestra">
     <ContentPage.Content>
 
-        <WebView Source="https://webchat.botframework.com/embed/gymfit-bot?s=kzvvZH8lhdY.9DvfCcBn2RyuZjdd9GXe1CgfOpmaxDkYSVfKr3kNeKg"/>
+        <WebView Source="https://webchat.botframework.com/embed/gymfit-bot?s=kzvvZH8lhdY.9DvfCcBn2RyuZjdd9GXe1CgfOpmaxDkYSVfKr3kNeKg"/> 
     </ContentPage.Content>
 </ContentPage>
