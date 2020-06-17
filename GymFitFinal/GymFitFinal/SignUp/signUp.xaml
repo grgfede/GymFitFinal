@@ -36,8 +36,8 @@
                 <BoxView AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.5"
                      AbsoluteLayout.LayoutFlags="All"
                      BackgroundColor="#64B5F6"
-                     CornerRadius="20"
-                     Opacity="0.6"
+                     CornerRadius="10"
+                     Opacity="0.7"
                      
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"/>
@@ -59,28 +59,28 @@
                    Text="Nome"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.5,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.52,0.7,0.45"/>
 
                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Cognome"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.7,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.72,0.7,0.45"/>
 
                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Email"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.9,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.92,0.7,0.45"/>
 
                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Password"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,1.1,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,1.12,0.7,0.45"/>
 
 
                 <Entry x:Name="txtNome"
@@ -88,7 +88,7 @@
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.31,0.7,0.08"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.33,0.7,0.08"/>
 
                 <Entry x:Name="txtCognome"
                    PlaceholderColor="#4a6572"
@@ -96,7 +96,7 @@
                    TextColor="#4a6572"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.43,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.45,0.7,0.1"/>
 
                 <Entry x:Name="txtEmail"
                    PlaceholderColor="#4a6572"
@@ -104,7 +104,7 @@
                    TextColor="#4a6572"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.55,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.57,0.7,0.1"/>
 
                 <Entry x:Name="txtPass"
                    IsPassword="True"
@@ -113,7 +113,7 @@
                    TextColor="#4a6572"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.67,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.69,0.7,0.1"/>
 
 
                 <CheckBox x:Name="chkTerm"
@@ -135,13 +135,13 @@
 
 
                 <Button BackgroundColor="#64B5F6"
-                    Font="13"
+                    Font="Bold,14"
                     TextColor="White"
                     Text="Invio"
                     CornerRadius="20"
-                    AbsoluteLayout.LayoutBounds="0.5,0.95,0.5,0.08"
+                    AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
-                    FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
                     Clicked="DoSignUpMethod"
                     />
             </AbsoluteLayout>
