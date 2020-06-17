@@ -6,10 +6,7 @@
              mc:Ignorable="d"
              x:Class="GymFitFinal.home.navBar.Palestra">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <WebView Source="https://webchat.botframework.com/embed/gymfit-bot?s=kzvvZH8lhdY.9DvfCcBn2RyuZjdd9GXe1CgfOpmaxDkYSVfKr3kNeKg"/>
     </ContentPage.Content>
 </ContentPage>
