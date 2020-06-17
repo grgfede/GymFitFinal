@@ -31,7 +31,8 @@
                     WidthRequest="400"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                BackgroundColor="#64B5F6">
+                BackgroundColor="#64B5F6"
+                Opacity="0.7">
             </Frame>
 
             <Frame
@@ -89,7 +90,8 @@
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Abbonamento"
                          AbsoluteLayout.LayoutBounds="0.5,0.57,1.1,0.13"
-                         AbsoluteLayout.LayoutFlags="All"/>
+                         AbsoluteLayout.LayoutFlags="All"
+                Opacity="0.7"/>
 
 
             <Image 
@@ -103,6 +105,7 @@
                          HorizontalOptions="FillAndExpand"
                          BackgroundColor="Transparent"
                          BorderColor="#64B5F6"
+                Opacity="0.7"
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Palestre"
@@ -120,6 +123,7 @@
                          HorizontalOptions="FillAndExpand"
                          BackgroundColor="Transparent"
                          BorderColor="#64B5F6"
+                Opacity="0.7"
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="prenotazioni"
