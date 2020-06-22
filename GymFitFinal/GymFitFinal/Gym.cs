@@ -4,13 +4,15 @@ using System.Text;
 
 namespace GymFitFinal
 {
-    class Gym
+    public class Gym
     {
         public static string Email { get; set; }
 
         public string Nome { get; set; }
-        public string Cognome { get; set; }
+        public string Citta { get; set; }
 
+        public string Indirizzo { get; set; }
+        public string Telefono{ get; set; }
         public string Uid { get; set; }
         public string profilePic { get; set; }
     }

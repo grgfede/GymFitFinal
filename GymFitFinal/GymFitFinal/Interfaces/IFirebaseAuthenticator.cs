@@ -15,6 +15,7 @@ namespace GymFitFinal.Interfaces
 
         Task<bool> UpdatePerson(string nome, string cognome);
         Task<string> DoSignUp(string email, string password, string nome, string cognome);
+        Task<string> DoSignUpGym(string email, string password, string nome, string citta);
 
         Task<User> GetPerson(string uid);
         Task<List<User>> GetAllPerson();

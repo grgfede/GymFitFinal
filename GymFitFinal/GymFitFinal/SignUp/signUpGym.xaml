@@ -148,7 +148,7 @@
                     AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
-                    
+                    Clicked="DoSignUpMethod"
                     />
         </AbsoluteLayout>
     </ContentPage.Content>

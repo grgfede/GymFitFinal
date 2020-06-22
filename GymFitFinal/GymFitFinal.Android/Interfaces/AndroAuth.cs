@@ -33,6 +33,7 @@ namespace GymFitFinal.Droid.Interfaces
     public class AndroAuth : IFirebaseAuthenticator
     {
         private readonly string ChildName = "utenti";
+        private readonly string ChildNameGym = "palestre";
 
         readonly FirebaseClient firebase = new FirebaseClient("https://gymfitt-2b845.firebaseio.com/");
 
@@ -197,7 +198,49 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
 
-       
+
+
+
+
+        public async Task<string> DoSignUpGym(string email, string password, string nome, string citta)
+        {
+            if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
+            {
+                var _result = "";
+                await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(async task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                        //Noget gik galt, returner FirebaseAuth fejlkoden
+                        if (task.Exception != null)
+                            _result = ((FirebaseAuthException)task.Exception.GetBaseException()).ErrorCode;
+                    }
+                    else
+                    {
+                        var currentuser = FirebaseAuth.Instance.CurrentUser;
+                        var uid = currentuser.Uid;
+
+
+                        //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
+                        AddGym(nome, citta, uid);
+                    }
+                });
+                return _result;
+            }
+            return "ERROR_EMAIL_OR_PASSWORD_MISSING";
+        }
+
+
+
+        public async Task AddGym(string nome, string citta, string uid)
+        {
+            string childGym = "palestre/" + uid;
+            // User user = new User(cognome, nome, uid);
+            //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
+
+            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+        }
+
 
 
 
