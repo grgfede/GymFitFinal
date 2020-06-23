@@ -26,11 +26,12 @@ namespace GymFitFinal
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
-             MainPage = new NavigationPage(new SignUp.signUpGym());
-           /* if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
-                MainPage = new NavigationPage(new home.Home());
-            else
-                MainPage = new NavigationPage(new Main());*/
+            //MainPage = new NavigationPage(new SignUp.signUpGym());
+            MainPage = new NavigationPage(new home.palestra.profiloPalestra());
+            /* if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
+                 MainPage = new NavigationPage(new home.Home());
+             else
+                 MainPage = new NavigationPage(new Main());*/
 
 
 
