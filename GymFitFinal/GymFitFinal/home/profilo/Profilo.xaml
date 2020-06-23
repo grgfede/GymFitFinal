@@ -36,13 +36,14 @@
             </Frame>
 
             <Frame
-                HeightRequest="125"
+                HeightRequest="170"
                     WidthRequest="300"
                VerticalOptions="End"
                  HorizontalOptions="Center"
-                    AbsoluteLayout.LayoutBounds="0.51,0.2,0.8,0.3" 
+                    AbsoluteLayout.LayoutBounds="0.51,0.26,0.9,0.3" 
                     AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="#FFFFFF">
+                BackgroundColor="#FFFFFF"
+                CornerRadius="3">
             </Frame>
 
             <controls:CircleImage x:Name="pictureBox"
@@ -60,17 +61,17 @@
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutBounds="0.5, 0.14, 0.5, 0.5"
                    AbsoluteLayout.LayoutFlags="All"
-                   Font="15"
-                   TextColor="#000000"
-                   FontFamily="Montserrat-Light.ttf#Montserrat"/>
+                   Font="18"
+                   TextColor="#4a6572"
+                   FontFamily="Montserrat-Bold.ttf#Montserrat"/>
 
             <Label Text="scadenza abbonamento:
                    tempo rimasto:"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.5, 0.5"
+                   AbsoluteLayout.LayoutBounds="0.3, 0.28, 0.5, 0.5"
                    AbsoluteLayout.LayoutFlags="All"
-                   Font="13"
+                   Font="14"
                    TextColor="#000000"
                    FontFamily="Montserrat-Light.ttf#Montserrat"/>
 
@@ -79,7 +80,7 @@
                        VerticalOptions="Start"
                        HorizontalOptions="Center"
                        Source="membership.png" 
-                       AbsoluteLayout.LayoutBounds="0.1,0.57,0.17,0.1"
+                       AbsoluteLayout.LayoutBounds="0.15,0.60,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 
             <Button 
@@ -89,45 +90,45 @@
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Abbonamento"
-                         AbsoluteLayout.LayoutBounds="0.5,0.57,1.1,0.13"
+                         AbsoluteLayout.LayoutBounds="0.5,0.60,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"
-                Opacity="0.7"/>
+                         Opacity="0.7"/>
 
 
             <Image 
                        VerticalOptions="Start"
                        HorizontalOptions="Center"
                        Source="gym.png" 
-                       AbsoluteLayout.LayoutBounds="0.1,0.72,0.17,0.1"
+                       AbsoluteLayout.LayoutBounds="0.15,0.77,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 
             <Button 
                          HorizontalOptions="FillAndExpand"
                          BackgroundColor="Transparent"
                          BorderColor="#64B5F6"
-                Opacity="0.7"
+                         Opacity="0.7"
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Palestre"
-                         AbsoluteLayout.LayoutBounds="0.5,0.73,1.1,0.13"
+                         AbsoluteLayout.LayoutBounds="0.5,0.78,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"/>
 
             <Image 
                        VerticalOptions="Start"
                        HorizontalOptions="Center"
                        Source="membership.png" 
-                       AbsoluteLayout.LayoutBounds="0.1,0.88,0.17,0.1"
+                       AbsoluteLayout.LayoutBounds="0.15,0.945,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 
             <Button
                          HorizontalOptions="FillAndExpand"
                          BackgroundColor="Transparent"
                          BorderColor="#64B5F6"
-                Opacity="0.7"
+                         Opacity="0.7"
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="prenotazioni"
-                         AbsoluteLayout.LayoutBounds="0.5,0.89,1.1,0.13"
+                         AbsoluteLayout.LayoutBounds="0.5,0.96,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"/>
 
 
