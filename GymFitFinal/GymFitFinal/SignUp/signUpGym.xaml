@@ -34,7 +34,7 @@
 
             <BoxView AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.5"
                      AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#64B5F6"
+                     BackgroundColor="#FACO5E"
                      CornerRadius="10"
                      Opacity="0.7"
                      
@@ -123,7 +123,7 @@
 
 
             <CheckBox x:Name="chkTerm"
-                      Color="#64B5F6"
+                      Color="#FACO5E"
                       AbsoluteLayout.LayoutFlags="All"
                       AbsoluteLayout.LayoutBounds="0.6,0.85,0.7,0.1"
                       VerticalOptions="Start"
@@ -140,7 +140,7 @@
                    AbsoluteLayout.LayoutBounds="0.7,0.852,0.6,0.09"/>
 
 
-            <Button BackgroundColor="#64B5F6"
+            <Button BackgroundColor="#FACO5E"
                     Font="Bold,14"
                     TextColor="White"
                     Text="Invio"

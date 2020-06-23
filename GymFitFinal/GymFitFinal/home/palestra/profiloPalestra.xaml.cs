@@ -25,7 +25,8 @@ namespace GymFitFinal.home.palestra
         {
             InitializeComponent();
 
-
+            var nav = new NavigationPage(new ContentPage { Title = "" });
+            nav.BarBackgroundColor = Color.FromHex("#FACO5E");
 
             picker.SelectedIndexChanged += async (sender, args) =>
             {
