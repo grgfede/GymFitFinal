@@ -196,7 +196,7 @@ namespace GymFitFinal.Droid.Interfaces
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, flagGym = false }); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
 
         }
 
@@ -238,7 +238,7 @@ namespace GymFitFinal.Droid.Interfaces
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Nome = nome, Uid = uid}); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
         }
 
 
@@ -261,6 +261,9 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_MISSING";
         }
 
+       
+
+
         public async Task<List<User>> GetAllPerson()
         {
             return (await firebase
@@ -269,7 +272,8 @@ namespace GymFitFinal.Droid.Interfaces
              {
                  Nome = item.Object.Nome,
                  Cognome = item.Object.Cognome,
-                 Uid = item.Object.Uid
+                 Uid = item.Object.Uid,
+                 flagGym = item.Object.flagGym
              }).ToList();
 
 
@@ -283,6 +287,31 @@ namespace GymFitFinal.Droid.Interfaces
                 .Child(ChildName)
                 .OnceAsync<User>();
             return allPersons.FirstOrDefault(a => a.Uid == uid);
+        }
+
+
+        public async Task<List<Gym>> GetAllGym()
+        {
+            return (await firebase
+            .Child(ChildNameGym)
+             .OnceAsync<Gym>()).Select(item => new Gym
+             {
+                 Nome = item.Object.Nome,
+                 Citta = item.Object.Citta,
+                 Uid = item.Object.Uid
+             }).ToList();
+
+
+        }
+
+
+        public async Task<Gym> GetGym(string uid)
+        {
+            var allGym = await GetAllGym();
+            await firebase
+                .Child(ChildNameGym)
+                .OnceAsync<Gym>();
+            return allGym.FirstOrDefault(a => a.Uid == uid);
         }
 
 

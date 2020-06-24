@@ -85,7 +85,8 @@
                     AbsoluteLayout.LayoutBounds="0.5,0.1,0.5,0.2" 
                     AbsoluteLayout.LayoutFlags="All"/>
 
-            <Label Text="Dove siamo: Modugno"
+            <Label x:Name="lblCitta"
+                   Text="Dove siamo: "
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutBounds="0.5, 0.30, 0.5, 0.15"
@@ -95,7 +96,7 @@
                    FontFamily="Montserrat-Light.ttf#Montserrat"/>
             
 
-            <Label Text="NOME PALESTRA"
+            <Label x:Name="lblNome"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutBounds="0.5, 0.10, 0.5, 0.5"

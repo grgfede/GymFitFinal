@@ -12,7 +12,7 @@ namespace GymFitFinal
 
 
         public static string Email { get; set; }
-
+        public bool flagGym { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
 

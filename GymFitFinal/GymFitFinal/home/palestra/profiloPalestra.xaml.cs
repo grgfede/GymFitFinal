@@ -1,11 +1,12 @@
-﻿using GymFitFinal.Interfaces;
+﻿using Android.Preferences;
+using GymFitFinal.Interfaces;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,6 +25,9 @@ namespace GymFitFinal.home.palestra
         public profiloPalestra()
         {
             InitializeComponent();
+            _auth = DependencyService.Get<IFirebaseAuthenticator>();
+
+            getInfo(uid);
 
             var nav = new NavigationPage(new ContentPage { Title = "" });
             nav.BarBackgroundColor = Color.FromHex("#FACO5E");
@@ -55,6 +59,39 @@ namespace GymFitFinal.home.palestra
 
 
         }
+
+
+
+
+        public async void getInfo(string uid)
+        {
+            var gym = await _auth.GetGym(uid);
+            if (gym != null)
+            {
+                lblCitta.Text = gym.Citta;
+                lblNome.Text = gym.Nome;
+                App.loggedGym = gym;
+                //pictureBox.Source = Preferences.Get("profilePic", "default.png");
+            } else
+            {
+                DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
+                _auth.Logout();
+                Navigation.RemovePage(this);
+                Navigation.PopAsync();
+            }
+        }
+
+
+
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            getInfo(uid);
+        }
+
+
+
 
 
         /*

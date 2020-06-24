@@ -101,6 +101,7 @@ namespace GymFitFinal.home.navBar
             else
             {
                 DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
+                _auth.Logout();
                 Navigation.RemovePage(this);
                 Navigation.PopAsync();
             }
