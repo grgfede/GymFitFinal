@@ -47,16 +47,7 @@ namespace GymFitFinal.Droid.Interfaces
 
    
 
-        //TASK PER LOGIN CON FIREBASE
-        public async Task AddPerson(string nome, string cognome, string uid)
-        {
-            string ChildNameAdd = ChildName + "/" + uid;
-            // User user = new User(cognome, nome, uid);
-            //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
-
-            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
-
-        }
+        
 
         public async Task<bool> UpdatePerson(string nome, string cognome)
         {
@@ -198,7 +189,16 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
 
+        //TASK PER LOGIN CON FIREBASE
+        public async Task AddPerson(string nome, string cognome, string uid)
+        {
+            string ChildNameAdd = ChildName + "/" + uid;
+            // User user = new User(cognome, nome, uid);
+            //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
+            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+
+        }
 
 
 
@@ -219,7 +219,7 @@ namespace GymFitFinal.Droid.Interfaces
                     {
                         var currentuser = FirebaseAuth.Instance.CurrentUser;
                         var uid = currentuser.Uid;
-
+                        App.uid = currentuser.Uid;
 
                         //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
                         AddGym(nome, citta, uid);
@@ -278,9 +278,6 @@ namespace GymFitFinal.Droid.Interfaces
 
         public async Task<User> GetPerson(string uid)
         {
-           
-
-
             var allPersons = await GetAllPerson();
             await firebase
                 .Child(ChildName)

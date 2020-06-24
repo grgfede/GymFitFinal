@@ -1,4 +1,5 @@
-﻿using Android.Graphics;
+﻿using Android.App;
+using Android.Graphics;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
@@ -21,6 +22,7 @@ namespace GymFitFinal.SignUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class signUpGym : ContentPage
     {
+        public Stream stream { get; set; }
         private IFirebaseAuthenticator _auth;
        
         public signUpGym()
@@ -61,7 +63,7 @@ namespace GymFitFinal.SignUp
                 DisplayAlert("Attenzione!", "Per proseguire accetta i Termini e Condizioni d'uso", "Ok");
             }
 
-            error = true;
+         
 
             if (!error)
             {
@@ -80,6 +82,10 @@ namespace GymFitFinal.SignUp
                 }
                 else
                 {
+                 
+                    string uid = App.uid;
+                    //string pic = await StoreImages(stream, uid);
+                    //DisplayAlert("prova", uid, "ok");
                     Navigation.PushAsync(new signUpSuccesful(nome));
                 }
 
@@ -164,10 +170,11 @@ namespace GymFitFinal.SignUp
             }
             pictureBox.Source = ImageSource.FromStream(() =>
             {
-                var stream = selectedImageFile.GetStream();
-                selectedImageFile.Dispose();
+                stream = selectedImageFile.GetStream();
+                //selectedImageFile.Dispose();
                 return stream;
             });
+            
             
 
         }
@@ -175,9 +182,9 @@ namespace GymFitFinal.SignUp
 
 
 
-        private async Task<string> StoreImages(Stream imageStream)
+        private async Task<string> StoreImages(Stream imageStream, string uid)
         {
-            string uid = App.uid;
+            DisplayAlert("Error", uid, "ok");
             var stroageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
                 .Child(uid)
                 .Child("profilePic.jpg")
