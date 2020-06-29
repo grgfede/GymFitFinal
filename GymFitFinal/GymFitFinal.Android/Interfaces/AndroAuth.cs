@@ -144,6 +144,16 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
+        public async Task<string> getProfilePicGymIscrizione(string uid)
+        {
+            var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                       .Child(uid)
+                       .Child("profilePic")
+                       .GetDownloadUrlAsync();
+            return storageImage;
+        }
+
+
         public bool IsUserLoggedIn() {
             if(FirebaseAuth.Instance.CurrentUser != null)
             {
@@ -229,7 +239,7 @@ namespace GymFitFinal.Droid.Interfaces
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, flagGym = false }); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, PalestraIscrizione = null}); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
 
         }
 
@@ -305,7 +315,8 @@ namespace GymFitFinal.Droid.Interfaces
              {
                  Nome = item.Object.Nome,
                  Cognome = item.Object.Cognome,
-                 Uid = item.Object.Uid
+                 Uid = item.Object.Uid,
+                 PalestraIscrizione = item.Object.PalestraIscrizione
              }).ToList();
 
 
@@ -355,7 +366,6 @@ namespace GymFitFinal.Droid.Interfaces
 
         public void Logout()
         {
-          
             FirebaseAuth.Instance.SignOut();
         }
     }

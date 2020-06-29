@@ -22,6 +22,7 @@ namespace GymFitFinal.Interfaces
         Task<List<Gym>> GetAllGym();
         Task<User> GetPerson(string uid);
         Task<string> getProfilePic();
+        Task<string> getProfilePicGymIscrizione(string uid);
         Task<List<User>> GetAllPerson();
         Task DeletePerson();
         Task refreshUser();

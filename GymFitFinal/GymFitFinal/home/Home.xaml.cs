@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GymFitFinal.home.navBar;
 using GymFitFinal.Interfaces;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -15,7 +16,7 @@ namespace GymFitFinal.home
     {
         private IFirebaseAuthenticator _auth;
         private List<User> lstPersons;
-        public bool flagGym { get; set; }
+       
         public Home()
         {
             string uid = App.uid;
@@ -33,6 +34,7 @@ namespace GymFitFinal.home
         {
             var person = await _auth.GetPerson(uid);
             var gym = await _auth.GetGym(uid);
+            Gym gymIscrizione = null;
 
             //CICLO GLI UTENTI NEL DATABASE, SE NON TROVO UN UTENTE CON QUEL UID
             if (person == null)
@@ -40,7 +42,10 @@ namespace GymFitFinal.home
              //PASSO A CERCARE LE PALESTRE CON QUEL UID  
                 if (gym != null)
                 {
-                    
+                    this.Title = "Profilo";
+                    this.IconImageSource = "navbarProfile.png";
+                    this.Children.Add(new navBar.Palestra());
+
                     //SE TROVO UNA PALESTRA, SALVO LA VARIABILE APP COME TRUE
                     App.isGym = true;
                     //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER LE PALESTRE
@@ -50,12 +55,36 @@ namespace GymFitFinal.home
 
                 } 
             } else {
-               
+                //SE L'UTENTE E' ISCRITTO AD UNA PALESTRA
+                if (person.PalestraIscrizione != null)
+                {
+                    this.Title = "Profilo";
+                    this.IconImageSource = "navbarProfile.png";
+                    this.Children.Add(new navBar.PalestraIscrizione(person.PalestraIscrizione));
+
+                    //RECUPERO LE INFO DELLA PALESTRA A CUI E' ISCRITTO E MOSTRO LE INFO DELLA PALESTRA
+                    gymIscrizione = await _auth.GetGym(person.PalestraIscrizione);
+                    DisplayAlert("Prova", "Sei iscritto alla palestra " + gymIscrizione.Nome, "ok");
+                }
+                else
+                {
+                    this.Title = "Profilo";
+                    this.IconImageSource = "navbarProfile.png";
+                    this.Children.Add(new navBar.Palestra());
+                    //ALTIRMENTI, SE L'UTENTE NON E' ISCRITTO AD UNA PALESTRA, VISUALIZZO IL BOT
+                    DisplayAlert("Prova", "Non sei iscritto a nessuna palestra", "ok");
+
+                }
+
                 App.isGym = false;
+                
                 //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER GLI UTENTI
                 this.Title = "Profilo";
                 this.IconImageSource = "navbarProfile.png";
                 this.Children.Add(new home.navBar.Profilo());
+                
+
+                
             }
         }
        
