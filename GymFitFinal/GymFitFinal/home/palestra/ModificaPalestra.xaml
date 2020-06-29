@@ -69,7 +69,7 @@
                 </StackLayout>
             </ScrollView>
 
-            <Button  x:Name="btnModifica"
+           <!-- <Button  x:Name="btnModifica"
             BackgroundColor="White"
                     Font="Bold,14"
                     TextColor="#FACO5E"
@@ -79,7 +79,7 @@
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
                     Clicked="modificaCheck"/> 
-            
+             -->
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

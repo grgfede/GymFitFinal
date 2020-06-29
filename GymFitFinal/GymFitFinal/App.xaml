@@ -8,9 +8,9 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#64B5F6</Color>
-            <Color x:Key="Sec">#FACO5E</Color>
+        
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Sec}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

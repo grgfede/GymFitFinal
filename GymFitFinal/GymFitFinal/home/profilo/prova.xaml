@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#4E94AF"
+             x:Class="GymFitFinal.home.profilo.prova">
+
+
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#FACO5E" Padding="0,15,0,0">
+            <Label Text="PROFILE AND QUALIFICATIONS"    
+                   TextColor="White" FontSize="Small" 
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Start" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" 
+                   AbsoluteLayout.LayoutBounds="0.9,0.022,250,20"/>
+            
+            <Image x:Name="notificayionButton"  
+                   BackgroundColor="Transparent" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" 
+                   AbsoluteLayout.LayoutBounds="0.95,0.022,20,20"     
+                   Source="gear_profile.png"/>
+            
+          <!--  <Button x:Name="menuButton" 
+                        BackgroundColor="Transparent"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                            AbsoluteLayout.LayoutBounds="1,0.005,40,40"
+                     Image="gear_profile.png" 
+                     HeightRequest="40"
+                        WidthRequest="50" 
+                         Padding="0
+                    
+                        Clicked="button_prova" /> -->
+                    
+
+            <RelativeLayout Margin="0,50,0,0" BackgroundColor="#f1f1f1">
+                <Grid  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                </Grid>
+            </RelativeLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
