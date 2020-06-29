@@ -50,7 +50,7 @@
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                        <Entry x:Name="lblCognome" 
+                        <Entry x:Name="lblCitta" 
                                Opacity="10"
                            PlaceholderColor="#4a6572"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
@@ -85,7 +85,8 @@
                     AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
-                    Clicked="modificaCheck"/>
+                     Clicked="modificaCheck"
+                   />
             
         </AbsoluteLayout>
     </ContentPage.Content>

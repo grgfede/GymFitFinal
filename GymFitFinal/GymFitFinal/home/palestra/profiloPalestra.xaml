@@ -76,7 +76,6 @@
                          AbsoluteLayout.LayoutFlags="All"/>
 
             <controls:CircleImage x:Name="pictureBox"
-                    Source="defaultUser.png" 
                     HeightRequest="120"
                     WidthRequest="120"
                     HorizontalOptions="Center"

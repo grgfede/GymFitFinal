@@ -84,7 +84,7 @@ namespace GymFitFinal.SignUp
                 {
                  
                     string uid = App.uid;
-                    //string pic = await StoreImages(stream, uid);
+                    string pic = await StoreImages(stream, uid);
                     //DisplayAlert("prova", uid, "ok");
                     Navigation.PushAsync(new signUpSuccesful(nome));
                 }

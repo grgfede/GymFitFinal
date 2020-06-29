@@ -16,6 +16,7 @@ namespace GymFitFinal
         {
             InitializeComponent();
             SignUpMethod();
+            
         }
 
         public async void LoginEmail(Object sender, EventArgs e)

@@ -23,6 +23,7 @@ using Android.Media;
 using System.Drawing;
 using Image = Xamarin.Forms.Image;
 using GymFitFinal.home.navBar;
+using Xamarin.Essentials;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -67,6 +68,27 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
+        public async Task<bool> UpdateGym(string nome, string citta)
+        {
+            bool success = false;
+            var uid = App.uid;
+            App.loggedGym.Nome = nome;
+            App.loggedGym.Citta = citta;
+            string ChildNameAdd = ChildNameGym + "/" + uid;
+            await firebase.Child(ChildNameAdd).PutAsync<Gym>(App.loggedGym).ContinueWith(async task =>
+            {
+                if (!task.IsFaulted)
+                    success = true; ;
+
+            });
+            return success;
+        }
+
+
+
+
+
+
         //TASK PER LOGIN CON FIREBASE
         public async Task<string> DoLoginWithEP(string email, string password)
         {
@@ -97,11 +119,11 @@ namespace GymFitFinal.Droid.Interfaces
 
                         //RECUPERO L'IMMAGINE PROFILO
                         var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
-                        .Child(uid)
+                        .Child(App.uid)
                         .Child("profilePic")
                         .GetDownloadUrlAsync();
-                        App.loggedUser.profilePic = storageImage;
-
+                        App.profilePic = storageImage;
+                        Preferences.Set("profilePic", storageImage);
                     }
                 });
                 return _result;
@@ -109,6 +131,17 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
 
+
+        public async Task<string> getProfilePic()
+        {
+            var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                       .Child(App.uid)
+                       .Child("profilePic")
+                       .GetDownloadUrlAsync();
+            App.profilePic = storageImage;
+            Preferences.Set("profilePic", storageImage);
+            return storageImage;
+        }
 
 
         public bool IsUserLoggedIn() {
@@ -272,8 +305,7 @@ namespace GymFitFinal.Droid.Interfaces
              {
                  Nome = item.Object.Nome,
                  Cognome = item.Object.Cognome,
-                 Uid = item.Object.Uid,
-                 flagGym = item.Object.flagGym
+                 Uid = item.Object.Uid
              }).ToList();
 
 
@@ -323,6 +355,7 @@ namespace GymFitFinal.Droid.Interfaces
 
         public void Logout()
         {
+          
             FirebaseAuth.Instance.SignOut();
         }
     }

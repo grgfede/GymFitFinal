@@ -21,11 +21,14 @@ namespace GymFitFinal
        
         public static string password { get; set; }
         public static bool isGym { get; set; }
+        public static string profilePic { get; set; } 
         public App()
         {
             
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+
+           
 
             //MainPage = new NavigationPage(new SignUp.signUpGym());
             //MainPage = new NavigationPage(new home.Home());

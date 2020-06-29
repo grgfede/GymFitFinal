@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GymFitFinal.Interfaces;
-
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,8 +23,9 @@ namespace GymFitFinal.home
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
             //VERIFICO SE CHI SI E' LOGGATO E' UTENTE O PALESTRA
             getInfo(uid);
-
+           
             NavigationPage.SetHasBackButton(this, false);
+            
 
         }
 
@@ -40,6 +40,7 @@ namespace GymFitFinal.home
              //PASSO A CERCARE LE PALESTRE CON QUEL UID  
                 if (gym != null)
                 {
+                    
                     //SE TROVO UNA PALESTRA, SALVO LA VARIABILE APP COME TRUE
                     App.isGym = true;
                     //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER LE PALESTRE
@@ -49,6 +50,7 @@ namespace GymFitFinal.home
 
                 } 
             } else {
+               
                 App.isGym = false;
                 //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER GLI UTENTI
                 this.Title = "Profilo";

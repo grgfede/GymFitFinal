@@ -29,9 +29,6 @@ namespace GymFitFinal.home.palestra
 
             getInfo(uid);
 
-            var nav = new NavigationPage(new ContentPage { Title = "" });
-            nav.BarBackgroundColor = Color.FromHex("#FACO5E");
-
             picker.SelectedIndexChanged += async (sender, args) =>
             {
                 if (picker.SelectedIndex == -1)
@@ -44,11 +41,12 @@ namespace GymFitFinal.home.palestra
                     picker.SelectedItem = -1;
                     if (colorName.Equals("Modifica Profilo"))
                     {
-                        //await Navigation.PushAsync(new ModificaProfilo());
+                        await Navigation.PushAsync(new home.palestra.Page1());
                     }
                     else
                     {
                         _auth.Logout();
+                        Preferences.Clear("profilePic");
                         Navigation.InsertPageBefore(new Main(), Navigation.NavigationStack[0]);
                         await Navigation.PopToRootAsync();
 
@@ -56,42 +54,13 @@ namespace GymFitFinal.home.palestra
                 }
             };
 
-
-
         }
-
-
-
-
-        public async void getInfo(string uid)
-        {
-            var gym = await _auth.GetGym(uid);
-            if (gym != null)
-            {
-                lblCitta.Text = gym.Citta;
-                lblNome.Text = gym.Nome;
-                App.loggedGym = gym;
-                //pictureBox.Source = Preferences.Get("profilePic", "default.png");
-            } else
-            {
-                DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
-                _auth.Logout();
-                Navigation.RemovePage(this);
-                Navigation.PopAsync();
-            }
-        }
-
-
-
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             getInfo(uid);
         }
-
-
-
 
 
         /*
@@ -101,6 +70,32 @@ namespace GymFitFinal.home.palestra
         {
             picker.Focus();
 
+        }
+        /*
+        * Metodo per recuperare le informazioni dell'utente.
+        * Nella variabile _auth abbiamo tutti i metodi di connessione al database firebase.
+        * In questo caso utilizziamo il metodo GetPerson che restituisce un oggetto "User" specifico grazie all'uid.
+        * In questo modo possiamo recuperare il nome e cognome grazie ai metodi get della classe User.
+        */
+        public async void getInfo(string uid)
+        {
+            var person = await _auth.GetGym(uid);
+            if (person != null)
+            {
+                lblNome.Text = person.Nome + " ";
+                lblCitta.Text = "Dove siamo: " + person.Citta;
+                App.loggedGym = person;
+                string pic = Preferences.Get("profilePic", "defaultUser.png");
+                pictureBox.Source = pic;
+
+            }
+            else
+            {
+                DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
+                _auth.Logout();
+                Navigation.RemovePage(this);
+                Navigation.PopAsync();
+            }
         }
 
 
