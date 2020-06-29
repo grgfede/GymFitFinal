@@ -7,14 +7,14 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="GymFitFinal.home.profilo.ModificaProfilo">
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <Frame
-                HeightRequest="77"
-                    WidthRequest="400"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Start"
-                BackgroundColor="#64B5F6"
-                Opacity="0.7">
+        <AbsoluteLayout BackgroundColor="#64B5F6">
+
+
+            <Frame AbsoluteLayout.LayoutBounds="0.51, 0.4, 0.85, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="#FFFFFF"
+                   Opacity="0.9"
+                   CornerRadius="10">
             </Frame>
 
             <controls:CircleImage x:Name="pictureBox"
@@ -28,60 +28,54 @@
                     VerticalOptions="Center"
                     Aspect="AspectFill"/>
 
-            <Frame AbsoluteLayout.LayoutBounds="0.51, 0.56, 0.85, 0.5"
-                   AbsoluteLayout.LayoutFlags="All"
-                   BackgroundColor="#64B5F6"
-                   Opacity="0.5"
-                   CornerRadius="10">
-
-                <ScrollView VerticalScrollBarVisibility="Always"
+            <ScrollView VerticalScrollBarVisibility="Always"
                    VerticalOptions="FillAndExpand"
                    HorizontalOptions="FillAndExpand"
-                   BackgroundColor="Transparent" >
+                   BackgroundColor="Transparent"
+                   AbsoluteLayout.LayoutBounds="0.51, 0.6, 0.77, 0.5"
+                   AbsoluteLayout.LayoutFlags="All">
 
 
                     <StackLayout Margin="7" Spacing="20" >
 
                         <Entry x:Name="lblName" 
-                               BackgroundColor="#64B5F6"
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
-                              
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
                         <Entry x:Name="lblCognome" 
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
                         <Entry x:Name="lblEmail"  
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
                         <Entry x:Name="lblPassword" 
-                               Opacity="10"
                            IsPassword="true" Placeholder="Password"  
-                           PlaceholderColor="#4a6572"
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
                     </StackLayout>
                 </ScrollView>
-            </Frame>
+
 
 
             <Button  x:Name="btnModifica"
-            BackgroundColor="#64B5F6"
+            BackgroundColor="White"
                     Font="Bold,14"
-                    TextColor="White"
+                    TextColor="#64B5F6"
                     Text="Invio"
                     CornerRadius="20"
                     AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"

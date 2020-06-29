@@ -8,14 +8,12 @@
              
              x:Class="GymFitFinal.home.palestra.Page1">
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <Frame
-                HeightRequest="77"
-                    WidthRequest="400"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Start"
-                BackgroundColor="#FACO5E"
-                Opacity="0.7">
+        <AbsoluteLayout BackgroundColor="#FACO5E">
+            <Frame AbsoluteLayout.LayoutBounds="0.51, 0.4, 0.85, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="#FFFFFF"
+                   Opacity="0.9"
+                   CornerRadius="10">
             </Frame>
 
             <controls:CircleImage x:Name="pictureBox"
@@ -29,65 +27,59 @@
                     VerticalOptions="Center"
                     Aspect="AspectFill"/>
 
-            <Frame AbsoluteLayout.LayoutBounds="0.51, 0.56, 0.85, 0.5"
-                   AbsoluteLayout.LayoutFlags="All"
-                   BackgroundColor="#FACO5E"
-                   Opacity="0.5"
-                   CornerRadius="10">
-                <ScrollView VerticalScrollBarVisibility="Always"
+            <ScrollView VerticalScrollBarVisibility="Always"
                    VerticalOptions="FillAndExpand"
                    HorizontalOptions="FillAndExpand"
-                   BackgroundColor="Transparent" >
+                   BackgroundColor="Transparent" 
+                   AbsoluteLayout.LayoutBounds="0.51, 0.6, 0.77, 0.5"
+                   AbsoluteLayout.LayoutFlags="All">
 
 
-                    <StackLayout Margin="7" Spacing="20" >
+                <StackLayout Margin="7" Spacing="20" >
 
-                        <Entry x:Name="lblName" 
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
-                              
+                    <Entry x:Name="lblName" 
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                        <Entry x:Name="lblCitta" 
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
+                    <Entry x:Name="lblCognome" 
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                        <Entry x:Name="lblEmail"  
-                               Opacity="10"
-                           PlaceholderColor="#4a6572"
+                    <Entry x:Name="lblEmail"  
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                        <Entry x:Name="lblPassword" 
-                               Opacity="10"
+                    <Entry x:Name="lblPassword" 
                            IsPassword="true" Placeholder="Password"  
-                           PlaceholderColor="#4a6572"
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                    </StackLayout>
-                </ScrollView>
-            </Frame>
+                </StackLayout>
+            </ScrollView>
 
-            <Button  x:Name="btnModifica"
-            BackgroundColor="#FACO5E"
+           <!-- <Button  x:Name="btnModifica"
+            BackgroundColor="White"
                     Font="Bold,14"
-                    TextColor="White"
+                    TextColor="#FACO5E"
                     Text="Invio"
                     CornerRadius="20"
                     AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
-                     Clicked="modificaCheck"
-                   />
-            
+                    Clicked="modificaCheck"/> 
+             -->
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -6,6 +6,12 @@
              mc:Ignorable="d"
              x:Class="GymFitFinal.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Color x:Key="Primary">#64B5F6</Color>
+        
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
