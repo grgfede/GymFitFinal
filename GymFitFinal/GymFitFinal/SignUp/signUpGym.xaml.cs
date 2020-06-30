@@ -30,9 +30,7 @@ namespace GymFitFinal.SignUp
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
            
-           
-            //INIZIALIZZO GESTURE TOCCA IMMAGINE
-            pictureModify();
+          
         }
 
         public async void DoSignUpMethod(Object sender, EventArgs e)
@@ -84,9 +82,10 @@ namespace GymFitFinal.SignUp
                 {
                  
                     string uid = App.uid;
-                    //string pic = await StoreImages(stream, uid);
                     //DisplayAlert("prova", uid, "ok");
-                    Navigation.PushAsync(new signUpSuccesful(nome));
+                    Navigation.PushAsync(new signUpDetailsGym(nome));
+
+                  
                 }
 
             }
@@ -96,102 +95,20 @@ namespace GymFitFinal.SignUp
 
 
 
-        public void pictureModify()
-        {
-            pictureBox.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(() =>
-                {
-                    getImage();
-                })
-            });
-        }
 
 
 
 
 
 
-
-        /*
-        * Metodo per recuperare un file multimediale (foto) dalla galleria del telefono
-        * Prima di tutto controlla se ha i permessi per accedere nello storage interno
-        * Se non dovesse avere i permessi, chiede all'utente di garantirli.
-        * Una volta avuto i permessi, crea una variabile che conterrà il file multimediale scelto dall'utente
-        * Per poi visualizzare questo file nell'apposito pictureBox
-        */
-        public async Task getImage()
-        {
-
-            var permission = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
-            if (permission != Xamarin.Essentials.PermissionStatus.Granted)
-            {
-                permission = await Permissions.RequestAsync<Permissions.StorageRead>();
-            }
-            if (permission != Xamarin.Essentials.PermissionStatus.Granted)
-            {
-                return;
-            }
-
-            //! added using Plugin.Media;
-            await CrossMedia.Current.Initialize();
-
-            //// if you want to take a picture use this
-            // if(!CrossMedia.Current.IsTakePhotoSupported || !CrossMedia.Current.IsCameraAvailable)
-            /// if you want to select from the gallery use this
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await DisplayAlert("Not supported", "Your device does not currently support this functionality", "Ok");
-                return;
-            }
-            
-            //! added using Plugin.Media.Abstractions;
-            // if you want to take a picture use StoreCameraMediaOptions instead of PickMediaOptions
-            var mediaOptions = new PickMediaOptions()
-            {
-                //PhotoSize = PhotoSize.Medium,
-                CustomPhotoSize = 50
-            };
-
-            // if you want to take a picture use TakePhotoAsync instead of PickPhotoAsync
-            var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
-
-            if (selectedImageFile == null)
-            {
-                pictureBox.Source = "defaultUser.png";
-                return;
-               
-            }
-            if (pictureBox == null)
-            {
-                await DisplayAlert("Error", "Could not get the image, please try again.", "Ok");
-               
-                return;
-            }
-            pictureBox.Source = ImageSource.FromStream(() =>
-            {
-                stream = selectedImageFile.GetStream();
-                //selectedImageFile.Dispose();
-                return stream;
-            });
-            
             
 
-        }
+        
 
 
 
 
-        private async Task<string> StoreImages(Stream imageStream, string uid)
-        {
-            DisplayAlert("Error", uid, "ok");
-            var stroageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
-                .Child(uid)
-                .Child("profilePic.jpg")
-                .PutAsync(imageStream);
-            string imgurl = stroageImage;
-            return imgurl;
-        }
+       
 
 
 

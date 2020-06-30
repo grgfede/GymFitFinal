@@ -44,7 +44,7 @@
                            Text="{Binding User.Email}" 
                            FontSize="Medium" />
 
-                    <Entry x:Name="lblCognome" 
+                    <Entry x:Name="lblCitta" 
                            PlaceholderColor="#2D3047"
                            Opacity="0.6"
                            FontFamily="Montserrat-Regular.ttf#Montserrat"

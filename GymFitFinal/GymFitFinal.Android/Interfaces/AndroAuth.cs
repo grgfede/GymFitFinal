@@ -23,6 +23,7 @@ using Android.Media;
 using System.Drawing;
 using Image = Xamarin.Forms.Image;
 using GymFitFinal.home.navBar;
+using Xamarin.Essentials;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -67,6 +68,27 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
+        public async Task<bool> UpdateGym(string nome, string citta)
+        {
+            bool success = false;
+            var uid = App.uid;
+            App.loggedGym.Nome = nome;
+            App.loggedGym.Citta = citta;
+            string ChildNameAdd = ChildNameGym + "/" + uid;
+            await firebase.Child(ChildNameAdd).PutAsync<Gym>(App.loggedGym).ContinueWith(async task =>
+            {
+                if (!task.IsFaulted)
+                    success = true; ;
+
+            });
+            return success;
+        }
+
+
+
+
+
+
         //TASK PER LOGIN CON FIREBASE
         public async Task<string> DoLoginWithEP(string email, string password)
         {
@@ -95,13 +117,17 @@ namespace GymFitFinal.Droid.Interfaces
                         App.loggedEmail = loggedEmail;
                         App.password = password;
 
+                        Preferences.Set("uid", uid);
+                        Preferences.Set("loggedEmail", loggedEmail);
+                        Preferences.Set("password", password);
+
                         //RECUPERO L'IMMAGINE PROFILO
                         var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
-                        .Child(uid)
+                        .Child(App.uid)
                         .Child("profilePic")
                         .GetDownloadUrlAsync();
-                        App.loggedUser.profilePic = storageImage;
-
+                        App.profilePic = storageImage;
+                        Preferences.Set("profilePic", storageImage);
                     }
                 });
                 return _result;
@@ -109,6 +135,27 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
 
+
+        public async Task<string> getProfilePic()
+        {
+            var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                       .Child(App.uid)
+                       .Child("profilePic")
+                       .GetDownloadUrlAsync();
+            App.profilePic = storageImage;
+            Preferences.Set("profilePic", storageImage);
+            return storageImage;
+        }
+
+
+        public async Task<string> getProfilePicGymIscrizione(string uid)
+        {
+            var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
+                       .Child(uid)
+                       .Child("profilePic")
+                       .GetDownloadUrlAsync();
+            return storageImage;
+        }
 
 
         public bool IsUserLoggedIn() {
@@ -196,7 +243,7 @@ namespace GymFitFinal.Droid.Interfaces
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, flagGym = false }); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, PalestraIscrizione = null}); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
 
         }
 
@@ -273,7 +320,7 @@ namespace GymFitFinal.Droid.Interfaces
                  Nome = item.Object.Nome,
                  Cognome = item.Object.Cognome,
                  Uid = item.Object.Uid,
-                 flagGym = item.Object.flagGym
+                 PalestraIscrizione = item.Object.PalestraIscrizione
              }).ToList();
 
 
@@ -323,6 +370,9 @@ namespace GymFitFinal.Droid.Interfaces
 
         public void Logout()
         {
+            Preferences.Set("uid", null);
+            Preferences.Set("loggedEmail", null);
+            Preferences.Set("password", null);
             FirebaseAuth.Instance.SignOut();
         }
     }

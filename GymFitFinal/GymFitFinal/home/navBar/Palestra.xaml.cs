@@ -15,6 +15,7 @@ namespace GymFitFinal.home.navBar
         public Palestra()
         {
             InitializeComponent();
+           
         }
     }
 }

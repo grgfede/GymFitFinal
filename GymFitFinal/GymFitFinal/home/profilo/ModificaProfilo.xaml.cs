@@ -38,7 +38,8 @@ namespace GymFitFinal.home.profilo
             lblCognome.Placeholder = App.loggedUser.Cognome;
             lblName.Placeholder = App.loggedUser.Nome;
             lblEmail.Placeholder = App.loggedEmail;
-            pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
+            string pic = Preferences.Get("profilePic", "defaultUser.png");
+            pictureBox.Source = pic;
         }
 
 
@@ -151,9 +152,9 @@ namespace GymFitFinal.home.profilo
                     return;
                 }
                 string pic = await StoreImages(selectedImageFile.GetStream());
+                App.profilePic = pic;
                 Preferences.Set("profilePic", pic);
-                pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
-                App.loggedUser.profilePic = pic;
+                pictureBox.Source = pic;
 
                  
 
@@ -164,7 +165,7 @@ namespace GymFitFinal.home.profilo
 
         private async Task<string> StoreImages(Stream imageStream)
         {
-            string uid = App.uid;
+            //string uid = App.uid;
             var stroageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
                 .Child(uid)
                 .Child("profilePic.jpg")

@@ -52,6 +52,7 @@ namespace GymFitFinal.home.navBar
                     } else
                     {
                         _auth.Logout();
+                        Preferences.Clear("profilePic");
                         Navigation.InsertPageBefore(new Main(), Navigation.NavigationStack[0]);
                         await Navigation.PopToRootAsync();
 
@@ -94,7 +95,8 @@ namespace GymFitFinal.home.navBar
                 lblNomeCognome.Text = person.Nome + " ";
                 lblNomeCognome.Text += person.Cognome;
                 App.loggedUser = person;
-                pictureBox.Source = Preferences.Get("profilePic", "defaultUser.png");
+                string pic = Preferences.Get("profilePic", "defaultUser.png");
+                pictureBox.Source = pic;
                 
             }
             else

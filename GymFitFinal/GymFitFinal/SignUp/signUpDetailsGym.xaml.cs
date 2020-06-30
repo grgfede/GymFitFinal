@@ -1,4 +1,4 @@
-﻿using Android.Preferences;
+﻿using Android.Net.Wifi.Aware;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
@@ -13,79 +13,27 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GymFitFinal.home.palestra
+namespace GymFitFinal.SignUp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class signUpDetailsGym : ContentPage
     {
+
         private IFirebaseAuthenticator _auth;
         string uid = App.uid;
-        public Page1()
+        public signUpDetailsGym(string nome)
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            showInfo();
+            //INIZIALIZZO GESTURE TOCCA IMMAGINE
             pictureModify();
-        }
-        protected override void OnAppearing()
-        {
-            //Write the code of your page here
-            base.OnAppearing();
+
         }
 
-        private void showInfo()
+        public async void signUpGym (Object sender, EventArgs e)
         {
-            lblName.Placeholder = App.loggedGym.Nome;
-            lblCitta.Placeholder = App.loggedGym.Citta;
-            lblEmail.Placeholder = App.loggedEmail;
-            string pic = Preferences.Get("profilePic", "defaultUser.png");
-            pictureBox.Source = pic;
-        }
+            Navigation.PushAsync(new signUpSuccesfulGym("federico"));
 
-
-
-        public async void modificaCheck(Object sender, EventArgs e)
-        {
-            string email = lblEmail.Text;
-            string citta = lblCitta.Text;
-            string nome = lblName.Text;
-
-
-            if (string.IsNullOrEmpty(nome))
-            {
-                nome = App.loggedGym.Nome;
-
-            }
-            if (string.IsNullOrEmpty(citta))
-            {
-                citta = App.loggedGym.Citta;
-            }
-
-            //RENDO IL NOME E COGNOME CON LA PRIMA LETTERA MAIUSCOLA
-            nome = nome.First().ToString().ToUpper() + nome.Substring(1);
-            citta = citta.First().ToString().ToUpper() + citta.Substring(1);
-
-            updateProfile(nome, citta);
-        }
-
-        private async void updateProfile(string nome, string citta)
-        {
-            bool update = false;
-            update = await _auth.UpdateGym(nome, citta);
-            if (!update)
-            {
-                DisplayAlert("Attenzione!", "Qualcosa è andato storto, riprova più tardi", "ok");
-
-            }
-            else
-            {
-                _auth.refreshUser();
-                // Remove page before Edit Page
-                this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 1]);
-                // This PopAsync will now go to List Page
-                this.Navigation.PopAsync();
-
-            }
         }
 
 
@@ -100,13 +48,8 @@ namespace GymFitFinal.home.palestra
             });
         }
 
-        /*
-         * Metodo per recuperare un file multimediale (foto) dalla galleria del telefono
-         * Prima di tutto controlla se ha i permessi per accedere nello storage interno
-         * Se non dovesse avere i permessi, chiede all'utente di garantirli.
-         * Una volta avuto i permessi, crea una variabile che conterrà il file multimediale scelto dall'utente
-         * Per poi visualizzare questo file nell'apposito pictureBox
-         */
+
+
         public async Task getImage()
         {
 
@@ -153,13 +96,14 @@ namespace GymFitFinal.home.palestra
                 return;
             }
             string pic = await StoreImages(selectedImageFile.GetStream());
-            App.profilePic = pic;
-            Preferences.Set("profilePic", pic);
             pictureBox.Source = pic;
 
 
 
         }
+
+
+
 
 
 
@@ -174,6 +118,7 @@ namespace GymFitFinal.home.palestra
             string imgurl = stroageImage;
             return imgurl;
         }
+
 
 
     }

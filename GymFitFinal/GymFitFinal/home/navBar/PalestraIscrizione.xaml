@@ -3,14 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              mc:Ignorable="d"
-             x:Class="GymFitFinal.home.palestra.profiloPalestra">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="gear_profile.png"
-                     Clicked="ToolbarItem_Impostazioni"/>
-
-    </ContentPage.ToolbarItems>
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="GymFitFinal.home.navBar.PalestraIscrizione">
     <ContentPage.Content>
         <AbsoluteLayout>
 
@@ -43,7 +38,7 @@
                 BorderColor="#FF9F1C"
                 CornerRadius="3">
             </Frame>
-            
+
             <Button 
                          HorizontalOptions="Start"
                          BackgroundColor="Transparent"
@@ -93,7 +88,7 @@
                    Font="14"
                    TextColor="#000000"
                    FontFamily="Montserrat-Light.ttf#Montserrat"/>
-            
+
 
             <Label x:Name="lblNome"
                    HorizontalOptions="Center"
