@@ -19,6 +19,10 @@ namespace GymFitFinal.home
        
         public Home()
         {
+            App.uid = Preferences.Get("uid", null);
+            App.loggedEmail = Preferences.Get("loggedEmail", null);
+            App.password = Preferences.Get("password", null);
+
             string uid = App.uid;
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
@@ -63,9 +67,7 @@ namespace GymFitFinal.home
                     this.Children.Add(new navBar.PalestraIscrizione(person.PalestraIscrizione));
 
                     //RECUPERO LE INFO DELLA PALESTRA A CUI E' ISCRITTO E MOSTRO LE INFO DELLA PALESTRA
-                    gymIscrizione = await _auth.GetGym(person.PalestraIscrizione);
-                    DisplayAlert("Prova", "Sei iscritto alla palestra " + gymIscrizione.Nome, "ok");
-                }
+                    gymIscrizione = await _auth.GetGym(person.PalestraIscrizione);                }
                 else
                 {
                     this.Title = "Profilo";

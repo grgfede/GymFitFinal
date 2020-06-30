@@ -32,8 +32,8 @@ namespace GymFitFinal.home.navBar
             {
                 lblNome.Text = person.Nome + " ";
                 lblCitta.Text = "Dove siamo: " + person.Citta;
-                string pic = await _auth.getProfilePicGymIscrizione(uid);
-                pictureBox.Source = pic;
+                //string pic = await _auth.getProfilePicGymIscrizione(uid);
+                pictureBox.Source = "defaultUser.png";
 
             }
             else

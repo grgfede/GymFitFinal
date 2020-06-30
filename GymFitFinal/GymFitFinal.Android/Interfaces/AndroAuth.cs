@@ -117,6 +117,10 @@ namespace GymFitFinal.Droid.Interfaces
                         App.loggedEmail = loggedEmail;
                         App.password = password;
 
+                        Preferences.Set("uid", uid);
+                        Preferences.Set("loggedEmail", loggedEmail);
+                        Preferences.Set("password", password);
+
                         //RECUPERO L'IMMAGINE PROFILO
                         var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
                         .Child(App.uid)
@@ -366,6 +370,9 @@ namespace GymFitFinal.Droid.Interfaces
 
         public void Logout()
         {
+            Preferences.Set("uid", null);
+            Preferences.Set("loggedEmail", null);
+            Preferences.Set("password", null);
             FirebaseAuth.Instance.SignOut();
         }
     }
