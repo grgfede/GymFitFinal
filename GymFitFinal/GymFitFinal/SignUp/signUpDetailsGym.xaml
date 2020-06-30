@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.SignUp.signUpDetailsGym">
+    <ContentPage.Content>
+        <AbsoluteLayout 
+            BackgroundColor="White">
+
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.5,0.073,0.3,0.06"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="38"
+                   TextColor="#000000"
+                   Text="GymFit"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.12,0.093,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.89,0.093,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.5"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#FACO5E"
+                     CornerRadius="10"
+                     Opacity="0.7"
+                     
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"/>
+
+
+
+
+            <controls:CircleImage x:Name="pictureBox"
+                    Margin="4,13,4,4"
+                    AbsoluteLayout.LayoutBounds="0.5,0.17,0.7,0.2"
+                    AbsoluteLayout.LayoutFlags="All"
+                    Source="defaultUser.png" 
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Aspect="AspectFill"/>
+
+
+
+
+           
+
+
+            <Button BackgroundColor="#FACO5E"
+                    Font="Bold,14"
+                    TextColor="White"
+                    Text="Invio"
+                    CornerRadius="20"
+                    AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
+                    AbsoluteLayout.LayoutFlags="All"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
+                    Clicked="signUpGym"
+                    />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
