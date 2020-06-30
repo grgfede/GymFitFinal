@@ -14,6 +14,7 @@ namespace GymFitFinal
         private readonly IFirebaseAuthenticator _auth;
 
         public static bool IsUserLoggedIn { get; set; }
+        public static string nome { get; set; }
         public static string uid { get; set; }
         public NavigationPage ContentPage { get; }
 

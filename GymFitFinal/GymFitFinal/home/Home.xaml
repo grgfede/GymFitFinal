@@ -10,8 +10,8 @@
             
              x:Class="GymFitFinal.home.Home">
 
-        <!--<gymfit:Palestra Title="Palestra" Icon="navbarGym.png"></gymfit:Palestra> 
-        <gymfit:Profilo Title="Profilo" Icon="navbarProfile.png"></gymfit:Profilo>-->
-       
+        <!--<gymfit:Palestra x:Name="tab1" Title="Palestra" Icon="navbarGym.png"></gymfit:Palestra>
+    <gymfit:Profilo Title="Profilo" Icon="navbarProfile.png"></gymfit:Profilo>-->
+
 
 </TabbedPage>
