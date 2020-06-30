@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Dettagli abbonamento"
+             x:Class="GymFitFinal.home.profilo.Abbonamento">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#64B5F6">
+
+            <Frame AbsoluteLayout.LayoutBounds="0.42, 0.1, 0.9, 0.35"
+                   AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="#FFFFFF"
+                   Opacity="0.7"
+                   CornerRadius="10">
+            </Frame>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Tipo abbonamento: ">
+            </Label>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.45, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Data inizio: ">
+            </Label>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.65, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Data scadenza: ">
+            </Label>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.85, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Costo: ">
+            </Label>
+
+            <Label  x:Name="lblBack"
+                    AbsoluteLayout.LayoutBounds="0.5, 1.2, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="Center"
+                    Font="14"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
+                    TextColor="#4a6572"
+                    Text="Torna alla home "
+                    />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,8 +1,6 @@
-﻿using Android.Preferences;
-using GymFitFinal.Interfaces;
+﻿using GymFitFinal.Interfaces;
 using System;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,31 +22,18 @@ namespace GymFitFinal
        
         public static string password { get; set; }
         public static bool isGym { get; set; }
-        public static string profilePic { get; set; } 
         public App()
         {
             
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
-           
-
             //MainPage = new NavigationPage(new SignUp.signUpGym());
-            MainPage = new NavigationPage(new Main());
-            App.uid = Preferences.Get("uid", null);
-            if (App.uid != null)
-            
-                MainPage = new NavigationPage(new home.Home());
-             else
-                    MainPage = new NavigationPage(new Main());
-            
-
-
-
-            /*if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
+            MainPage = new NavigationPage(new home.profilo.Abbonamento());
+           /* if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
                  MainPage = new NavigationPage(new home.Home());
              else
-                 MainPage = new NavigationPage(new Main());*/
+                 MainPage = new NavigationPage(new Main()); */
 
 
 
