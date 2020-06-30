@@ -1,5 +1,5 @@
-﻿using Android.App;
-using Android.Graphics;
+﻿//using Android.App;
+//using Android.Graphics;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
@@ -15,7 +15,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using Bitmap = Android.Graphics.Bitmap;
+//using Bitmap = Android.Graphics.Bitmap;
 
 namespace GymFitFinal.SignUp
 {

@@ -23,7 +23,7 @@ namespace GymFitFinal.home.navBar
     {
         private IFirebaseAuthenticator _auth;
         private List<User> lstPersons;
-       
+
         string uid = App.uid;
 
         FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
@@ -33,14 +33,14 @@ namespace GymFitFinal.home.navBar
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            
+
             getInfo(uid);
-           
+
             picker.SelectedIndexChanged += async (sender, args) =>
-            {               
+            {
                 if (picker.SelectedIndex == -1)
                 {
-                    
+
                 }
                 else
                 {
@@ -73,10 +73,9 @@ namespace GymFitFinal.home.navBar
          */
         public void ToolbarItem_Impostazioni(Object sender, EventArgs e)
         {
-            picker.Focus();  
-            
-        }
+            picker.Focus();
 
+        }
 
 
 
@@ -106,6 +105,7 @@ namespace GymFitFinal.home.navBar
                 Navigation.PopAsync();
             }
         }
+
     }
 
 }
