@@ -126,7 +126,7 @@ namespace GymFitFinal.Droid.Interfaces
                         .Child(App.uid)
                         .Child("profilePic")
                         .GetDownloadUrlAsync();
-                        App.profilePic = storageImage;
+                        //App.profilePic = storageImage;
                         Preferences.Set("profilePic", storageImage);
                     }
                 });
@@ -142,7 +142,7 @@ namespace GymFitFinal.Droid.Interfaces
                        .Child(App.uid)
                        .Child("profilePic")
                        .GetDownloadUrlAsync();
-            App.profilePic = storageImage;
+           // App.profilePic = storageImage;
             Preferences.Set("profilePic", storageImage);
             return storageImage;
         }

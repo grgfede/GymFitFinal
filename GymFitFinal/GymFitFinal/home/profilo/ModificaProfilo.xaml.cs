@@ -152,7 +152,7 @@ namespace GymFitFinal.home.profilo
                     return;
                 }
                 string pic = await StoreImages(selectedImageFile.GetStream());
-                App.profilePic = pic;
+                //App.profilePic = pic;
                 Preferences.Set("profilePic", pic);
                 pictureBox.Source = pic;
 

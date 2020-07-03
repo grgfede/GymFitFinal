@@ -1,4 +1,4 @@
-﻿using Android.Net.Wifi.Aware;
+﻿//using Android.Net.Wifi.Aware;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;

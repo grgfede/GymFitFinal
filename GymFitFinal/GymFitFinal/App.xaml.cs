@@ -29,12 +29,10 @@ namespace GymFitFinal
 
             //MainPage = new NavigationPage(new SignUp.signUpGym());
             MainPage = new NavigationPage(new home.profilo.Abbonamento());
-           /* if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
+            /*if (DependencyService.Get<IFirebaseAuthenticator>().IsUserLoggedIn())
                  MainPage = new NavigationPage(new home.Home());
              else
                  MainPage = new NavigationPage(new Main()); */
-
-
 
         }
 
