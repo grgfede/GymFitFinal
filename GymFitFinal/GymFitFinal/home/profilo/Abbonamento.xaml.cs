@@ -16,7 +16,7 @@ namespace GymFitFinal.home.profilo
         {
             InitializeComponent();
         }
-
+/*
         void BackMethod()
         {
             lblBack.GestureRecognizers.Add(new TapGestureRecognizer()
@@ -26,6 +26,6 @@ namespace GymFitFinal.home.profilo
                     Navigation.PushAsync(new home.Home());
                 })
             });
-        }
+        }*/
     }
 }

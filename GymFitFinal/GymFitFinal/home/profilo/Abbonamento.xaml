@@ -10,7 +10,7 @@
         <AbsoluteLayout BackgroundColor="#64B5F6">
 
             
-            <Frame AbsoluteLayout.LayoutBounds="0.42, 0.315, 0.9, 0.45"
+            <Frame AbsoluteLayout.LayoutBounds="0.42, 0.50, 0.9, 0.35"
                    AbsoluteLayout.LayoutFlags="All"
                    BackgroundColor="#FFFFFF"
                    Opacity="0.7"
@@ -24,31 +24,31 @@
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="0.9"/>
 
-            <Label AbsoluteLayout.LayoutBounds="0.5, 0.75, 0.8, 0.6"
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.90, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Tipo abbonamento: ">
             </Label>
-            <Label AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.8, 0.6"
+            <Label AbsoluteLayout.LayoutBounds="0.5, 1.10, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Data inizio: ">
             </Label>
-            <Label AbsoluteLayout.LayoutBounds="0.5, 1.15, 0.8, 0.6"
+            <Label AbsoluteLayout.LayoutBounds="0.5, 1.30, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Data scadenza: ">
             </Label>
-            <Label AbsoluteLayout.LayoutBounds="0.5, 1.35, 0.8, 0.6"
+            <Label AbsoluteLayout.LayoutBounds="0.5, 1.50, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Costo: ">
             </Label>
-
+<!--
             <Label  x:Name="lblBack"
                     AbsoluteLayout.LayoutBounds="0.5, 1.9, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
@@ -58,7 +58,7 @@
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
                     TextColor="#4a6572"
                     Text="Torna alla home "
-                    />
+                    /> -->
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
