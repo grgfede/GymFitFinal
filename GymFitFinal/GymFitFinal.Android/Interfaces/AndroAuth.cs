@@ -373,6 +373,7 @@ namespace GymFitFinal.Droid.Interfaces
             Preferences.Set("uid", null);
             Preferences.Set("loggedEmail", null);
             Preferences.Set("password", null);
+            Preferences.Set("profilePic", null);
             FirebaseAuth.Instance.SignOut();
         }
     }

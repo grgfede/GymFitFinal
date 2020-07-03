@@ -25,6 +25,7 @@ namespace GymFitFinal.SignUp
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+            App.nome = nome;
             //INIZIALIZZO GESTURE TOCCA IMMAGINE
             pictureModify();
 
@@ -32,7 +33,7 @@ namespace GymFitFinal.SignUp
 
         public async void signUpGym (Object sender, EventArgs e)
         {
-            Navigation.PushAsync(new signUpSuccesfulGym("federico"));
+            Navigation.PushAsync(new signUpSuccesfulGym(App.nome));
 
         }
 
