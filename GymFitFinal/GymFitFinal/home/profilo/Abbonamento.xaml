@@ -14,14 +14,8 @@
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="#64B5F6">
 
-            
-            <Frame AbsoluteLayout.LayoutBounds="0.42, 0.50, 0.9, 0.35"
-                   AbsoluteLayout.LayoutFlags="All"
-                   BackgroundColor="#FFFFFF"
-                   Opacity="0.7"
-                   CornerRadius="10">
-            </Frame>
 
+        
             <Image Source="ic_abbonamento.png" 
                    HorizontalOptions="Center"
                    VerticalOptions="Start"

@@ -36,8 +36,7 @@ namespace GymFitFinal
             if (uid != null)
                  MainPage = new NavigationPage(new home.Home());
              else
-                 MainPage = new NavigationPage(new Main()); 
-
+                 MainPage = new NavigationPage(new Main());
 
 
         }
