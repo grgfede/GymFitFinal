@@ -1,4 +1,4 @@
-﻿using Android.Preferences;
+﻿//using Android.Preferences;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
@@ -153,11 +153,9 @@ namespace GymFitFinal.home.palestra
                 return;
             }
             string pic = await StoreImages(selectedImageFile.GetStream());
-            App.profilePic = pic;
+            //App.profilePic = pic;
             Preferences.Set("profilePic", pic);
             pictureBox.Source = pic;
-
-
 
         }
 
