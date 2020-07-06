@@ -13,6 +13,7 @@ namespace GymFitFinal
 
         public static string Email { get; set; }
         public string PalestraIscrizione { get; set; }
+        public string AbbonamentoIscrizione { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
 

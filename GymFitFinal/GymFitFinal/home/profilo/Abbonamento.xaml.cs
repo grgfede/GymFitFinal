@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GymFitFinal.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,40 @@ namespace GymFitFinal.home.profilo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Abbonamento : ContentPage
     {
+        private IFirebaseAuthenticator _auth;
         public Abbonamento()
         {
             InitializeComponent();
+            _auth = DependencyService.Get<IFirebaseAuthenticator>();
+
         }
 
-        void BackMethod()
+        public void ToolbarItem_Follow (Object sender, EventArgs e)
         {
-            lblBack.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(() =>
-                {
-                    Navigation.PushAsync(new home.Home());
-                })
-            });
+            checkSub();
         }
+
+        public async void checkSub()
+        {
+            string uid = App.uid;
+            var person = await _auth.GetPerson(uid);
+
+            if (person.PalestraIscrizione != null)
+            {
+                if (person.AbbonamentoIscrizione == null)
+                {
+                    DisplayAlert("Stai per comprare un abbonamento", "ok", "ok");
+                }
+                else
+                {
+                    DisplayAlert("Attenzione!", "Abbonamento già presente", "ok");
+                }
+            } else
+            {
+                DisplayAlert("Attenzione!", "Non sei inscritto a nessuna palestra!", "ok");
+            }
+            
+        }
+
     }
 }

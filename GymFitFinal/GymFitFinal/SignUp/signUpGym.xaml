@@ -36,7 +36,6 @@
                      BackgroundColor="#FACO5E"
                      CornerRadius="10"
                      Opacity="0.7"
-                     
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"/>
 
@@ -59,27 +58,33 @@
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.5,0.73,0.7,0.45"/>
-
+            
             <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                   Text="Email"
+                   Text="Indirizzo"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.5,0.93,0.7,0.45"/>
 
             <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                   Text="Password"
+                   Text="Email"
                    Font="15"
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.5,1.13,0.7,0.45"/>
+
+            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Password"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,1.32,0.7,0.45"/>
 
 
             <Entry x:Name="txtNome"
                    PlaceholderColor="#4a6572"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                   
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.5,0.34,0.7,0.08"/>
 
@@ -87,35 +92,40 @@
                    PlaceholderColor="#4a6572"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                  
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.5,0.46,0.7,0.1"/>
+
+            <Entry x:Name="txtIndirizzo"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.58,0.7,0.1"/>
 
             <Entry x:Name="txtEmail"
                    PlaceholderColor="#4a6572"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                  
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.58,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.70,0.7,0.1"/>
 
             <Entry x:Name="txtPass"
                    IsPassword="True"
                    PlaceholderColor="#4a6572"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
-                   
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.70,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.81,0.7,0.1"/>
 
 
             <CheckBox x:Name="chkTerm"
                       Color="#FACO5E"
                       AbsoluteLayout.LayoutFlags="All"
-                      AbsoluteLayout.LayoutBounds="0.6,0.85,0.7,0.1"
+                      AbsoluteLayout.LayoutBounds="0.6,0.92,0.7,0.1"
                       VerticalOptions="Start"
                       HorizontalOptions="Start"/>
 
@@ -127,7 +137,7 @@
                    HorizontalOptions="Start"
                    VerticalOptions="Start"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.7,0.852,0.6,0.09"/>
+                   AbsoluteLayout.LayoutBounds="0.7,0.921,0.6,0.09"/>
 
 
             <Button BackgroundColor="#FACO5E"
@@ -135,7 +145,7 @@
                     TextColor="White"
                     Text="Avanti"
                     CornerRadius="20"
-                    AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
+                    AbsoluteLayout.LayoutBounds="0.5,0.97,0.5,0.08"
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
                     Clicked="DoSignUpMethod"

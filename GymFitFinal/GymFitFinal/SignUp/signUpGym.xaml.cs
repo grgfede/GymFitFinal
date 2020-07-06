@@ -38,6 +38,7 @@ namespace GymFitFinal.SignUp
             bool error = false;
             string nome = txtNome.Text;
             string citta = txtCitta.Text;
+            string indirizzo = txtIndirizzo.Text;
             string email = txtEmail.Text;
             string password = txtPass.Text;
            
@@ -65,7 +66,7 @@ namespace GymFitFinal.SignUp
 
             if (!error)
             {
-                var Token = await _auth.DoSignUpGym(email, password, nome, citta);
+                var Token = await _auth.DoSignUpGym(email, password, nome, citta, indirizzo);
                 if (Token.Contains("ERROR_INVALID_EMAIL"))
                 {
                     DisplayAlert("Attenzione!", "Email inserita non valida", "Riprova");

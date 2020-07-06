@@ -92,7 +92,8 @@
                          Text="Abbonamento"
                          AbsoluteLayout.LayoutBounds="0.5,0.60,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"
-                         Opacity="0.7"/>
+                         Opacity="0.7"
+                         Clicked="OpenSubmit"/>
 
 
             <Image 

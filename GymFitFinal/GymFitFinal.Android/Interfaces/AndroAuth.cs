@@ -243,13 +243,13 @@ namespace GymFitFinal.Droid.Interfaces
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, PalestraIscrizione = null}); ; //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(ChildNameAdd).PutAsync(new User() { Cognome = cognome, Nome = nome, Uid = uid, PalestraIscrizione = null, AbbonamentoIscrizione = null }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
 
         }
 
 
 
-        public async Task<string> DoSignUpGym(string email, string password, string nome, string citta)
+        public async Task<string> DoSignUpGym(string email, string password, string nome, string citta, string indirizzo)
         {
             if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
@@ -269,7 +269,7 @@ namespace GymFitFinal.Droid.Interfaces
                         App.uid = currentuser.Uid;
 
                         //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
-                        AddGym(nome, citta, uid);
+                        AddGym(nome, citta, indirizzo, uid);
                     }
                 });
                 return _result;
@@ -279,13 +279,13 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
-        public async Task AddGym(string nome, string citta, string uid)
+        public async Task AddGym(string nome, string citta, string indirizzo, string uid)
         {
             string childGym = "palestre/" + uid;
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Nome = nome, Uid = uid}); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Indirizzo = indirizzo, Nome = nome, Uid = uid}); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
         }
 
 
@@ -320,7 +320,8 @@ namespace GymFitFinal.Droid.Interfaces
                  Nome = item.Object.Nome,
                  Cognome = item.Object.Cognome,
                  Uid = item.Object.Uid,
-                 PalestraIscrizione = item.Object.PalestraIscrizione
+                 PalestraIscrizione = item.Object.PalestraIscrizione, 
+                 AbbonamentoIscrizione = item.Object.AbbonamentoIscrizione
              }).ToList();
 
 
@@ -345,6 +346,7 @@ namespace GymFitFinal.Droid.Interfaces
              {
                  Nome = item.Object.Nome,
                  Citta = item.Object.Citta,
+                 Indirizzo = item.Object.Indirizzo,
                  Uid = item.Object.Uid
              }).ToList();
 

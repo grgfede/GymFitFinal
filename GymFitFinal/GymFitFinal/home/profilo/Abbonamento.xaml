@@ -6,6 +6,11 @@
              mc:Ignorable="d"
              Title="Dettagli abbonamento"
              x:Class="GymFitFinal.home.profilo.Abbonamento">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="gear_profile.png"
+                     Clicked="ToolbarItem_Follow"/>
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="#64B5F6">
 

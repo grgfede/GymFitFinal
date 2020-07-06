@@ -108,6 +108,12 @@ namespace GymFitFinal.home.navBar
             }
         }
 
+        public async void OpenSubmit(Object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Abbonamento());
+
+        }
+
     }
 
 }

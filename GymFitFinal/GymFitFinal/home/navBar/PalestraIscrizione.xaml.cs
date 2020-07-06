@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -34,12 +34,20 @@ namespace GymFitFinal.home.navBar
                 lblCitta.Text = "Dove siamo: " + person.Citta;
                 //string pic = await _auth.getProfilePicGymIscrizione(uid);
                 pictureBox.Source = "defaultUser.png";
+                Gym.citta = person.Citta;
+                Gym.indirizzo = person.Indirizzo;
 
             }
             else
             {
                 DisplayAlert("Attenzione!", "C'è stato un errore, riprova più tardi.", "OK");
             }
+        }
+
+        public async void OpenMap(Object sender, EventArgs e)
+        {
+            
+            await Launcher.OpenAsync("geo:0,0?q=394+" + Gym.citta + "+" + Gym.indirizzo);
         }
 
 
