@@ -22,6 +22,7 @@ namespace GymFitFinal.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
             FirebaseApp.InitializeApp(Application.Context);
             LoadApplication(new App());

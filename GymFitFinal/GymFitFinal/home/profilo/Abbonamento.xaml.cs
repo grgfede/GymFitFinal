@@ -1,4 +1,5 @@
 ﻿using GymFitFinal.Interfaces;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace GymFitFinal.home.profilo
             {
                 if (person.AbbonamentoIscrizione == null)
                 {
-                    DisplayAlert("Stai per comprare un abbonamento", "ok", "ok");
+                    await PopupNavigation.PushAsync(new AbbonamentoPopup());
                 }
                 else
                 {
