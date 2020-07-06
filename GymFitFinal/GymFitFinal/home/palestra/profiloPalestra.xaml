@@ -23,57 +23,54 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Frame
-                HeightRequest="140"
-                    WidthRequest="400"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                BackgroundColor="#FACO5E"
-                Opacity="0.7">
+            <Frame HeightRequest="140"
+                   WidthRequest="400"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   BackgroundColor="#FACO5E"
+                   Opacity="0.7">
             </Frame>
 
-            <Frame
-                HeightRequest="170"
-                    WidthRequest="300"
-               VerticalOptions="End"
-                 HorizontalOptions="Center"
-                    AbsoluteLayout.LayoutBounds="0.51,0.26,0.9,0.3" 
-                    AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="#FFFFFF"
-                BorderColor="#FF9F1C"
-                CornerRadius="3">
+            <Frame HeightRequest="170"
+                   WidthRequest="300"
+                   VerticalOptions="End"
+                   HorizontalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.51,0.26,0.9,0.3" 
+                   AbsoluteLayout.LayoutFlags="All"
+                   BackgroundColor="#FFFFFF"
+                   BorderColor="#FF9F1C"
+                   CornerRadius="3">
             </Frame>
             
-            <Button 
-                         HorizontalOptions="Start"
-                         BackgroundColor="Transparent"
-                         BorderColor="#2D3047"
-                         Opacity="0.5"
-                         BorderWidth="1"
-                         FontFamily="Montserrat-Light.ttf#Montserrat"
-                         Text="giorni"
-                         AbsoluteLayout.LayoutBounds="0.30,0.41,0.5,0.1"
-                         AbsoluteLayout.LayoutFlags="All"/>
-            <Button 
-                         HorizontalOptions="Center"
-                         BackgroundColor="Transparent"
-                         BorderColor="#2D3047"
-                         Opacity="0.5"
-                         BorderWidth="1"
-                         FontFamily="Montserrat-Light.ttf#Montserrat"
-                         Text="orari"
-                         AbsoluteLayout.LayoutBounds="0.50,0.41,0.5,0.1"
-                         AbsoluteLayout.LayoutFlags="All"/>
-            <Button 
-                         HorizontalOptions="End"
-                         BackgroundColor="Transparent"
-                         BorderColor="#2D3047"
-                         Opacity="0.5"
-                         BorderWidth="1"
-                         FontFamily="Montserrat-Light.ttf#Montserrat"
-                         Text="mappa"
-                         AbsoluteLayout.LayoutBounds="0.70,0.41,0.5,0.1"
-                         AbsoluteLayout.LayoutFlags="All"/>
+            <Button HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
+                    BorderColor="#2D3047"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    FontFamily="Montserrat-Light.ttf#Montserrat"
+                    Text="giorni"
+                    AbsoluteLayout.LayoutBounds="0.30,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutFlags="All"/>
+            
+            <Button HorizontalOptions="Center"
+                    BackgroundColor="Transparent"
+                    BorderColor="#2D3047"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    FontFamily="Montserrat-Light.ttf#Montserrat"
+                    Text="orari"
+                    AbsoluteLayout.LayoutBounds="0.50,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutFlags="All"/>
+            
+            <Button HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    BorderColor="#2D3047"
+                    Opacity="0.5"
+                    BorderWidth="1"
+                    FontFamily="Montserrat-Light.ttf#Montserrat"
+                    Text="mappa"
+                    AbsoluteLayout.LayoutBounds="0.70,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutFlags="All"/>
 
             <controls:CircleImage x:Name="pictureBox"
                     HeightRequest="120"
@@ -105,39 +102,23 @@
                    FontFamily="Montserrat-Bold.ttf#Montserrat" />
 
             <Image 
-                       VerticalOptions="Start"
-                       HorizontalOptions="Center"
-                       Source="membership.png" 
-                       AbsoluteLayout.LayoutBounds="0.15,0.62,0.17,0.1"
-                       AbsoluteLayout.LayoutFlags="All"/>
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   Source="membership.png" 
+                   AbsoluteLayout.LayoutBounds="0.15,0.62,0.17,0.1"
+                   AbsoluteLayout.LayoutFlags="All"/>
 
             <Button 
-                         HorizontalOptions="FillAndExpand"
-                         BackgroundColor="Transparent"
-                         BorderColor="#FACO5E"
-                         Opacity="0.7"
-                         BorderWidth="2"
-                         FontFamily="Montserrat-Light.ttf#Montserrat"
-                         Text="         Turni disponibili"
-                         AbsoluteLayout.LayoutBounds="0.5,0.62,1.1,0.13"
-                         AbsoluteLayout.LayoutFlags="All"/>
-            <Image 
-                       VerticalOptions="Start"
-                       HorizontalOptions="Center"
-                       Source="gym.png" 
-                       AbsoluteLayout.LayoutBounds="0.15,0.79,0.17,0.1"
-                       AbsoluteLayout.LayoutFlags="All"/>
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Transparent"
+                   BorderColor="#FACO5E"
+                   Opacity="0.7"
+                   BorderWidth="2"
+                   FontFamily="Montserrat-Light.ttf#Montserrat"
+                   Text="         Inserisci turni"
+                   AbsoluteLayout.LayoutBounds="0.5,0.62,1.1,0.13"
+                   AbsoluteLayout.LayoutFlags="All"/>
 
-            <Button 
-                         HorizontalOptions="FillAndExpand"
-                         BackgroundColor="Transparent"
-                         BorderColor="#FACO5E"
-                         Opacity="0.7"
-                         BorderWidth="2"
-                         FontFamily="Montserrat-Light.ttf#Montserrat"
-                         Text=" cerca turno"
-                         AbsoluteLayout.LayoutBounds="0.5,0.80,1.1,0.13"
-                         AbsoluteLayout.LayoutFlags="All"/>
 
         </AbsoluteLayout>
     </ContentPage.Content>
