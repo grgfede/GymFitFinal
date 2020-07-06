@@ -115,7 +115,8 @@
                    Opacity="0.7"
                    BorderWidth="2"
                    FontFamily="Montserrat-Light.ttf#Montserrat"
-                   Text="         Inserisci turni"
+                   Text="Inserisci turni"
+                Padding="80,0,0,0"
                    AbsoluteLayout.LayoutBounds="0.5,0.62,1.1,0.13"
                    AbsoluteLayout.LayoutFlags="All"/>
 

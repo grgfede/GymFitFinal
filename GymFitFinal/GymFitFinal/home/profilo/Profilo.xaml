@@ -44,6 +44,7 @@
                     AbsoluteLayout.LayoutBounds="0.51,0.26,0.9,0.3" 
                     AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor="#FFFFFF"
+                BorderColor="#4699db"
                 CornerRadius="3">
             </Frame>
 
@@ -90,6 +91,7 @@
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Abbonamento"
+                     Padding="80,0,0,0"
                          AbsoluteLayout.LayoutBounds="0.5,0.60,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"
                          Opacity="0.7"
@@ -111,6 +113,7 @@
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="Palestra"
+                Padding="80,0,0,0"
                          AbsoluteLayout.LayoutBounds="0.5,0.78,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"/>
 
@@ -121,7 +124,7 @@
                        AbsoluteLayout.LayoutBounds="0.15,0.945,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 
-            <Button
+            <Button 
                          HorizontalOptions="FillAndExpand"
                          BackgroundColor="Transparent"
                          BorderColor="#64B5F6"
@@ -129,6 +132,7 @@
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text="prenotazioni effettuate"
+                Padding="80,0,0,0"
                          AbsoluteLayout.LayoutBounds="0.5,0.96,1.1,0.13"
                          AbsoluteLayout.LayoutFlags="All"/>
 

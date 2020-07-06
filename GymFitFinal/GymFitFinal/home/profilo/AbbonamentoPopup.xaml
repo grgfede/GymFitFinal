@@ -23,12 +23,12 @@
     </pages:PopupPage.Animation>
 
     <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
-        <Frame CornerRadius="10" Padding="0" BackgroundColor="CadetBlue" >
+        <Frame CornerRadius="5" Padding="25,25" BackgroundColor="#64B5F6" >
             <StackLayout Padding="10">
-                <Label Text="First Popup Page" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
+                <Label Padding="0, 0, 0, 15" Text="First Popup Page" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
                 <ScrollView>
                     <StackLayout>
-                        <Label Text="Hello Xamarin Guys" TextColor="Red"/>
+                        <Label Padding="0, 0, 0, 10" Text="Hello Xamarin Guys" TextColor="Red"/>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="This is Very Awesome Popup Plugins For Xamarin forms" TextColor="LightBlue"/>
                             <Button Text="Close" TextColor="Black"  ></Button>
