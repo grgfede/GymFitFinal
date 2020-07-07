@@ -31,13 +31,13 @@ namespace GymFitFinal
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
-            MainPage = new NavigationPage(new home.profilo.AbbonamentoPopup());
-         /*   string uid = Preferences.Get("uid", null);
+           // MainPage = new NavigationPage(new home.profilo.AbbonamentoPopup());
+            string uid = Preferences.Get("uid", null);
             if (uid != null)
                  MainPage = new NavigationPage(new home.Home());
              else
                  MainPage = new NavigationPage(new Main());
-         */
+         
 
         }
 

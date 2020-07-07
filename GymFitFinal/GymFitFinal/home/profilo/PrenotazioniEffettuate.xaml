@@ -4,12 +4,111 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Le mie prenotazioni"
              x:Class="GymFitFinal.home.profilo.PrenotazioniEffettuate">
+  <!--  <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="gear_profile.png"
+                     Clicked="ToolbarItem_Follow"/>
+
+    </ContentPage.ToolbarItems> -->
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout BackgroundColor="#64B5F6">
+
+            <Image Source="ic_prenotazioni.png" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   AbsoluteLayout.LayoutBounds="0.42, 0.015, 0.9, 0.35"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Opacity="0.9"/>
+
+            <Frame BackgroundColor="#FFFFFF"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.78, 0.9, 0.65"
+                   AbsoluteLayout.LayoutFlags="All"
+                   CornerRadius="5"
+                   Opacity="0.7"
+                   ></Frame>
+
+            <ScrollView  
+                   BackgroundColor="Transparent"
+                   AbsoluteLayout.LayoutBounds="0.51, 0.77, 0.97, 0.63"
+                   AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout Margin="25" Spacing="20" >
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Giorno: ">
+                    </Label>
+                    
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Fascia Oraria: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="----------------------------------------------- ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Giorno: ">
+                    </Label>
+                    
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Fascia Oraria: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="----------------------------------------------- ">
+                    </Label>
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Giorno: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Fascia Oraria: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="----------------------------------------------- ">
+                    </Label>
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Giorno: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="Fascia Oraria: ">
+                    </Label>
+
+                    <Label 
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   Text="----------------------------------------------- ">
+                    </Label>
+
+
+                </StackLayout>
+            </ScrollView>
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
