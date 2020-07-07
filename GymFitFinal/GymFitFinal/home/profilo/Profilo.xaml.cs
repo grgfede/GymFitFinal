@@ -114,6 +114,19 @@ namespace GymFitFinal.home.navBar
 
         }
 
+        public async void Prenotazioni(Object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PrenotazioniEffettuate());
+
+        }
+
+        public async void Palestra(Object sender, EventArgs e)
+        {
+            //fedeeeeee
+            await Navigation.PushAsync(new home.navBar.PalestraIscrizione("ua"));
+
+        }
+
     }
 
 }

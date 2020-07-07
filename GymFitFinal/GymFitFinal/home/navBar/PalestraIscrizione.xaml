@@ -105,7 +105,8 @@
                          Text="Turni disponibili"
                 Padding="80,0,0,0"
                          AbsoluteLayout.LayoutBounds="0.5,0.62,1.1,0.13"
-                         AbsoluteLayout.LayoutFlags="All"/>
+                         AbsoluteLayout.LayoutFlags="All"
+                Clicked="TurniDisponibili"/>
             <Image 
                        VerticalOptions="Start"
                        HorizontalOptions="Center"

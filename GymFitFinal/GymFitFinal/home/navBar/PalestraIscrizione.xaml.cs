@@ -1,4 +1,5 @@
-﻿using GymFitFinal.Interfaces;
+﻿using GymFitFinal.home.palestra;
+using GymFitFinal.Interfaces;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,10 @@ namespace GymFitFinal.home.navBar
             await Launcher.OpenAsync("geo:0,0?q=394+" + Gym.citta + "+" + Gym.indirizzo);
         }
 
+        private async void TurniDisponibili(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TurniDisponibili());
+        }
 
     }
 }
