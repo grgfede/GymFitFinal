@@ -120,12 +120,6 @@ namespace GymFitFinal.home.navBar
 
         }
 
-        public async void Palestra(Object sender, EventArgs e)
-        {
-            //fedeeeeee
-            await Navigation.PushAsync(new home.navBar.PalestraIscrizione("ua"));
-
-        }
 
     }
 

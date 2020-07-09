@@ -72,7 +72,7 @@
                    Text="Dove siamo: "
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.5, 0.30, 0.5, 0.15"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.31, 0.5, 0.15"
                    AbsoluteLayout.LayoutFlags="All"
                    Font="14"
                    TextColor="#000000"
