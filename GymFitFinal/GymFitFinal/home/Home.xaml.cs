@@ -74,7 +74,6 @@ namespace GymFitFinal.home
                     this.IconImageSource = "navbarProfile.png";
                     this.Children.Add(new navBar.Palestra());
                     //ALTIRMENTI, SE L'UTENTE NON E' ISCRITTO AD UNA PALESTRA, VISUALIZZO IL BOT
-                    DisplayAlert("Prova", "Non sei iscritto a nessuna palestra", "ok");
 
                 }
 

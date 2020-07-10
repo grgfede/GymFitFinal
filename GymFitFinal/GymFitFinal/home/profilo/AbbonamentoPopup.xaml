@@ -31,7 +31,7 @@
                         <Label Padding="0, 0, 0, 10" Text="Hello Xamarin Guys" TextColor="Red" FontSize="18"/>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="This is Very Awesome Popup Plugins For Xamarin forms" FontSize="16" TextColor="Gray"/>
-                            <Button Text="Close" TextColor="Black"  ></Button>
+                            <Button Text="Crea abbonamento" Clicked="createSub" TextColor="Black"  ></Button>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

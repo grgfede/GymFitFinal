@@ -16,7 +16,6 @@ namespace GymFitFinal
         public string AbbonamentoIscrizione { get; set; }
         public string Nome { get; set; }
         public string Cognome { get; set; }
-
         public string Uid { get; set; }
         public string profilePic { get; set; }
       
