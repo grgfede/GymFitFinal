@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"  
+             BackgroundColor="White" Opacity="0.9"
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.home.palestra.OrariPopup">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center"  
+                      ScaleIn="1.2"  
+                      ScaleOut="0.8"  
+                      DurationIn="400"  
+                      DurationOut="300"  
+                      EasingIn="SinOut"  
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout  VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="5" Padding="25,25" BackgroundColor="#FACO5E" BorderColor="#FF9F1C">
+            <StackLayout >
+                <Label Padding="0, 0, 0, 15" Text="Orari di apertura" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
+                <ScrollView>
+                    <StackLayout>
+                        <Label Text="Mattina:" FontSize="16" TextColor="#2D3047"/>
+                        <StackLayout Orientation="Horizontal" Spacing="120">
+                            <Label Text="Pomeriggio:" FontSize="16" TextColor="#2D3047"/>
+                            <Button Text="Close" TextColor="#2D3047" BackgroundColor="White" ></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>
