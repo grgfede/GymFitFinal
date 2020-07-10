@@ -15,8 +15,12 @@ namespace GymFitFinal.Interfaces
 
         Task<bool> UpdatePerson(string nome, string cognome);
         Task<bool> UpdateGym(string nome, string citta);
+        Task UpdateAbboanmento(string uidAbbonamento);
         Task<string> DoSignUp(string email, string password, string nome, string cognome);
         Task<string> DoSignUpGym(string email, string password, string nome, string citta, string indirizzo);
+
+        Task AddSub(string tipoAbbonamento, double costo, DateTime dataI, DateTime dataF, string uidAbbonamento, string uidUtente);
+
 
         Task<Gym> GetGym(string uid);
         Task<List<Gym>> GetAllGym();

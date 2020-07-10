@@ -35,6 +35,8 @@ namespace GymFitFinal.Droid.Interfaces
     {
         private readonly string ChildName = "utenti";
         private readonly string ChildNameGym = "palestre";
+        private readonly string ChildNameSub = "abbonamenti";
+
 
         readonly FirebaseClient firebase = new FirebaseClient("https://gymfitt-2b845.firebaseio.com/");
 
@@ -85,7 +87,14 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
-
+        public async Task UpdateAbboanmento(string uidAbbonamento)
+        {
+            var uid = App.uid;
+            App.loggedUser.AbbonamentoIscrizione = uidAbbonamento;
+            string ChildNameAdd = ChildName + "/" + uid;
+            await firebase.Child(ChildNameAdd).PutAsync<User>(App.loggedUser);
+          
+        }
 
 
 
@@ -276,6 +285,26 @@ namespace GymFitFinal.Droid.Interfaces
             }
             return "ERROR_EMAIL_OR_PASSWORD_MISSING";
         }
+
+
+
+
+
+        public async Task AddSub(string tipoAbbonamento, double costo, DateTime dataI, DateTime dataF, string uidAbbonamento, string uidUtente)
+        {
+            string childSub = "abbonamenti/" + uidAbbonamento;
+            string childName = "utenti/" + uidUtente;
+            // User user = new User(cognome, nome, uid);
+            //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
+
+            await firebase.Child(childSub).PutAsync(new Abbomamento() { uid = uidAbbonamento, TipoAbbonamento = tipoAbbonamento, Costo = costo, DataInizio = dataI, DataFine = dataF }).ContinueWith(async task =>
+            {
+                await firebase.Child(ChildName).Child("/AbbonamentoIscrizione").PutAsync(uidUtente);
+            }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+        }
+
+
+
 
 
 
