@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Text.Format;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,6 +18,10 @@ namespace GymFitFinal
         public string profilePic { get; set; }
         public static string citta { get; set; }
         public static string indirizzo { get; set; }
+        public string DataIMattina { get; set; }
+        public string DataFMattina { get; set; }
+        public string DataIPomeriggio { get; set; }
+        public string DataFPomeriggio { get; set; }
     }
        
 }

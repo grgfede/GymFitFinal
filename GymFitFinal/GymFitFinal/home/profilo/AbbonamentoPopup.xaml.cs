@@ -46,6 +46,9 @@ namespace GymFitFinal.home.profilo
                         if (task2.IsFaulted)
                         {
                             DisplayAlert("Attenzione!", "Abbonamento non riuscito, provare più tardi", "ok");
+                        } else
+                        {
+                            App.loggedUser.AbbonamentoIscrizione = uidSub;
                         }
                     });
             });

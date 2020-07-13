@@ -24,6 +24,7 @@ using System.Drawing;
 using Image = Xamarin.Forms.Image;
 using GymFitFinal.home.navBar;
 using Xamarin.Essentials;
+using Java.Net;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -145,6 +146,43 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
+
+
+
+        //TASK PER LOGIN CON FIREBASE DOPO LA REGISTRAZIONE DI UNA PALESTRA
+        public async Task<string> DoLoginWithEPafterSignUpGym(string email, string password)
+        {
+            if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
+            {
+                var _result = "";
+                await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(async task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                        //Noget gik galt, returner FirebaseAuth fejlkoden
+                        if (task.Exception != null)
+                            _result = ((FirebaseAuthException)task.Exception.GetBaseException()).ErrorCode;
+                    }
+                    else
+                    {
+                        // Login lykkedes - returner Token
+                        var token = await task.Result.User.GetIdTokenAsync(false);
+                        _result = token.Token;
+
+                       
+                        var currentuser = FirebaseAuth.Instance.CurrentUser;
+                        var loggedEmail = currentuser.Email;
+                        App.uid = currentuser.Uid;
+                    }
+                });
+                return _result;
+            }
+            return "ERROR_EMAIL_OR_PASSWORD_MISSING";
+        }
+
+
+
+
         public async Task<string> getProfilePic()
         {
             var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
@@ -258,7 +296,7 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
-        public async Task<string> DoSignUpGym(string email, string password, string nome, string citta, string indirizzo)
+        public async Task<string> DoSignUpGym(string email, string password)
         {
             if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
@@ -276,9 +314,6 @@ namespace GymFitFinal.Droid.Interfaces
                         var currentuser = FirebaseAuth.Instance.CurrentUser;
                         var uid = currentuser.Uid;
                         App.uid = currentuser.Uid;
-
-                        //FIREBASEHELPER E' UNA CLASSE CHE CONTIENE TUTTI LE QUERY PER LA SCRITTURA/LETTURA DEL DATABASE DI FIREBASE
-                        AddGym(nome, citta, indirizzo, uid);
                     }
                 });
                 return _result;
@@ -308,17 +343,17 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
-        public async Task AddGym(string nome, string citta, string indirizzo, string uid)
+        public async Task AddGym(string nome, string citta, string indirizzo, string telefono, string IM, string FM, string IP, string FP, string uid)
         {
             string childGym = "palestre/" + uid;
             // User user = new User(cognome, nome, uid);
             //await firebase.Child(ChildNameAdd).PostAsync(user); Il metodo postAsync genera un nodo padre random
 
-            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Indirizzo = indirizzo, Nome = nome, Uid = uid}); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+            await firebase.Child(childGym).PutAsync(new Gym() { Citta = citta, Indirizzo = indirizzo, Nome = nome, Uid = uid, Telefono = telefono, DataIMattina = IM, DataFMattina = FM, DataIPomeriggio = IP, DataFPomeriggio = FP}); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
         }
 
 
-
+       
 
         //TASK PER REIMPOSTA PASSWORD
         public async Task<string> ResetPassword(string email)
@@ -391,6 +426,36 @@ namespace GymFitFinal.Droid.Interfaces
                 .OnceAsync<Gym>();
             return allGym.FirstOrDefault(a => a.Uid == uid);
         }
+
+
+
+
+        public async Task<List<Abbomamento>> GetAllSub()
+        {
+            return (await firebase
+            .Child(ChildNameSub)
+             .OnceAsync<Abbomamento>()).Select(item => new Abbomamento
+             {
+                uid = item.Object.uid,
+                TipoAbbonamento = item.Object.TipoAbbonamento,
+                Costo = item.Object.Costo,
+                DataFine = item.Object.DataFine,
+                DataInizio = item.Object.DataInizio
+             }).ToList();
+
+
+        }
+
+
+        public async Task<Abbomamento> GetSub(string uidSub)
+        {
+            var allPersons = await GetAllSub();
+            await firebase
+                .Child(ChildNameSub)
+                .OnceAsync<Abbomamento>();
+            return allPersons.FirstOrDefault(a => a.uid == uidSub);
+        }
+
 
 
         public async Task DeletePerson()

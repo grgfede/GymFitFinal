@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="GymFitFinal.SignUp.SignUpGym2">
+    <ContentPage.Content>
+        <AbsoluteLayout 
+            BackgroundColor="White">
+
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutBounds="0.5,0.073,0.3,0.06"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="38"
+                   TextColor="#000000"
+                   Text="GymFit"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.12,0.093,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.89,0.093,0.2,0.002"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#333333"
+                     HeightRequest="1"/>
+
+
+            <BoxView AbsoluteLayout.LayoutBounds="0.5,0.65,0.85,0.46"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#FACO5E"
+                     CornerRadius="10"
+                     Opacity="0.7"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"/>
+
+
+
+
+            <controls:CircleImage x:Name="pictureBox"
+                    Source="defaultUser.png" 
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Aspect="AspectFill"
+                    AbsoluteLayout.LayoutBounds="0.5,0.3,0.5,0.2" 
+                    AbsoluteLayout.LayoutFlags="All"/>
+
+
+
+            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Orario Mattina"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,0.7,0.099"/>
+
+
+
+            <TimePicker x:Name="dataIMattina"
+                   Format="hh:mm"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.23,0.5,0.3,0.08"/>
+            
+            <TimePicker x:Name="dataFMattina"
+                   Format="hh:mm"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.8,0.5,0.3,0.08"/>
+
+            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Orario Pomeridiano"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.6,0.7,0.099"/>
+
+
+
+            <TimePicker x:Name="dataIPomeriggio"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.23,0.6,0.3,0.08"
+                        Format="hh:mm"/>
+
+            <TimePicker x:Name="dataFPomeriggio"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.8,0.6,0.3,0.08"
+                        Format="hh:mm"/>
+
+
+            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   Text="Recapito Telefonico"
+                   Font="15"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.705,0.7,0.099"/>
+
+
+            <Entry x:Name="txtRecapito"
+                   PlaceholderColor="#4a6572"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.7,0.7,0.08"/>
+
+            <Button BackgroundColor="#FACO5E"
+                    Font="Bold,14"
+                    TextColor="White"
+                    Text="Avanti"
+                    CornerRadius="20"
+                    AbsoluteLayout.LayoutBounds="0.5,0.97,0.5,0.08"
+                    AbsoluteLayout.LayoutFlags="All"
+                    FontFamily="Montserrat-Bold.ttf#Montserrat"
+                    Clicked="finishSignUp"
+                    />
+
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

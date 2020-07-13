@@ -41,32 +41,27 @@ namespace GymFitFinal.SignUp
             string indirizzo = txtIndirizzo.Text;
             string email = txtEmail.Text;
             string password = txtPass.Text;
-           
-            //RENDO IL NOME E COGNOME CON LA PRIMA LETTERA MAIUSCOLA
-            nome = nome.First().ToString().ToUpper() + nome.Substring(1);
-            citta = citta.First().ToString().ToUpper() + citta.Substring(1);
+
+            
+             //CONTROLLO SE I CAMPI SONO VUOTI
+             if (String.IsNullOrEmpty(nome) || (string.IsNullOrEmpty(citta)) || (string.IsNullOrEmpty(indirizzo)) || (string.IsNullOrEmpty(email)) || (string.IsNullOrEmpty(password)))
+             {
+                 DisplayAlert("Attenzione!", "Uno o più campi non sono completi", "OK");
+                 error = true;
+             }
 
 
-           
-            //CONTROLLO SE I CAMPI SONO VUOTI
-            if (String.IsNullOrEmpty(nome))
-            {
-                DisplayAlert("Attenzione!", "Uno o più campi non sono completi", "OK");
-                error = true;
-            }
-           
+             if (!chkTerm.IsChecked)
+             {
+                 error = true;
+                 DisplayAlert("Attenzione!", "Per proseguire accetta i Termini e Condizioni d'uso", "Ok");
+             }
 
-            if (!chkTerm.IsChecked)
-            {
-                error = true;
-                DisplayAlert("Attenzione!", "Per proseguire accetta i Termini e Condizioni d'uso", "Ok");
-            }
 
-         
 
-            if (!error)
-            {
-                var Token = await _auth.DoSignUpGym(email, password, nome, citta, indirizzo);
+             if (!error)
+             {
+                var Token = await _auth.DoSignUpGym(email, password);
                 if (Token.Contains("ERROR_INVALID_EMAIL"))
                 {
                     DisplayAlert("Attenzione!", "Email inserita non valida", "Riprova");
@@ -81,13 +76,15 @@ namespace GymFitFinal.SignUp
                 }
                 else
                 {
-                 
-                    string uid = App.uid;
-                    //DisplayAlert("prova", uid, "ok");
-                    Navigation.PushAsync(new signUpDetailsGym(nome));
+                    //RENDO IL NOME E COGNOME CON LA PRIMA LETTERA MAIUSCOLA
+                    nome = nome.First().ToString().ToUpper() + nome.Substring(1);
+                    citta = citta.First().ToString().ToUpper() + citta.Substring(1);
 
-                  
+                    Navigation.PushAsync(new SignUpGym2(nome, citta, indirizzo, email, password));
                 }
+
+                
+                
 
             }
         }

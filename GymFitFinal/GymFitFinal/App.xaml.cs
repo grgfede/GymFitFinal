@@ -25,6 +25,12 @@ namespace GymFitFinal
         public static string password { get; set; }
         public static bool isGym { get; set; }
         public static string profilePic { get; set; }
+        public static string nomeGym { get; set; }
+        public static string indirizzoGym { get; set; }
+        public static string cittaGym { get; set; }
+        public static string emailGym { get; set; }
+        public static string passwordGym { get; set; }
+
         public App()
         {
             
