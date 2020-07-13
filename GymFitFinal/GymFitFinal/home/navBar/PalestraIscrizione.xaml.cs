@@ -1,5 +1,6 @@
 ﻿using GymFitFinal.home.palestra;
 using GymFitFinal.Interfaces;
+using Rg.Plugins.Popup.Services;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,16 @@ namespace GymFitFinal.home.navBar
         private async void TurniDisponibili(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TurniDisponibili());
+        }
+
+        private async void giorniPopup (object sender, EventArgs e)
+        {
+            await PopupNavigation.PushAsync(new GiorniPopup());
+        }
+
+        private async void orariPopup(object sender, EventArgs e)
+        {
+            await PopupNavigation.PushAsync(new OrariPopup());
         }
 
     }
