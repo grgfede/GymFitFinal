@@ -65,14 +65,12 @@
 
 
             <TimePicker x:Name="dataIMattina"
-                   Format="hh:mm"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    AbsoluteLayout.LayoutFlags="All"
                    AbsoluteLayout.LayoutBounds="0.23,0.5,0.3,0.08"/>
             
             <TimePicker x:Name="dataFMattina"
-                   Format="hh:mm"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    AbsoluteLayout.LayoutFlags="All"
@@ -91,15 +89,13 @@
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.23,0.6,0.3,0.08"
-                        Format="hh:mm"/>
+                   AbsoluteLayout.LayoutBounds="0.23,0.6,0.3,0.08"/>
 
             <TimePicker x:Name="dataFPomeriggio"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.8,0.6,0.3,0.08"
-                        Format="hh:mm"/>
+                   AbsoluteLayout.LayoutBounds="0.8,0.6,0.3,0.08"/>
 
 
             <Label FontFamily="Montserrat-Regular.ttf#Montserrat"

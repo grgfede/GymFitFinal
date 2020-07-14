@@ -43,7 +43,6 @@ namespace GymFitFinal
                  MainPage = new NavigationPage(new home.Home());
              else
                  MainPage = new NavigationPage(new Main());
-         
 
         }
 

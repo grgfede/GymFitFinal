@@ -39,16 +39,13 @@ namespace GymFitFinal.SignUp
 
         public async void finishSignUp(Object sender, EventArgs e)
         {
-            dataIMattina = new TimePicker();
+           
             TimeSpan selectedTimeIM = dataIMattina.Time;
 
-            dataFMattina = new TimePicker();
             TimeSpan selectedTimeFM = dataFMattina.Time;
 
-            dataIPomeriggio = new TimePicker();
             TimeSpan selectedTimeIP = dataIPomeriggio.Time;
 
-            dataFPomeriggio = new TimePicker();
             TimeSpan selectedTimeFP = dataFPomeriggio.Time;
 
             //CONVERTO GLI ORARI IN STRINGHE
@@ -158,7 +155,6 @@ namespace GymFitFinal.SignUp
             }
             string pic = await StoreImages(selectedImageFile.GetStream());
             //App.profilePic = pic;
-            Preferences.Set("profilePic", pic);
             pictureBox.Source = pic;
 
 

@@ -23,7 +23,7 @@ namespace GymFitFinal.SignUp
         public async void LoginLink(Object sender, EventArgs e)
         {
             // Remove page before Edit Page
-            this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 3]);
+            this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
             // This PopAsync will now go to List Page
             this.Navigation.PopAsync();
         }
