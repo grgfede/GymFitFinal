@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"  
+             BackgroundColor="White" Opacity="0.9"
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.home.navBar.FindGymManually">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center"  
+                      ScaleIn="1.2"  
+                      ScaleOut="0.8"  
+                      DurationIn="400"  
+                      DurationOut="300"  
+                      EasingIn="SinOut"  
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout  VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="5" Padding="25,25" BackgroundColor="#64B5F6" >
+            <StackLayout Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.ColumnSpan="3" FontFamily="Montserrat-Regular.ttf#Montserrat" Padding="0, 0, 0, 15" Text="Cerca una palestra" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
+                <Picker Grid.Row="1" Grid.ColumnSpan="3" x:Name="pickerFilterFind" FontFamily="Montserrat-Regular.ttf#Montserrat" Title="Cerca per" HorizontalOptions="Fill" FontSize="Body"></Picker>
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="parameter" FontFamily="Montserrat-Regular.ttf#Montserrat" IsVisible="false" HorizontalOptions="Fill" FontSize="Body"></Entry>
+                <Button Grid.Row="2" Grid.Column="2" x:Name="btnFindGymCity" Clicked="findGymCity" ImageSource="find.png" FontFamily="Montserrat-Regular.ttf#Montserrat" IsVisible="false" HorizontalOptions="End" ></Button>
+                <Button Grid.Row="2" Grid.Column="2" x:Name="btnFindGymName" Clicked="findGymName" ImageSource="find.png" FontFamily="Montserrat-Regular.ttf#Montserrat" IsVisible="false" HorizontalOptions="End" ></Button>
+                <ListView Grid.Row="4" Grid.ColumnSpan="2" x:Name="result" IsVisible="false" ItemSelected="lvItemTapped" HorizontalOptions="Center"></ListView>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

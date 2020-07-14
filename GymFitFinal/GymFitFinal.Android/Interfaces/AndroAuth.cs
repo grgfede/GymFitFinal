@@ -25,6 +25,7 @@ using Image = Xamarin.Forms.Image;
 using GymFitFinal.home.navBar;
 using Xamarin.Essentials;
 using Java.Net;
+using Xamarin.Forms.Internals;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroAuth))]
 
@@ -411,6 +412,10 @@ namespace GymFitFinal.Droid.Interfaces
                  Nome = item.Object.Nome,
                  Citta = item.Object.Citta,
                  Indirizzo = item.Object.Indirizzo,
+                 DataIMattina = item.Object.DataIMattina,
+                 DataFMattina = item.Object.DataFMattina,
+                 DataIPomeriggio = item.Object.DataIPomeriggio,
+                 DataFPomeriggio = item.Object.DataFPomeriggio,
                  Uid = item.Object.Uid
              }).ToList();
 
@@ -427,6 +432,39 @@ namespace GymFitFinal.Droid.Interfaces
             return allGym.FirstOrDefault(a => a.Uid == uid);
         }
 
+
+        //METODO CHE RESTITUSCE UNA LISTA DI PALESTRE CON IL NOME PASSATO DALL'UTENTE
+        public async Task<List<Gym>> GetGymByName(string name)
+        {
+            List<Gym> risultatiPalestre = new List<Gym>();
+
+            var allGym = await GetAllGym();
+            foreach (Gym e in allGym)
+            {
+                if (e.Nome.Equals(name))
+                {
+                    risultatiPalestre.Add(e);
+                }
+                
+            }
+            return risultatiPalestre;
+        }
+
+        public async Task<List<Gym>> GetGymByCity(string city)
+        {
+            List<Gym> risultatiPalestre = new List<Gym>();
+
+            var allGym = await GetAllGym();
+            foreach (Gym e in allGym)
+            {
+                if (e.Citta.Equals(city))
+                {
+                    risultatiPalestre.Add(e);
+                }
+
+            }
+            return risultatiPalestre;
+        }
 
 
 
@@ -456,6 +494,11 @@ namespace GymFitFinal.Droid.Interfaces
             return allPersons.FirstOrDefault(a => a.uid == uidSub);
         }
 
+
+
+
+
+       
 
 
         public async Task DeletePerson()

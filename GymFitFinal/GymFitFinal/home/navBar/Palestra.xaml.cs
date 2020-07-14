@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,11 @@ namespace GymFitFinal.home.navBar
         {
             InitializeComponent();
            
+        }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.PushAsync(new FindGymManually());
         }
     }
 }

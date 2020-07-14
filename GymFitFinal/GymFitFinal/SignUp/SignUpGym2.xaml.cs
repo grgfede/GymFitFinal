@@ -57,10 +57,10 @@ namespace GymFitFinal.SignUp
             string inizioP = string.Format("{0:hh\\:mm\\:ss}", dataIPomeriggio);
             string fineP = string.Format("{0:hh\\:mm\\:ss}", dataFPomeriggio);*/
 
-            string inizioM = dataIMattina.Time.ToString(@"hh\:mm");
-            string fineM = dataFMattina.Time.ToString(@"hh\:mm");
-            string inizioP = dataIPomeriggio.Time.ToString(@"hh\:mm");
-            string fineP = dataFPomeriggio.Time.ToString(@"hh\:mm");
+            string inizioM = selectedTimeIM.ToString(@"hh\:mm");
+            string fineM = selectedTimeFM.ToString(@"hh\:mm");
+            string inizioP = selectedTimeIP.ToString(@"hh\:mm");
+            string fineP = selectedTimeFP.ToString(@"hh\:mm");
 
 
 

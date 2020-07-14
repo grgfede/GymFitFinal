@@ -25,6 +25,8 @@ namespace GymFitFinal.Interfaces
 
         Task<Gym> GetGym(string uid);
         Task<List<Gym>> GetAllGym();
+        Task<List<Gym>> GetGymByName(string name);
+        Task<List<Gym>> GetGymByCity(string city);
         Task<User> GetPerson(string uid);
         Task<Abbomamento> GetSub(string uidSub);
         Task<string> getProfilePic();
