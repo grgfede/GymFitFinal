@@ -74,6 +74,10 @@ namespace GymFitFinal
             {
                 Token = "Email o Password mancanti!";
                 DisplayAlert("Attenzione", Token, "Riprova"); 
+            } else if (Token.Contains("ERR_PROFILE_PIC"))
+            {
+                Token = "Errore immagine profilo";
+                DisplayAlert("Attenzione", "Token", "Rirpova");
             }
 
 
