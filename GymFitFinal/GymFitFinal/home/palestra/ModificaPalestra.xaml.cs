@@ -37,6 +37,7 @@ namespace GymFitFinal.home.palestra
         {
             lblName.Placeholder = App.loggedGym.Nome;
             lblCitta.Placeholder = App.loggedGym.Citta;
+            lblIndirizzo.Placeholder = App.loggedGym.Indirizzo;
             lblEmail.Placeholder = App.loggedEmail;
             string pic = Preferences.Get("profilePic", "defaultUser.png");
             pictureBox.Source = pic;
@@ -48,6 +49,7 @@ namespace GymFitFinal.home.palestra
         {
             string email = lblEmail.Text;
             string citta = lblCitta.Text;
+            string indirizzo = lblCitta.Text;
             string nome = lblName.Text;
 
 
@@ -60,18 +62,23 @@ namespace GymFitFinal.home.palestra
             {
                 citta = App.loggedGym.Citta;
             }
+            if (string.IsNullOrEmpty(indirizzo))
+            {
+                indirizzo = App.loggedGym.Indirizzo;
+            }
 
             //RENDO IL NOME E COGNOME CON LA PRIMA LETTERA MAIUSCOLA
             nome = nome.First().ToString().ToUpper() + nome.Substring(1);
             citta = citta.First().ToString().ToUpper() + citta.Substring(1);
+            indirizzo = indirizzo.First().ToString().ToUpper() + indirizzo.Substring(1);
 
-            updateProfile(nome, citta);
+            updateProfile(nome, citta, indirizzo);
         }
 
-        private async void updateProfile(string nome, string citta)
+        private async void updateProfile(string nome, string citta, string indirizzo)
         {
             bool update = false;
-            update = await _auth.UpdateGym(nome, citta);
+            update = await _auth.UpdateGym(nome, citta, indirizzo);
             if (!update)
             {
                 DisplayAlert("Attenzione!", "Qualcosa è andato storto, riprova più tardi", "ok");

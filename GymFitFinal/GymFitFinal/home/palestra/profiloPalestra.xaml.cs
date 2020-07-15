@@ -1,6 +1,7 @@
 ﻿//using Android.Preferences;
 using GymFitFinal.Interfaces;
 using Plugin.Media.Abstractions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,6 +63,16 @@ namespace GymFitFinal.home.palestra
             getInfo(uid);
         }
 
+        public async void openMap(Object sender, EventArgs e)
+        {
+            await Launcher.OpenAsync("geo:0,0?q=394+" + App.loggedGym.Citta + "+" + App.loggedGym.Indirizzo);
+
+        }
+
+        private async void orariPopup(object sender, EventArgs e)
+        {
+            await PopupNavigation.PushAsync(new OrariPopup(uid));
+        }
 
         /*
         * Metodo che fa "visualizzare" il picker una volta premuto l'icona della gear presente nella toolbar
@@ -100,4 +111,5 @@ namespace GymFitFinal.home.palestra
 
 
     }
+   
 }
