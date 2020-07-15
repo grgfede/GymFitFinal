@@ -72,13 +72,18 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
-        public async Task<bool> UpdateGym(string nome, string citta, string indirizzo)
+        public async Task<bool> UpdateGym(string nome, string citta, string indirizzo, string telefono, string IM, string FM, string IP, string FP)
         {
             bool success = false;
             var uid = App.uid;
             App.loggedGym.Nome = nome;
             App.loggedGym.Citta = citta;
             App.loggedGym.Indirizzo = indirizzo;
+            App.loggedGym.Telefono = telefono;
+            App.loggedGym.DataIMattina = IM;
+            App.loggedGym.DataFMattina = FM;
+            App.loggedGym.DataIPomeriggio = IP;
+            App.loggedGym.DataFPomeriggio = FP;
             string ChildNameAdd = ChildNameGym + "/" + uid;
             await firebase.Child(ChildNameAdd).PutAsync<Gym>(App.loggedGym).ContinueWith(async task =>
             {

@@ -39,6 +39,7 @@ namespace GymFitFinal.home.palestra
             lblCitta.Placeholder = App.loggedGym.Citta;
             lblIndirizzo.Placeholder = App.loggedGym.Indirizzo;
             lblEmail.Placeholder = App.loggedEmail;
+            lblTelefono.Placeholder = App.loggedGym.Telefono;
             string pic = Preferences.Get("profilePic", "defaultUser.png");
             pictureBox.Source = pic;
         }
@@ -51,7 +52,16 @@ namespace GymFitFinal.home.palestra
             string citta = lblCitta.Text;
             string indirizzo = lblCitta.Text;
             string nome = lblName.Text;
-
+            string telefono = lblTelefono.Text;
+            TimeSpan IM = dataIMattina.Time;
+            TimeSpan FM = dataFMattina.Time;
+            TimeSpan IP = dataIPomeriggio.Time;
+            TimeSpan FP = dataFPomeriggio.Time;
+            //CONVERTO GLI ORARI IN STRINGHE
+            string inizioM = IM.ToString(@"hh\:mm");
+            string fineM = FM.ToString(@"hh\:mm");
+            string inizioP = IP.ToString(@"hh\:mm");
+            string fineP = FP.ToString(@"hh\:mm");
 
             if (string.IsNullOrEmpty(nome))
             {
@@ -66,19 +76,38 @@ namespace GymFitFinal.home.palestra
             {
                 indirizzo = App.loggedGym.Indirizzo;
             }
+            if (string.IsNullOrEmpty(telefono))
+            {
+                telefono = App.loggedGym.Telefono;
+            }
+            if (string.Equals(IM, "00:00"))
+            {
+                inizioM = App.loggedGym.DataIMattina;
+            }
+            if (string.Equals(FM, "00:00"))
+            {
+                fineM = App.loggedGym.DataFMattina;
+            }
+            if (string.Equals(IP, "00:00"))
+            {
+                inizioP = App.loggedGym.DataIPomeriggio;
+            }
+            if (string.Equals(FP, "00:00"))
+            {
+                fineP = App.loggedGym.DataFPomeriggio;
+            }
 
             //RENDO IL NOME E COGNOME CON LA PRIMA LETTERA MAIUSCOLA
             nome = nome.First().ToString().ToUpper() + nome.Substring(1);
             citta = citta.First().ToString().ToUpper() + citta.Substring(1);
             indirizzo = indirizzo.First().ToString().ToUpper() + indirizzo.Substring(1);
-
-            updateProfile(nome, citta, indirizzo);
+            updateProfile(nome, citta, indirizzo, telefono, inizioM, fineM, inizioP, fineP);
         }
 
-        private async void updateProfile(string nome, string citta, string indirizzo)
+        private async void updateProfile(string nome, string citta, string indirizzo, string telefono, string IM, string FM, string IP, string FP)
         {
             bool update = false;
-            update = await _auth.UpdateGym(nome, citta, indirizzo);
+            update = await _auth.UpdateGym(nome, citta, indirizzo, telefono, IM, FM, IP, FP);
             if (!update)
             {
                 DisplayAlert("Attenzione!", "Qualcosa è andato storto, riprova più tardi", "ok");
