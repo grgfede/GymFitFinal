@@ -18,6 +18,8 @@ namespace GymFitFinal
         public string profilePic { get; set; }
         public static string citta { get; set; }
         public static string indirizzo { get; set; }
+        public static string uid{ get; set; }
+
         public string DataIMattina { get; set; }
         public string DataFMattina { get; set; }
         public string DataIPomeriggio { get; set; }

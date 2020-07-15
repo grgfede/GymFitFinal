@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Runtime.CompilerServices;
 
 namespace GymFitFinal.home.navBar
 {
@@ -21,9 +22,17 @@ namespace GymFitFinal.home.navBar
         MediaFile file;
         public PalestraIscrizione(string uid)
         {
+            Gym.uid = uid;
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
             getInfo(uid);
+        
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            getInfo(Gym.uid);
         }
 
 
@@ -34,11 +43,10 @@ namespace GymFitFinal.home.navBar
             {
                 lblNome.Text = person.Nome + " ";
                 lblCitta.Text = "Dove siamo: " + person.Citta;
-                //string pic = await _auth.getProfilePicGymIscrizione(uid);
-                pictureBox.Source = "defaultUser.png";
+                string pic = await _auth.getProfilePicGymIscrizione(uid);
+                pictureBox.Source = pic;
                 Gym.citta = person.Citta;
                 Gym.indirizzo = person.Indirizzo;
-
             }
             else
             {
@@ -57,14 +65,10 @@ namespace GymFitFinal.home.navBar
             await Navigation.PushAsync(new TurniDisponibili());
         }
 
-        private async void giorniPopup (object sender, EventArgs e)
-        {
-            await PopupNavigation.PushAsync(new GiorniPopup());
-        }
 
         private async void orariPopup(object sender, EventArgs e)
         {
-            await PopupNavigation.PushAsync(new OrariPopup());
+            await PopupNavigation.PushAsync(new OrariPopup(Gym.uid));
         }
 
     }

@@ -200,7 +200,7 @@ namespace GymFitFinal.Droid.Interfaces
         {
             var storageImage = await new FirebaseStorage("gymfitt-2b845.appspot.com")
                        .Child(uid)
-                       .Child("profilePic")
+                       .Child("profilePic.jpg")
                        .GetDownloadUrlAsync();
             return storageImage;
         }
