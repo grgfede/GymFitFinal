@@ -22,8 +22,30 @@ namespace GymFitFinal.home.profilo
         public AbbonamentoPopup()
         {
             InitializeComponent();
+
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
+            List<string> tipoabbonamento = new List<string>();
+            tipoabbonamento.Add("Mensile");
+            tipoabbonamento.Add("Trimestrale");
+            tipoabbonamento.Add("Semestrale");
+            tipoabbonamento.Add("Annuale");
+            IwTipoAbbonamento.ItemsSource = tipoabbonamento;
+
+
+        }
+        private void ViewCell_Tapped(object sender, System.EventArgs e)
+        {
+            ViewCell lastCell = new ViewCell();
+
+            if (lastCell != null)
+                lastCell.View.BackgroundColor = Color.Transparent;
+            var viewCell = (ViewCell)sender;
+           if (viewCell.View != null)
+            {
+                viewCell.View.BackgroundColor = Color.BlueViolet;
+                lastCell = viewCell;
+            }
         }
 
         public async void createSub(Object sender, EventArgs e)
