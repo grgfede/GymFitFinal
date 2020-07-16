@@ -29,16 +29,7 @@
                    CornerRadius="3">
             </Frame>
 
-            <Button HorizontalOptions="Start"
-                    BackgroundColor="Transparent"
-                    BorderColor="#2D3047"
-                    Opacity="0.5"
-                    BorderWidth="1"
-                    FontFamily="Montserrat-Light.ttf#Montserrat"
-                    Text="giorni"
-                    Clicked="giorniPopup"
-                    AbsoluteLayout.LayoutBounds="0.30,0.41,0.5,0.1"
-                    AbsoluteLayout.LayoutFlags="All"/>
+           
 
             <Button HorizontalOptions="Center"
                     BackgroundColor="Transparent"
@@ -48,8 +39,9 @@
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="orari"
                     Clicked="orariPopup"
-                    AbsoluteLayout.LayoutBounds="0.50,0.41,0.5,0.1"
-                    AbsoluteLayout.LayoutFlags="All"/>
+                    AbsoluteLayout.LayoutBounds="0.2,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="btnOrari"/>
 
             <Button HorizontalOptions="End"
                     BackgroundColor="Transparent"
@@ -58,7 +50,7 @@
                     BorderWidth="1"
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="mappa"
-                    AbsoluteLayout.LayoutBounds="0.70,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutBounds="0.60,0.41,0.5,0.1"
                     AbsoluteLayout.LayoutFlags="All"/>
 
             <controls:CircleImage x:Name="pictureBox"

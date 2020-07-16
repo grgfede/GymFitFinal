@@ -25,13 +25,12 @@
     <StackLayout  VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
         <Frame CornerRadius="5" Padding="25,25" BackgroundColor="#FACO5E" BorderColor="#FF9F1C">
             <StackLayout >
-                <Label Padding="0, 0, 0, 15" Text="Orari di apertura" TextColor="Black" FontSize="20" HorizontalOptions="Center"></Label>
+                <Label Padding="0, 0, 0, 15" Text="Orari di apertura" TextColor="Black" FontSize="20" HorizontalOptions="Center" FontFamily="BebasKai.ttf#BebasKai"></Label>
                 <ScrollView>
-                    <StackLayout>
-                        <Label Text="Mattina:" FontSize="16" TextColor="#2D3047"/>
-                        <StackLayout Orientation="Horizontal" Spacing="120">
-                            <Label Text="Pomeriggio:" FontSize="16" TextColor="#2D3047"/>
-                            <Button Text="Close" TextColor="#2D3047" BackgroundColor="White" ></Button>
+                    <StackLayout HorizontalOptions="Center">
+                        <Label x:Name="lblMat" Text="Mattina:" FontSize="16" TextColor="#2D3047" FontFamily="BebasKai.ttf#BebasKai"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="lblPom" Text="Pomeriggio:" FontSize="16" TextColor="#2D3047" FontFamily="BebasKai.ttf#BebasKai"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

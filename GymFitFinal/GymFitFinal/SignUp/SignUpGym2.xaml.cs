@@ -49,11 +49,6 @@ namespace GymFitFinal.SignUp
             TimeSpan selectedTimeFP = dataFPomeriggio.Time;
 
             //CONVERTO GLI ORARI IN STRINGHE
-            /*string inizioM = string.Format("{0:hh\\:mm\\:ss}", dataIMattina);
-            string fineM = string.Format("{0:hh\\:mm\\:ss}", dataFMattina);
-            string inizioP = string.Format("{0:hh\\:mm\\:ss}", dataIPomeriggio);
-            string fineP = string.Format("{0:hh\\:mm\\:ss}", dataFPomeriggio);*/
-
             string inizioM = selectedTimeIM.ToString(@"hh\:mm");
             string fineM = selectedTimeFM.ToString(@"hh\:mm");
             string inizioP = selectedTimeIP.ToString(@"hh\:mm");

@@ -5,81 +5,217 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              mc:Ignorable="d"
-             
              x:Class="GymFitFinal.home.palestra.Page1">
     <ContentPage.Content>
-        <AbsoluteLayout BackgroundColor="#FACO5E">
-            <Frame AbsoluteLayout.LayoutBounds="0.51, 0.4, 0.85, 0.6"
-                   AbsoluteLayout.LayoutFlags="All"
-                   BackgroundColor="#FFFFFF"
-                   Opacity="0.9"
-                   CornerRadius="10">
-            </Frame>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="#FACO5E">
+                    <AbsoluteLayout>
+                        <Frame AbsoluteLayout.LayoutBounds="0.51, 0.4, 0.85, 0.6"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BackgroundColor="#FFFFFF"
+                       Opacity="0.9"
+                       CornerRadius="10">
+                        </Frame>
 
-            <controls:CircleImage x:Name="pictureBox"
-                    Margin="4,10,4,4"
-                    AbsoluteLayout.LayoutBounds="0.5,0.08,0.5,0.2"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Source="defaultUser.png" 
-                    HeightRequest="120"
-                    WidthRequest="120"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Aspect="AspectFill"/>
+                        <controls:CircleImage x:Name="pictureBox"
+                        Margin="4,10,4,4"
+                        AbsoluteLayout.LayoutBounds="0.5,0.08,0.5,0.24"
+                        AbsoluteLayout.LayoutFlags="All"
+                        Source="defaultUser.png" 
+                        HeightRequest="120"
+                        WidthRequest="120"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Aspect="AspectFill"/>
 
-            <ScrollView VerticalScrollBarVisibility="Always"
-                   VerticalOptions="FillAndExpand"
-                   HorizontalOptions="FillAndExpand"
-                   BackgroundColor="Transparent" 
-                   AbsoluteLayout.LayoutBounds="0.51, 0.6, 0.77, 0.5"
-                   AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.5,0.85,0.37" Margin="7" Spacing="20" >
+
+                            <Entry x:Name="lblName" 
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+
+                            <Entry x:Name="lblCitta" 
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+
+                            <Entry x:Name="lblIndirizzo" 
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+
+                            <Entry x:Name="lblTelefono" 
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+
+                        </StackLayout>
+                        <BoxView AbsoluteLayout.LayoutBounds="0.1,0.85,0.2,0.008"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#333333"
+                                 HeightRequest="1"/>
+
+                        <Label HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               Font="30"
+                               TextColor="#000000"
+                               Text="Orari"
+                               AbsoluteLayout.LayoutFlags="All"
+                               AbsoluteLayout.LayoutBounds="0.5,0.75,0.5,0.5"
+                               FontFamily="BebasKai.ttf#BebasKai"/>
+
+                        <BoxView AbsoluteLayout.LayoutBounds="0.89,0.85,0.2,0.008"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#333333"
+                                 HeightRequest="1"/>
+                    </AbsoluteLayout>
 
 
-                <StackLayout Margin="7" Spacing="20" >
 
-                    <Entry x:Name="lblName" 
-                           PlaceholderColor="#2D3047"
-                           Opacity="0.6"
-                           FontFamily="Montserrat-Regular.ttf#Montserrat"
-                           Text="{Binding User.Email}" 
-                           FontSize="Medium" />
 
-                    <Entry x:Name="lblCitta" 
-                           PlaceholderColor="#2D3047"
-                           Opacity="0.6"
-                           FontFamily="Montserrat-Regular.ttf#Montserrat"
-                           Text="{Binding User.Email}" 
-                           FontSize="Medium" />
+                    <AbsoluteLayout>
+                        <Frame AbsoluteLayout.LayoutBounds="0.51, 0.1, 0.85, 0.6"
+                               AbsoluteLayout.LayoutFlags="All"
+                               BackgroundColor="#FFFFFF"
+                               Opacity="0.9"
+                               CornerRadius="10">
+                        </Frame>
+                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.03,0.85,0.5" Margin="7" Spacing="20" >
+                            <AbsoluteLayout>
+                                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                       TextColor="#4a6572"
+                                       Text="Orario Mattina"
+                                       Font="15"
+                                       HorizontalTextAlignment="Center"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0.5,0.2,0.5,0.5"/>
+                                <TimePicker x:Name="dataIMattina"
+                                            FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                            TextColor="#4a6572"
+                                            HorizontalOptions="Start"
+                                            AbsoluteLayout.LayoutFlags="All"
+                                            AbsoluteLayout.LayoutBounds="0.3,0.5,0.5,0.5"/>
 
-                    <Entry x:Name="lblEmail"  
-                           PlaceholderColor="#2D3047"
-                           Opacity="0.6"
-                           FontFamily="Montserrat-Regular.ttf#Montserrat"
-                           Text="{Binding User.Email}" 
-                           FontSize="Medium" />
+                                <TimePicker x:Name="dataFMattina"
+                                            FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                            TextColor="#4a6572"
+                                            HorizontalOptions="End"
+                                            AbsoluteLayout.LayoutFlags="All"
+                                            AbsoluteLayout.LayoutBounds="0.7,0.5,0.5,0.5"/>
+                                <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                       TextColor="#4a6572"
+                                       Text="Orario Pomeriggio"
+                                       Font="15"
+                                       HorizontalTextAlignment="Center"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       AbsoluteLayout.LayoutBounds="0.5,1.4,0.5,0.5"/>
+                                <TimePicker x:Name="dataIPomeriggio"
+                                            FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                            TextColor="#4a6572"
+                                            HorizontalOptions="Start"
+                                            AbsoluteLayout.LayoutFlags="All"
+                                            AbsoluteLayout.LayoutBounds="0.3,1.8,0.5,0.5"/>
 
-                    <Entry x:Name="lblPassword" 
-                           IsPassword="true" Placeholder="Password"  
-                           PlaceholderColor="#2D3047"
-                           Opacity="0.6"
-                           FontFamily="Montserrat-Regular.ttf#Montserrat"
-                           Text="{Binding User.Email}" 
-                           FontSize="Medium" />
+                                <TimePicker x:Name="dataFPomeriggio"
+                                            FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                            TextColor="#4a6572"
+                                            HorizontalOptions="End"
+                                            AbsoluteLayout.LayoutFlags="All"
+                                            AbsoluteLayout.LayoutBounds="0.7,1.8,0.5,0.5"/>
 
+                            </AbsoluteLayout>
+                        </StackLayout>
+                        <BoxView AbsoluteLayout.LayoutBounds="0.1,0.9,0.2,0.008"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#333333"
+                                 HeightRequest="1"/>
+
+                        <Label HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               Font="30"
+                               TextColor="#000000"
+                               Text="Credenziali"
+                               AbsoluteLayout.LayoutFlags="All"
+                               AbsoluteLayout.LayoutBounds="0.5,0.85,0.5,0.5"
+                               FontFamily="BebasKai.ttf#BebasKai"/>
+
+                        <BoxView AbsoluteLayout.LayoutBounds="0.89,0.9,0.2,0.008"
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#333333"
+                                 HeightRequest="1"/>
+                    </AbsoluteLayout>
+
+
+
+
+
+
+                    <AbsoluteLayout>
+                        <Frame AbsoluteLayout.LayoutBounds="0.51, 0.15, 0.85, 0.6"
+                               AbsoluteLayout.LayoutFlags="All"
+                               BackgroundColor="#FFFFFF"
+                               Opacity="0.9"
+                               CornerRadius="10">
+                        </Frame>
+                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.15,0.85,0.5" Margin="7" Spacing="20" >
+                            <Entry x:Name="lblEmail"  
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+
+                            <Entry x:Name="lblPassword" 
+                               IsPassword="true" Placeholder="Password"  
+                               PlaceholderColor="#2D3047"
+                               Opacity="0.6"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               Text="{Binding User.Email}" 
+                               FontSize="Medium" />
+                        </StackLayout>
+                    </AbsoluteLayout>
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+                    <AbsoluteLayout>
+                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,1,0.85,0.5" Margin="7" Spacing="20" >
+                            <Button BackgroundColor="White"
+                                Font="Bold,14"
+                                TextColor="#FACO5E"
+                                Text="Modifica"
+                                CornerRadius="20"
+                                AbsoluteLayout.LayoutBounds="0.5,0.9,0.5,0.08"
+                                AbsoluteLayout.LayoutFlags="All"
+                                FontFamily="Montserrat-Bold.ttf#Montserrat"
+                                Clicked="modificaCheck"/>
+                        </StackLayout>
+                    </AbsoluteLayout>
                 </StackLayout>
             </ScrollView>
-
-           <!-- <Button  x:Name="btnModifica"
-            BackgroundColor="White"
-                    Font="Bold,14"
-                    TextColor="#FACO5E"
-                    Text="Invio"
-                    CornerRadius="20"
-                    AbsoluteLayout.LayoutBounds="0.5,0.91,0.5,0.08"
-                    AbsoluteLayout.LayoutFlags="All"
-                    FontFamily="Montserrat-Bold.ttf#Montserrat"
-                    Clicked="modificaCheck"/> 
-             -->
-        </AbsoluteLayout>
+        </Grid>
+        
+        
+        
+      
     </ContentPage.Content>
 </ContentPage>

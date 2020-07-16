@@ -60,7 +60,8 @@
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="orari"
                     AbsoluteLayout.LayoutBounds="0.50,0.41,0.5,0.1"
-                    AbsoluteLayout.LayoutFlags="All"/>
+                    AbsoluteLayout.LayoutFlags="All"
+                    Clicked="orariPopup"/>
             
             <Button HorizontalOptions="End"
                     BackgroundColor="Transparent"
@@ -70,7 +71,8 @@
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="mappa"
                     AbsoluteLayout.LayoutBounds="0.70,0.41,0.5,0.1"
-                    AbsoluteLayout.LayoutFlags="All"/>
+                    AbsoluteLayout.LayoutFlags="All"
+                    Clicked="openMap"/>
 
             <controls:CircleImage x:Name="pictureBox"
                     HeightRequest="120"
