@@ -46,10 +46,6 @@ namespace GymFitFinal.home
              //PASSO A CERCARE LE PALESTRE CON QUEL UID  
                 if (gym != null)
                 {
-                    this.Title = "Profilo";
-                    this.IconImageSource = "navbarProfile.png";
-                    this.Children.Add(new navBar.Palestra());
-
                     //SE TROVO UNA PALESTRA, SALVO LA VARIABILE APP COME TRUE
                     App.isGym = true;
                     //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER LE PALESTRE

@@ -4,6 +4,7 @@ using GymFitFinal.Interfaces;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Plugin.Permissions.Abstractions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,6 +36,7 @@ namespace GymFitFinal.home.navBar
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
 
             getInfo(uid);
+            pictureFullScreen();
 
             picker.SelectedIndexChanged += async (sender, args) =>
             {
@@ -117,6 +119,17 @@ namespace GymFitFinal.home.navBar
         {
             await Navigation.PushAsync(new PrenotazioniEffettuate());
 
+        }
+
+        void pictureFullScreen()
+        {
+            pictureBox.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await PopupNavigation.PushAsync(new FullscreenImagePopup(pictureBox.Source));
+                })
+            });
         }
 
 

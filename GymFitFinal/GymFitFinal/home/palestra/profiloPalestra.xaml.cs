@@ -1,4 +1,5 @@
 ﻿//using Android.Preferences;
+using GymFitFinal.home.profilo;
 using GymFitFinal.Interfaces;
 using Plugin.Media.Abstractions;
 using Rg.Plugins.Popup.Services;
@@ -27,6 +28,8 @@ namespace GymFitFinal.home.palestra
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+
+            pictureFullScreen();
 
             getInfo(uid);
 
@@ -98,6 +101,7 @@ namespace GymFitFinal.home.palestra
                 App.loggedGym = person;
                 string pic = Preferences.Get("profilePic", "defaultUser.png");
                 pictureBox.Source = pic;
+                App.profilePic = pic;
 
             }
             else
@@ -107,6 +111,17 @@ namespace GymFitFinal.home.palestra
                 Navigation.RemovePage(this);
                 Navigation.PopAsync();
             }
+        }
+
+        void pictureFullScreen()
+        {
+            pictureBox.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await PopupNavigation.PushAsync(new FullscreenImagePopup(pictureBox.Source));
+                })
+            });
         }
 
 
