@@ -84,13 +84,13 @@
 
 
                     <AbsoluteLayout>
-                        <Frame AbsoluteLayout.LayoutBounds="0.51, 0.1, 0.85, 0.6"
+                        <Frame AbsoluteLayout.LayoutBounds="0.51, 0.1, 0.8, 0.85"
                                AbsoluteLayout.LayoutFlags="All"
                                BackgroundColor="#FFFFFF"
                                Opacity="0.9"
                                CornerRadius="10">
                         </Frame>
-                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.03,0.85,0.5" Margin="7" Spacing="20" >
+                        <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0,0.85,0.9" Margin="7" Spacing="20" >
                             <AbsoluteLayout>
                                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                                        TextColor="#4a6572"
@@ -98,40 +98,40 @@
                                        Font="15"
                                        HorizontalTextAlignment="Center"
                                        AbsoluteLayout.LayoutFlags="All"
-                                       AbsoluteLayout.LayoutBounds="0.5,0.2,0.5,0.5"/>
+                                       AbsoluteLayout.LayoutBounds="0.5,0,0.85,0.9"/>
                                 <TimePicker x:Name="dataIMattina"
                                             FontFamily="Montserrat-Regular.ttf#Montserrat"
                                             TextColor="#4a6572"
                                             HorizontalOptions="Start"
                                             AbsoluteLayout.LayoutFlags="All"
-                                            AbsoluteLayout.LayoutBounds="0.3,0.5,0.5,0.5"/>
+                                            AbsoluteLayout.LayoutBounds="0.3,0.2,0.5,0.25"/>
 
                                 <TimePicker x:Name="dataFMattina"
                                             FontFamily="Montserrat-Regular.ttf#Montserrat"
                                             TextColor="#4a6572"
                                             HorizontalOptions="End"
                                             AbsoluteLayout.LayoutFlags="All"
-                                            AbsoluteLayout.LayoutBounds="0.7,0.5,0.5,0.5"/>
+                                            AbsoluteLayout.LayoutBounds="0.7,0.2,0.5,0.25"/>
                                 <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                                        TextColor="#4a6572"
                                        Text="Orario Pomeriggio"
                                        Font="15"
                                        HorizontalTextAlignment="Center"
                                        AbsoluteLayout.LayoutFlags="All"
-                                       AbsoluteLayout.LayoutBounds="0.5,1.4,0.5,0.5"/>
+                                       AbsoluteLayout.LayoutBounds="0.5,1,0.5,0.5"/>
                                 <TimePicker x:Name="dataIPomeriggio"
                                             FontFamily="Montserrat-Regular.ttf#Montserrat"
                                             TextColor="#4a6572"
                                             HorizontalOptions="Start"
                                             AbsoluteLayout.LayoutFlags="All"
-                                            AbsoluteLayout.LayoutBounds="0.3,1.8,0.5,0.5"/>
+                                            AbsoluteLayout.LayoutBounds="0.3,1,0.5,0.25"/>
 
                                 <TimePicker x:Name="dataFPomeriggio"
                                             FontFamily="Montserrat-Regular.ttf#Montserrat"
                                             TextColor="#4a6572"
                                             HorizontalOptions="End"
                                             AbsoluteLayout.LayoutFlags="All"
-                                            AbsoluteLayout.LayoutBounds="0.7,1.8,0.5,0.5"/>
+                                            AbsoluteLayout.LayoutBounds="0.7,1,0.5,0.25"/>
 
                             </AbsoluteLayout>
                         </StackLayout>

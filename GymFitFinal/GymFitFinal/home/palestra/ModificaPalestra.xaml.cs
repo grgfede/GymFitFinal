@@ -1,4 +1,5 @@
 ﻿//using Android.Preferences;
+using Android.App;
 using Firebase.Storage;
 using GymFitFinal.Interfaces;
 using Plugin.Media;
@@ -39,7 +40,13 @@ namespace GymFitFinal.home.palestra
             lblCitta.Placeholder = App.loggedGym.Citta;
             lblIndirizzo.Placeholder = App.loggedGym.Indirizzo;
             lblEmail.Placeholder = App.loggedEmail;
-            lblTelefono.Placeholder = App.loggedGym.Telefono;
+            if (string.IsNullOrEmpty(App.loggedGym.Telefono))
+            {
+                lblTelefono.Placeholder = "Recapito Telefonico";
+            } else
+            {
+                lblTelefono.Placeholder = App.loggedGym.Telefono;
+            }
             string pic = Preferences.Get("profilePic", "defaultUser.png");
             pictureBox.Source = pic;
         }
@@ -63,6 +70,7 @@ namespace GymFitFinal.home.palestra
             string inizioP = IP.ToString(@"hh\:mm");
             string fineP = FP.ToString(@"hh\:mm");
 
+            DisplayAlert("ok", inizioM, "ok");
             if (string.IsNullOrEmpty(nome))
             {
                 nome = App.loggedGym.Nome;
@@ -80,19 +88,19 @@ namespace GymFitFinal.home.palestra
             {
                 telefono = App.loggedGym.Telefono;
             }
-            if (string.Equals(IM, "00:00"))
+            if (string.Equals(inizioM, "00:00"))
             {
                 inizioM = App.loggedGym.DataIMattina;
             }
-            if (string.Equals(FM, "00:00"))
+            if (string.Equals(fineM, "00:00"))
             {
                 fineM = App.loggedGym.DataFMattina;
             }
-            if (string.Equals(IP, "00:00"))
+            if (string.Equals(inizioP, "00:00"))
             {
                 inizioP = App.loggedGym.DataIPomeriggio;
             }
-            if (string.Equals(FP, "00:00"))
+            if (string.Equals(fineP, "00:00"))
             {
                 fineP = App.loggedGym.DataFPomeriggio;
             }
