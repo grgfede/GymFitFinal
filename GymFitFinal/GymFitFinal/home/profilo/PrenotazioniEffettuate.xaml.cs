@@ -16,5 +16,6 @@ namespace GymFitFinal.home.profilo
         {
             InitializeComponent();
         }
+
     }
 }
