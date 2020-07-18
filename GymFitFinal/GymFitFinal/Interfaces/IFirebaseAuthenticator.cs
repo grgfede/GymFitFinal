@@ -20,7 +20,7 @@ namespace GymFitFinal.Interfaces
         Task<string> DoSignUp(string email, string password, string nome, string cognome);
         Task<string> DoSignUpGym(string email, string password);
 
-        Task AddSub(string tipoAbbonamento, double costo, DateTime dataI, DateTime dataF, string uidAbbonamento, string uidUtente);
+        Task AddSub(string tipoAbbonamento, double costo, string dataI, string dataF, string uidAbbonamento, string uidUtente);
         Task AddGym(string nome, string citta, string indirizzo, string telefono, string IM, string FM, string IP, string FP, string uid);
 
         Task<Gym> GetGym(string uid);
@@ -32,6 +32,8 @@ namespace GymFitFinal.Interfaces
         Task<string> getProfilePic();
         Task<string> getProfilePicGymIscrizione(string uid);
         Task<List<User>> GetAllPerson();
+        Task followGym(string uidU, string uidG);
+        Task unfollowGym(string uidU);
         Task DeletePerson();
         Task refreshUser();
         bool IsUserLoggedIn();

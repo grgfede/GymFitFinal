@@ -6,7 +6,10 @@
              mc:Ignorable="d"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="GymFitFinal.home.navBar.PalestraIscrizione">
-   
+    <ContentPage.ToolbarItems>
+        
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <AbsoluteLayout>
             

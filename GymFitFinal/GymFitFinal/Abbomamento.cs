@@ -9,7 +9,7 @@ namespace GymFitFinal
         public string uid { get; set; }
         public string TipoAbbonamento { get; set; }
         public double Costo { get; set; }
-        public DateTime DataInizio { get; set; }
-        public DateTime DataFine { get; set; }
+        public string DataInizio { get; set; }
+        public string DataFine { get; set; }
     }
 }

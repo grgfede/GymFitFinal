@@ -18,6 +18,11 @@ namespace GymFitFinal
             SignUpMethod();
             
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
+
 
         public async void LoginEmail(Object sender, EventArgs e)
         {

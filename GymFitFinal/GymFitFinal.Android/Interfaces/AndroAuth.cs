@@ -332,7 +332,7 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
-        public async Task AddSub(string tipoAbbonamento, double costo, DateTime dataI, DateTime dataF, string uidAbbonamento, string uidUtente)
+        public async Task AddSub(string tipoAbbonamento, double costo, string dataI, string dataF, string uidAbbonamento, string uidUtente)
         {
             string childSub = "abbonamenti/" + uidAbbonamento;
             string childName = "utenti/" + uidUtente;
@@ -503,8 +503,21 @@ namespace GymFitFinal.Droid.Interfaces
 
 
 
+        public async Task followGym(string uidU, string uidG)
+        {
+            App.loggedUser.PalestraIscrizione = uidG;
+            string ChildNameAdd = ChildName + "/" + uidU;
+            await firebase.Child(ChildNameAdd).PutAsync<User>(App.loggedUser);
+        }
 
-       
+        public async Task unfollowGym(string uidU)
+        {
+            App.loggedUser.PalestraIscrizione = null;
+            string ChildNameAdd = ChildName + "/" + uidU;
+            await firebase.Child(ChildNameAdd).PutAsync<User>(App.loggedUser);
+        }
+
+
 
 
         public async Task DeletePerson()

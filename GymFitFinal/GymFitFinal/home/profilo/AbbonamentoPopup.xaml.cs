@@ -57,10 +57,12 @@ namespace GymFitFinal.home.profilo
             DateTime dataF = lblDataF.text;
              */
             DateTime dataI = DateTime.Today;
-            DateTime dataF = new DateTime(2020, 09, 30);
+            string dataInizio = String.Format("{0:MM/dd/yyyy}", dataI);
+            DateTime dataF = dataI.AddMonths(1);
+            string dataFine = String.Format("{0:MM/dd/yyyy}", dataF);
             string uidSub = RandomString(28);
             DisplayAlert("Prova", uidSub, "ok");
-            await _auth.AddSub("mensile", 80, dataI, dataI, uidSub, uid).ContinueWith(async task =>
+            await _auth.AddSub("mensile", 80, dataInizio, dataFine, uidSub, uid).ContinueWith(async task =>
             {
                 if (!task.IsFaulted)
                     await _auth.UpdateAbboanmento(uidSub).ContinueWith(async task2 =>
