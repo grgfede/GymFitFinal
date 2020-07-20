@@ -7,25 +7,13 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="GymFitFinal.Main">
     <ContentPage.Content>
-        <Grid Margin="40,50,40,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*" />
-                <RowDefinition Height="0.9*" />
-                <RowDefinition Height="0.1*" />
-                <RowDefinition Height="0.4*" />
-                <RowDefinition Height="0.1*" />
-                <RowDefinition Height="0.2*" />
-            </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.6*" />
-                <ColumnDefinition Width="0.4*" />
-            </Grid.ColumnDefinitions>
-            
-            
+        <AbsoluteLayout>
 
-            <Label Grid.Row="0"
-                   Grid.ColumnSpan="2"
+
+            <Label 
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0,0.5,0.3"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Font="38"
@@ -33,22 +21,20 @@
                    Text="GymFit"
                    FontFamily="BebasKai.ttf#BebasKai"/>
 
-            <Image Grid.Row="1"
-                   Grid.ColumnSpan="2"
+            <Image
+                   AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0.5,0.3,1,0.5"
                    Aspect="AspectFill"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
                    Source="logo.png"/>
 
 
-
-            <StackLayout Grid.Row="2" Grid.ColumnSpan="2"  HorizontalOptions="FillAndExpand"
-                   VerticalOptions="Start">
-
                 <Button 
-                   ContentLayout="Left, 5"
+                   AbsoluteLayout.LayoutBounds="0.5,0.7,0.8,0.07"
+                    AbsoluteLayout.LayoutFlags="All"
                    ImageSource="icoEmail.png"
-                    VerticalOptions="Center"
+                    VerticalOptions="End"
                    Font="13"
                    HeightRequest="45"
                    TextColor="White"
@@ -60,28 +46,27 @@
 
 
                 <Button 
-                  
-                   HeightRequest="45"
-                   ContentLayout="Left, 5"
-                   ImageSource="icoFacebook.png"
+                
+                   AbsoluteLayout.LayoutBounds="0.5,0.8,0.8,0.07"
+                   AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="Start"
                    Font="13"
                    TextColor="White"
-                   Text="Accedi come palestra"
-                   BackgroundColor="#3b5999" 
+                   Text="Sei una palestra? Registrati"
+                   BackgroundColor="#FACO5E" 
                    CornerRadius="20"
-                   
+                    Clicked="signUpGym"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"/>
 
 
-            </StackLayout>
+            
 
 
             <Label
-                    Grid.Row="3"
-                    Grid.Column="0"
-                    Margin="10,19,0,0"
-                    VerticalOptions="Center"
-                    HorizontalOptions="StartAndExpand"
+                AbsoluteLayout.LayoutBounds="0.5,0.87,0.8,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="End"
+                    HorizontalOptions="Start"
                     Font="Bold,13"
                     FontFamily="Montserrat-Regular.ttf#Montserrat"
                     TextColor="#4a6572"
@@ -89,11 +74,10 @@
                     />
 
             <Label  x:Name="lblSignUp"
-                    Grid.Row="3"
-                    Grid.Column="1"
-                    Margin="10,19,10,0"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
+                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0.46,0.87,0.8,0.1"
+                    VerticalOptions="End"
+                    HorizontalOptions="End"
                     Font="Bold,13"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
                     TextColor="#4a6572"
@@ -101,16 +85,26 @@
                     />
 
 
-            <Label Grid.Row="5"
-                   Grid.ColumnSpan="2"
+            <Label 
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.9,0.9,0.5"
+                   VerticalOptions="End"
                    HorizontalOptions="Center"
-                   VerticalOptions="Center"
                    Font="10"
                    TextColor="#4a6572"
                    Text="Continuando accetti i Termini di condizione"
                    FontFamily="Montserrat-Italic.ttf#Montserrat"/>
-            
 
-        </Grid>
+
+
+
+
+        </AbsoluteLayout>
+
+
+
+
+
+
     </ContentPage.Content>
 </ContentPage>

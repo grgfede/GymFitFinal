@@ -14,6 +14,7 @@
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="#64B5F6">
 
+            
             <Frame BackgroundColor="#FFFFFF"
                    AbsoluteLayout.LayoutBounds="0.5, 0.55, 0.9, 0.35"
                    AbsoluteLayout.LayoutFlags="All"
@@ -28,26 +29,41 @@
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="0.9"/>
 
+
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.4"
+                   AbsoluteLayout.LayoutFlags="All"
+                   HorizontalOptions="Center"
+                   x:Name="lblNoSub"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   IsVisible="False"
+                   Text="Non hai nessun abbonamento attivo! "/>
+
+
             <Label AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblTipoAbbonamento"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Tipo abbonamento: ">
             </Label>
             <Label AbsoluteLayout.LayoutBounds="0.5, 1.15, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblDataI"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Data inizio: ">
             </Label>
             <Label AbsoluteLayout.LayoutBounds="0.5, 1.35, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblDataF"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Data scadenza: ">
             </Label>
             <Label AbsoluteLayout.LayoutBounds="0.5, 1.55, 0.8, 0.6"
                    AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblCosto"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
                    FontSize="Medium"
                    Text="Costo: ">

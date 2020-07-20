@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.home.palestra.abbonamento.AddSub">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FACO5E">
+            <AbsoluteLayout>
+                <BoxView AbsoluteLayout.LayoutBounds="0.1,0.5,0.1,0.008"
+                         AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="#333333"
+                         HeightRequest="1"/>
+
+                <Label HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       Font="30"
+                       TextColor="#000000"
+                       Text="Nuovo abbonamento"
+                       AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds="0.5,0.5,1,0.5"
+                       FontFamily="BebasKai.ttf#BebasKai"/>
+
+                <BoxView AbsoluteLayout.LayoutBounds="0.9,0.5,0.1,0.008"
+                         AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="#333333"
+                         HeightRequest="1"/>
+            </AbsoluteLayout>
+
+
+            <AbsoluteLayout>
+                <Frame AbsoluteLayout.LayoutBounds="0.51, 0.15, 0.85, 0.74"
+                       AbsoluteLayout.LayoutFlags="All"
+                       BackgroundColor="#FFFFFF"
+                       Opacity="0.9"
+                       CornerRadius="10">
+                </Frame>
+                <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.5,0.15,0.85,0.5" Margin="7" Spacing="20" >
+                    <Picker x:Name="pckTipoAbbonamento" SelectedItem="myPickerSelectedIndexChanged">
+                        <Picker.Items>
+                                <x:String>Mensile</x:String>
+                                <x:String>Trimestrale</x:String>
+                                <x:String>Semestrale</x:String>
+                                <x:String>Annuale</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Entry x:Name="lblCosto" 
+                           Placeholder="Costo in €"  
+                           PlaceholderColor="#2D3047"
+                           Opacity="0.6"
+                           FontFamily="Montserrat-Regular.ttf#Montserrat"
+                           FontSize="Medium" />
+                    <Editor x:Name="lblNote"
+                            HeightRequest="180"
+                            Placeholder="Aggiungi dettagli che potrebbero interessare l'utente"
+                            FontFamily="Montserrat-Regular.ttf#Montserrat"
+                            FontSize="Medium"/>
+                   
+                </StackLayout>
+            </AbsoluteLayout>
+             <Button BackgroundColor="White"
+                            Font="Bold,14"
+                            TextColor="#FACO5E"
+                            Text="Crea"
+                            CornerRadius="20"
+                            Clicked="creaSub"
+                            FontFamily="Montserrat-Bold.ttf#Montserrat"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

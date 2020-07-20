@@ -28,10 +28,34 @@ namespace GymFitFinal.home
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
             //VERIFICO SE CHI SI E' LOGGATO E' UTENTE O PALESTRA
             getInfo(uid);
-           
+            //checkSub(App.loggedUser.AbbonamentoIscrizione);
+
+
             NavigationPage.SetHasBackButton(this, false);
             
 
+        }
+
+        public async void checkSub(string uidS)
+        {
+            var sub = await _auth.GetSub(uidS);
+            if (sub != null)
+            {
+                string dataF = sub.DataFine;
+                DateTime dt1 = DateTime.Parse(dataF);
+                DateTime dt2 = DateTime.Now;
+                if (dt1.Date < dt2.Date)
+                {
+                    DisplayAlert("PROVA", "peova", "Ok");
+                    await _auth.DeleteSub(uidS).ContinueWith(async task =>
+                    {
+                        if (task.IsFaulted)
+                        {
+                            await _auth.DeleteSub(uidS);
+                        }
+                    });
+                }
+            }
         }
 
         public async void getInfo(string uid)

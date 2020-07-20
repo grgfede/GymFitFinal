@@ -66,6 +66,12 @@ namespace GymFitFinal.home.palestra
             getInfo(uid);
         }
 
+
+        public void subManager(Object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new abbonamento.subManager());
+        }
+
         public async void openMap(Object sender, EventArgs e)
         {
             await Launcher.OpenAsync("geo:0,0?q=394+" + App.loggedGym.Citta + "+" + App.loggedGym.Indirizzo);
