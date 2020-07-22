@@ -7,29 +7,41 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="GymFitFinal.SignUp.signUpGym">
     <ContentPage.Content>
-        <AbsoluteLayout 
-            BackgroundColor="White">
-
-            <Label HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.5,0.073,0.3,0.06"
+        
+            <ScrollView 
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Transparent"
+                 AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.9, 0.9"
                    AbsoluteLayout.LayoutFlags="All"
-                   Font="38"
-                   TextColor="#000000"
+                   >
+            <StackLayout>
+                <AbsoluteLayout HeightRequest="80">
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0.15,0.55,0.2,0.01"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#2D3047" 
+                               />
+
+                    <Label HorizontalOptions="CenterAndExpand"
+                   AbsoluteLayout.LayoutBounds="0.5,1.3,0.7,0.8"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="40"
+                   TextColor="#2D3047"
                    Text="GymFit"
                    FontFamily="BebasKai.ttf#BebasKai"/>
 
-            <BoxView AbsoluteLayout.LayoutBounds="0.12,0.093,0.2,0.002"
+                    <BoxView AbsoluteLayout.LayoutBounds="0.85,0.55,0.2,0.01"
                      AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#333333"
-                     HeightRequest="1"/>
+                     BackgroundColor="#2D3047"
+                    />
 
-            <BoxView AbsoluteLayout.LayoutBounds="0.89,0.093,0.2,0.002"
-                     AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#333333"
-                     HeightRequest="1"/>
+                </AbsoluteLayout>
 
-            <BoxView AbsoluteLayout.LayoutBounds="0.5,0.4,0.85,0.6"
+
+                <AbsoluteLayout HeightRequest="300"  >
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0.5,0.4,0.85,0.9"
                      AbsoluteLayout.LayoutFlags="All"
                      BackgroundColor="#FACO5E"
                      CornerRadius="10"
@@ -37,110 +49,150 @@
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"/>
 
-            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Nome"
-                   Font="15"
+                   Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.33,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.21,0.7,0.45"/>
 
-            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Città"
-                   Font="15"
+                   Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.53,0.7,0.45"/>
-            
-            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   AbsoluteLayout.LayoutBounds="0.5,0.66,0.7,0.45"/>
+
+                    <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Indirizzo"
-                   Font="15"
+                   Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.73,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,1.09,0.7,0.45"/>
 
-            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    <Entry x:Name="txtNome"
+                   PlaceholderColor="#2D3047"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#2D3047"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.20,0.7,0.2"/>
+
+                    <Entry x:Name="txtCitta"
+                   PlaceholderColor="#2D3047"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.55,0.7,0.2"/>
+
+                    <Entry x:Name="txtIndirizzo"
+                   PlaceholderColor="#2D3047"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   TextColor="#4a6572"
+                   VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0.5,0.85,0.7,0.2"/>
+
+                </AbsoluteLayout>
+
+                <AbsoluteLayout HeightRequest="80" >
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0.15,0.48,0.2,0.01"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#2D3047" 
+                               />
+
+                    <Label HorizontalOptions="CenterAndExpand"
+                   AbsoluteLayout.LayoutBounds="0.5,1.3,0.7,0.8"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Font="30"
+                   TextColor="#2D3047"
+                   Text="Credenziali"
+                   FontFamily="BebasKai.ttf#BebasKai"/>
+
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0.85,0.48,0.2,0.01"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#2D3047"
+                    />
+
+                </AbsoluteLayout>
+
+                <AbsoluteLayout HeightRequest="200"  >
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0.5,0.4,0.85,0.9"
+                     AbsoluteLayout.LayoutFlags="All"
+                     BackgroundColor="#FACO5E"
+                     CornerRadius="10"
+                     Opacity="0.7"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"/>
+
+                    <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Email"
-                   Font="15"
+                   Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.93,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.20,0.7,0.45"/>
 
-            <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
+                    <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Password"
-                   Font="15"
+                   Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,1.13,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.87,0.7,0.45"/>
 
-            <Entry x:Name="txtNome"
-                   PlaceholderColor="#4a6572"
+                    <Entry x:Name="txtEmail"
+                   PlaceholderColor="#2D3047"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.22,0.7,0.08"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.38,0.7,0.2"/>
 
-            <Entry x:Name="txtCitta"
-                   PlaceholderColor="#4a6572"
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
-                   VerticalOptions="Center"
-                   AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.34,0.7,0.1"/>
-
-            <Entry x:Name="txtIndirizzo"
-                   PlaceholderColor="#4a6572"
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
-                   VerticalOptions="Center"
-                   AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.46,0.7,0.1"/>
-
-            <Entry x:Name="txtEmail"
-                   PlaceholderColor="#4a6572"
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
-                   VerticalOptions="Center"
-                   AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.58,0.7,0.1"/>
-
-            <Entry x:Name="txtPass"
+                    <Entry x:Name="txtPass"
                    IsPassword="True"
-                   PlaceholderColor="#4a6572"
+                   PlaceholderColor="#2D3047"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.5,0.71,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.83,0.7,0.2"/>
 
+                </AbsoluteLayout>
 
-            <CheckBox x:Name="chkTerm"
+                <AbsoluteLayout HeightRequest="180"  >
+                    
+                    <CheckBox x:Name="chkTerm"
                       Color="#FACO5E"
                       AbsoluteLayout.LayoutFlags="All"
-                      AbsoluteLayout.LayoutBounds="0.6,0.86,0.7,0.1"
+                      AbsoluteLayout.LayoutBounds="0.6,0.05,0.7,0.1"
                       VerticalOptions="Start"
                       HorizontalOptions="Start"/>
 
-            <Label x:Name="lblTerm"
+                    <Label x:Name="lblTerm"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    Text="Accetto i Termini e Condizioni d'uso"
                    Font="12"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.7,0.86,0.6,0.09"/>
+                   AbsoluteLayout.LayoutBounds="0.7,0.07,0.6,0.09"/>
 
-
-            <Button BackgroundColor="#FACO5E"
+                    <Button BackgroundColor="#FACO5E"
                     Font="Bold,14"
                     TextColor="White"
                     Text="Avanti"
                     CornerRadius="20"
-                    AbsoluteLayout.LayoutBounds="0.5,0.92,0.5,0.08"
+                    AbsoluteLayout.LayoutBounds="0.5,0.48,0.5,0.3"
                     AbsoluteLayout.LayoutFlags="All"
                     FontFamily="Montserrat-Bold.ttf#Montserrat"
                     Clicked="DoSignUpMethod"
                     />
-        </AbsoluteLayout>
+                    
+                </AbsoluteLayout>
+            </StackLayout>
+        </ScrollView>
+      
     </ContentPage.Content>
 </ContentPage>
