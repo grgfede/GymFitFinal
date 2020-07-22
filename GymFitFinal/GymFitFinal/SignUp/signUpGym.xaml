@@ -54,28 +54,28 @@
                    Text="Nome"
                    Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.21,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.21,0.7,0.45"/>
 
                     <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Città"
                    Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.66,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.66,0.7,0.45"/>
 
                     <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Indirizzo"
                    Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,1.09,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,1.09,0.7,0.45"/>
 
                     <Entry x:Name="txtNome"
                    PlaceholderColor="#2D3047"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.30,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.20,0.7,0.2"/>
 
                     <Entry x:Name="txtCitta"
                    PlaceholderColor="#2D3047"
@@ -83,7 +83,7 @@
                    TextColor="#4a6572"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.57,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.55,0.7,0.2"/>
 
                     <Entry x:Name="txtIndirizzo"
                    PlaceholderColor="#2D3047"
@@ -91,7 +91,7 @@
                    TextColor="#4a6572"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.84,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.85,0.7,0.2"/>
 
                 </AbsoluteLayout>
 
@@ -133,30 +133,30 @@
                    Text="Email"
                    Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.21,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.20,0.7,0.45"/>
 
                     <Label FontFamily="Montserrat-Regular.ttf#Montserrat"
                    TextColor="#4a6572"
                    Text="Password"
                    Font="16"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.87,0.7,0.45"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.87,0.7,0.45"/>
 
                     <Entry x:Name="txtEmail"
                    PlaceholderColor="#2D3047"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.44,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.38,0.7,0.2"/>
 
                     <Entry x:Name="txtPass"
                    IsPassword="True"
                    PlaceholderColor="#2D3047"
                    FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   TextColor="#4a6572"
+                   TextColor="#2D3047"
                    VerticalOptions="Center"
                    AbsoluteLayout.LayoutFlags="All"
-                   AbsoluteLayout.LayoutBounds="0.45,0.85,0.7,0.1"/>
+                   AbsoluteLayout.LayoutBounds="0.5,0.83,0.7,0.2"/>
 
                 </AbsoluteLayout>
 
