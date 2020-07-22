@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,7 +25,15 @@ namespace GymFitFinal.home.profilo
             getInfoSub(uidSub);
 
         }
-       
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            DisplayAlert("Ciao", "Ciao", "Ok");
+            getInfoSub(uidSub);
+        }
+
+   
 
         public async void getInfoSub(string uidS)
         {
@@ -61,7 +69,7 @@ namespace GymFitFinal.home.profilo
             {
                 if (person.AbbonamentoIscrizione == null)
                 {
-                    await PopupNavigation.PushAsync(new AbbonamentoPopup());
+                    await PopupNavigation.PushAsync(new AbbonamentoPopup(person.PalestraIscrizione));
                 }
                 else
                 {

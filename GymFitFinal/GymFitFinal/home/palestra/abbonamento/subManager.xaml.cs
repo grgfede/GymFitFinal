@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace GymFitFinal.home.palestra.abbonamento
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class subManager : ContentPage
     {
@@ -19,7 +20,7 @@ namespace GymFitFinal.home.palestra.abbonamento
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            getSubs();
+            //getSubs();
         }
 
         public async void getSubs()
@@ -27,25 +28,20 @@ namespace GymFitFinal.home.palestra.abbonamento
             List<AbbonamentoPalestra> allSubGym = await _auth.getSubGym();
             if (allSubGym != null)
             {
-               foreach (AbbonamentoPalestra e in allSubGym)
-               {
-                    StackLayout stackLayout = new StackLayout
-                    {
-                        Spacing = 0,
-                        VerticalOptions = LayoutOptions.FillAndExpand,
-                        Children =
-                        {
-                            new Label
-                            {
-                                Text = "StackLayout",
-                                HorizontalOptions = LayoutOptions.Start
-                            },
-                        }
-                    };
-               }
-
+                int i = 0;
+                foreach (AbbonamentoPalestra e in allSubGym)
+                {
+                    i += 1;
+                    DisplayAlert("a", Convert.ToString(i), "ik");
+                    Label l = new Label { Text = "prova" };
+                    stack.Children.Add(l);
+                }
+               
             }
+              
         }
+
+        
 
         public void addSub(Object sender, EventArgs e)
         {

@@ -70,7 +70,7 @@ namespace GymFitFinal.home.palestra
         public void subManager(Object sender, EventArgs e)
         {
             Navigation.PushAsync(new abbonamento.subManager());
-        }
+            }
 
         public async void openMap(Object sender, EventArgs e)
         {

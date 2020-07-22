@@ -1,8 +1,10 @@
 ﻿using Android.App;
 using GymFitFinal.Interfaces;
 using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,50 +21,42 @@ namespace GymFitFinal.home.profilo
         private static Random random = new Random();
         string uid = App.uid;
 
-        public AbbonamentoPopup()
+        private static double costo;
+        private static string descrizione;
+
+        public AbbonamentoPopup(string uidG)
         {
             InitializeComponent();
 
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+            this.BindingContext = new model.MyViewModel();
+
 
             List<string> tipoabbonamento = new List<string>();
-            tipoabbonamento.Add("Mensile");
-            tipoabbonamento.Add("Trimestrale");
-            tipoabbonamento.Add("Semestrale");
-            tipoabbonamento.Add("Annuale");
-            IwTipoAbbonamento.ItemsSource = tipoabbonamento;
-
-
+           
         }
-        private void ViewCell_Tapped(object sender, System.EventArgs e)
+
+        protected async override void OnAppearing()
         {
-            ViewCell lastCell = new ViewCell();
-
-            if (lastCell != null)
-                lastCell.View.BackgroundColor = Color.Transparent;
-            var viewCell = (ViewCell)sender;
-           if (viewCell.View != null)
-            {
-                viewCell.View.BackgroundColor = Color.BlueViolet;
-                lastCell = viewCell;
-            }
+            base.OnAppearing();
+            this.BindingContext = new model.MyViewModel();
         }
+
+
+
+
 
         public async void createSub(Object sender, EventArgs e)
         {
-            /*
-             string tipoAbbonamento = lblTipoAbbonamento.Text;
-            double costo = lblCosto.text;
-            DateTime dataI = lblDataI.text;
-            DateTime dataF = lblDataF.text;
-             */
             DateTime dataI = DateTime.Today;
             string dataInizio = String.Format("{0:MM/dd/yyyy}", dataI);
             DateTime dataF = dataI.AddMonths(1);
             string dataFine = String.Format("{0:MM/dd/yyyy}", dataF);
             string uidSub = RandomString(28);
-            DisplayAlert("Prova", uidSub, "ok");
-            await _auth.AddSub("mensile", 80, dataInizio, dataFine, uidSub, uid).ContinueWith(async task =>
+            string TipoAbb = IwTipoAbbonamento.Items[IwTipoAbbonamento.SelectedIndex];
+            double Costo = costo;
+
+            await _auth.AddSub(TipoAbb, Costo, dataInizio, dataFine, uidSub, uid).ContinueWith(async task =>
             {
                 if (!task.IsFaulted)
                     await _auth.UpdateAbboanmento(uidSub).ContinueWith(async task2 =>
@@ -73,9 +67,23 @@ namespace GymFitFinal.home.profilo
                         } else
                         {
                             App.loggedUser.AbbonamentoIscrizione = uidSub;
+                            await Navigation.PopModalAsync();
+                            //await PopupNavigation.Instance.PopAsync();
                         }
                     });
             });
+        }
+
+        private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Picker picker = sender as Picker;
+            var selectedItem = (AbbonamentoPalestra)picker.SelectedItem; // This is the model selected in the picker
+            lblCosto.Text = "Costo: " + Convert.ToString(selectedItem.Costo) + " €";
+            lblNote.Text = selectedItem.Descrizione;
+            lblCosto.IsVisible = true;
+            lblNote.IsVisible = true;
+            costo = selectedItem.Costo;
+            descrizione = selectedItem.Descrizione;
         }
 
         public static string RandomString(int length)

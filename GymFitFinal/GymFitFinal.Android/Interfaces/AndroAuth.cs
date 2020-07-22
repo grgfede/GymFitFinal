@@ -403,7 +403,10 @@ namespace GymFitFinal.Droid.Interfaces
             return "ERROR_EMAIL_MISSING";
         }
 
-       
+
+
+
+
 
 
         public async Task<List<User>> GetAllPerson()

@@ -29,20 +29,25 @@
                 <ScrollView>
                     <StackLayout>
                         <Label Text="Tipo abbonamento: " FontSize="18" TextColor="Black"/>
-                        <ListView x:Name="IwTipoAbbonamento" 
-                                 SeparatorColor="#2D3047"
-                                  RowHeight="50"
-                              
-                                 HorizontalOptions="Start" HeightRequest="100" >
-                            <ListView.ItemTemplate  >
-                                <DataTemplate >
-                                    <ViewCell Tapped="ViewCell_Tapped" >
-                                        <Label Text="Mensile" TextColor="#2D3047" Font="16"  VerticalTextAlignment="Center"></Label>
-                                       
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                        <Picker x:Name="IwTipoAbbonamento" 
+                                HorizontalOptions="FillAndExpand" HeightRequest="100"
+                                ItemsSource="{Binding AbbonamentoPalestras}"
+                                ItemDisplayBinding="{Binding TipoAbbonamento}"
+                                SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                        </Picker>
+                        <Label x:Name="lblCosto"
+                               Text = "{Binding Costo}"
+                               IsVisible="false"
+                               Opacity="1"
+                               FontFamily="Montserrat-Regular.ttf#Montserrat"
+                               FontSize="Medium" />
+                        <Editor x:Name="lblNote"
+                                Text="{Binding Descrizione}"
+                                HeightRequest="180"
+                                IsReadOnly="true"
+                                IsVisible="false"
+                                FontFamily="Montserrat-Regular.ttf#Montserrat"
+                                FontSize="Medium"/>
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Crea" Clicked="createSub" TextColor="Black"  ></Button>
                         </StackLayout>
