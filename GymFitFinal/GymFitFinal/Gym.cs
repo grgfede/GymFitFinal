@@ -7,6 +7,11 @@ namespace GymFitFinal
 {
     public class Gym
     {
+        public override string ToString()
+        {
+            return Nome;
+        }
+
         public static string Email { get; set; }
 
         public string Nome { get; set; }

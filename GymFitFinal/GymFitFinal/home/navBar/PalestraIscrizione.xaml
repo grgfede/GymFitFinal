@@ -53,6 +53,7 @@
                     BorderWidth="1"
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="mappa"
+                    Clicked="OpenMap"
                     AbsoluteLayout.LayoutBounds="0.8,0.41,0.35,0.1"
                     AbsoluteLayout.LayoutFlags="All"/>
 

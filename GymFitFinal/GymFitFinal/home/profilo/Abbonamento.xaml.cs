@@ -22,28 +22,29 @@ namespace GymFitFinal.home.profilo
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
+            this.BindingContext = new model.MyViewModel();
             getInfoSub(uidSub);
-
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            DisplayAlert("Ciao", "Ciao", "Ok");
-            getInfoSub(uidSub);
+            //getInfoSub(uidSub);
         }
 
-   
+      
+
+
 
         public async void getInfoSub(string uidS)
         {
             var sub = await _auth.GetSub(uidS);
             if(sub != null)
             {
-                lblTipoAbbonamento.Text += " " + sub.TipoAbbonamento;
-                lblDataI.Text += " " + sub.DataInizio;
-                lblDataF.Text += " " + sub.DataFine;
-                lblCosto.Text += " " + sub.Costo + "€";
+                lblTipoAbbonamento.Text = "Tipo abbonamento: " + sub.TipoAbbonamento;
+                lblDataI.Text = "Data inizio: " + sub.DataInizio;
+                lblDataF.Text = "Data scadenza: " + sub.DataFine;
+                lblCosto.Text = "Costo: " + sub.Costo + "€";
             } else
             {
                 lblTipoAbbonamento.IsVisible = false;
@@ -59,7 +60,6 @@ namespace GymFitFinal.home.profilo
         {
             checkSub();
         }
-
         public async void checkSub()
         {
             string uid = App.uid;

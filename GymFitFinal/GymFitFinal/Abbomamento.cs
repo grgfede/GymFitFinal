@@ -11,5 +11,10 @@ namespace GymFitFinal
         public double Costo { get; set; }
         public string DataInizio { get; set; }
         public string DataFine { get; set; }
+
+        public static implicit operator List<object>(Abbomamento v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
