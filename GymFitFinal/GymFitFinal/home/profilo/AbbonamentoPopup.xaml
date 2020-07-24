@@ -49,7 +49,7 @@
                                 FontFamily="Montserrat-Regular.ttf#Montserrat"
                                 FontSize="Medium"/>
                         <StackLayout Orientation="Horizontal">
-                            <Button Text="Crea" Clicked="createSub" TextColor="Black"  ></Button>
+                            <Button Text="Crea" Clicked="createSub" TextColor="Black" ></Button>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
