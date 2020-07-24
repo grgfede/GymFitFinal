@@ -78,6 +78,11 @@ namespace GymFitFinal.home.palestra
 
         }
 
+        public void InserisciTurni(Object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new palestra.InserisciTurni());
+        }
+
         private async void orariPopup(object sender, EventArgs e)
         {
             await PopupNavigation.PushAsync(new OrariPopup(uid));
