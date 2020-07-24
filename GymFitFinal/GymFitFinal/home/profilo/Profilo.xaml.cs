@@ -67,6 +67,10 @@ namespace GymFitFinal.home.navBar
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            MessagingCenter.Subscribe<AbbonamentoPopup>(this, "RefreshSchedulePage", async (sender) =>
+            {
+                await Navigation.PushAsync(new Abbonamento());
+            });
             getInfo(uid);
         }
 

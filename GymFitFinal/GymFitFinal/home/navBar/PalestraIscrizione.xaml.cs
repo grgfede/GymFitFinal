@@ -12,6 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Runtime.CompilerServices;
 using Java.Nio.Channels;
+using GymFitFinal.home.profilo;
 
 namespace GymFitFinal.home.navBar
 {
@@ -27,7 +28,7 @@ namespace GymFitFinal.home.navBar
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
             getInfo(uid);
-
+            pictureFullScreen();
             //PER POTERSI REGISTRARE ALLA PALESTRA CHE L'UTENTE STA VISUALIZZANDO
             //HO BISOGNO DEL SUO UID PER CAPIRE SE E' GIA' REGISTRATO O MENO
             string uidUser = App.uid;
@@ -132,6 +133,17 @@ namespace GymFitFinal.home.navBar
         private async void orariPopup(object sender, EventArgs e)
         {
             await PopupNavigation.PushAsync(new OrariPopup(Gym.uid));
+        }
+
+        void pictureFullScreen()
+        {
+            pictureBox.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(async () =>
+                {
+                    await PopupNavigation.PushAsync(new FullscreenImagePopup(pictureBox.Source));
+                })
+            });
         }
 
     }

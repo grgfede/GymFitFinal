@@ -67,8 +67,7 @@ namespace GymFitFinal.home.profilo
                         } else
                         {
                             App.loggedUser.AbbonamentoIscrizione = uidSub;
-                            await Navigation.PopModalAsync();
-                            //await PopupNavigation.Instance.PopAsync();
+                            await PopupNavigation.Instance.PopAsync();
                         }
                     });
             });
