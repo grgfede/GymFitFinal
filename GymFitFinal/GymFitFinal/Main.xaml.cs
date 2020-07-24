@@ -1,5 +1,7 @@
 ﻿using GymFitFinal.Interfaces;
 using GymFitFinal.SignUp;
+using Java.Security.Cert;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +18,18 @@ namespace GymFitFinal
     {
         public Main()
         {
-            InitializeComponent();
-            SignUpMethod();
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                InitializeComponent();
+                SignUpMethod();
+            }
+            else
+            {
+                DisplayAlert("Attenzione!", "Nessuna connessione ad Internet", "Ok", "Riprova");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }  
         }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();

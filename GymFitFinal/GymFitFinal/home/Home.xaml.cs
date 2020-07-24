@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GymFitFinal.home.navBar;
 using GymFitFinal.Interfaces;
+using Plugin.Connectivity;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,12 +25,18 @@ namespace GymFitFinal.home
             App.password = Preferences.Get("password", null);
 
             string uid = App.uid;
-            InitializeComponent();
-            _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            //VERIFICO SE CHI SI E' LOGGATO E' UTENTE O PALESTRA
-            getInfo(uid);
-            //checkSub(App.loggedUser.AbbonamentoIscrizione);
-
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                InitializeComponent();
+                _auth = DependencyService.Get<IFirebaseAuthenticator>();
+                //VERIFICO SE CHI SI E' LOGGATO E' UTENTE O PALESTRA
+                getInfo(uid);
+                //checkSub(App.loggedUser.AbbonamentoIscrizione);
+            } else
+            {
+                DisplayAlert("Attenzione!", "Nessuna connessione ad Internet", "Ok", "Riprova");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
 
             NavigationPage.SetHasBackButton(this, false);
             
