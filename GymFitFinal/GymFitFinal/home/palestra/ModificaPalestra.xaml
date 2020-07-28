@@ -149,22 +149,20 @@
                      <AbsoluteLayout HeightRequest="80" >
 
                         <BoxView AbsoluteLayout.LayoutBounds="0.15,0.5,0.2,0.01"
-                     AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#2D3047" 
-                               />
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#2D3047"/>
 
                         <Label HorizontalOptions="CenterAndExpand"
-                   AbsoluteLayout.LayoutBounds="0.5,1.5,0.7,0.8"
-                   AbsoluteLayout.LayoutFlags="All"
-                   Font="30"
-                   TextColor="#2D3047"
-                   Text="Credenziali"
-                   FontFamily="BebasKai.ttf#BebasKai"/>
+                               AbsoluteLayout.LayoutBounds="0.5,1.5,0.7,0.8"
+                               AbsoluteLayout.LayoutFlags="All"
+                               Font="30"
+                               TextColor="#2D3047"
+                               Text="Credenziali"
+                               FontFamily="BebasKai.ttf#BebasKai"/>
 
                         <BoxView AbsoluteLayout.LayoutBounds="0.85,0.5,0.2,0.01"
-                     AbsoluteLayout.LayoutFlags="All"
-                     BackgroundColor="#2D3047"
-                    />
+                                 AbsoluteLayout.LayoutFlags="All"
+                                 BackgroundColor="#2D3047"/>
 
                     </AbsoluteLayout>
 

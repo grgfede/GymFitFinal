@@ -20,6 +20,8 @@ namespace GymFitFinal
 
         public static User loggedUser { get; set; }     //loggedUser è un oggetto di tipo USER che contiene tutte le informazioni dell'utente loggato
         public static Gym loggedGym { get; set; }
+        public static Turno loggedTurno { get; set; }
+
         public static string loggedEmail { get; set; }
        
         public static string password { get; set; }

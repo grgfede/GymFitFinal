@@ -38,6 +38,7 @@ namespace GymFitFinal.Droid.Interfaces
         private readonly string ChildName = "utenti";
         private readonly string ChildNameGym = "palestre";
         private readonly string ChildNameSub = "abbonamenti";
+        private readonly string ChildNameTurno = "turni";
 
 
         readonly FirebaseClient firebase = new FirebaseClient("https://gymfitt-2b845.firebaseio.com/");
@@ -69,6 +70,14 @@ namespace GymFitFinal.Droid.Interfaces
             });
             return success;
         }
+
+
+        public async Task UpdateTurno(Turno t)
+        {
+            string ChildNameAdd = ChildNameTurno + "/" + t.uidTurno;
+            await firebase.Child(ChildNameAdd).PutAsync<Turno>(t);
+        }
+
 
 
 
@@ -200,6 +209,7 @@ namespace GymFitFinal.Droid.Interfaces
             Preferences.Set("profilePic", storageImage);
             return storageImage;
         }
+
 
 
         public async Task<string> getProfilePicGymIscrizione(string uid)
@@ -345,6 +355,28 @@ namespace GymFitFinal.Droid.Interfaces
             }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
         }
 
+        public async Task AddTurno(string uidTurno, string palestraIscrizione, bool lunMat, bool lunPom, bool marMat, bool marPom, bool merMat, bool merPom, bool gioMat, bool gioPom, bool venMat, bool venPom, bool sabMat, bool sabPom, bool domMat, bool domPom)
+        {
+            string childTurno = "turni/" + uidTurno;
+
+
+            await firebase.Child(childTurno).PutAsync(new Turno() { uidTurno = uidTurno,
+                                                                    PalestraIscrizione = palestraIscrizione,
+                                                                    LunMat = lunMat,
+                                                                    LunPom = lunPom,
+                                                                    MarMat = marMat,
+                                                                    MarPom = marPom,
+                                                                    MerMat = merMat,
+                                                                    MerPom = merPom,
+                                                                    GioMat = gioMat,
+                                                                    GioPom = gioPom,
+                                                                    VenMat = venMat,
+                                                                    VenPom = venPom,
+                                                                    SabMat = sabMat,
+                                                                    SabPom = sabPom });
+          
+        }
+
 
 
 
@@ -404,6 +436,43 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
+
+
+
+        public async Task<List<Turno>> GetAllTurni()
+        {
+            return (await firebase
+            .Child(ChildNameTurno)
+             .OnceAsync<Turno>()).Select(item => new Turno
+             {
+                 LunMat = item.Object.LunMat,
+                 LunPom = item.Object.LunPom,
+                 MarMat = item.Object.MarMat,
+                 MarPom = item.Object.MarPom,
+                 MerMat = item.Object.MerMat,
+                 MerPom = item.Object.MerPom,
+                 GioMat = item.Object.GioMat,
+                 GioPom = item.Object.GioPom,
+                 VenMat = item.Object.VenMat,
+                 VenPom = item.Object.VenPom,
+                 SabMat = item.Object.SabMat,
+                 SabPom = item.Object.SabPom,
+                 PalestraIscrizione = item.Object.PalestraIscrizione,
+                 uidTurno = item.Object.uidTurno
+             }).ToList();
+
+
+        }
+
+
+        public async Task<Turno> GetTurni(string uidPalestra)
+        {
+            var allTurni = await GetAllTurni();
+            await firebase
+                .Child(ChildNameTurno)
+                .OnceAsync<Turno>();
+            return allTurni.FirstOrDefault(a => a.PalestraIscrizione == uidPalestra);
+        }
 
 
 
