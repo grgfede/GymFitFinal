@@ -34,7 +34,7 @@ namespace GymFitFinal.Interfaces
         Task<string> getProfilePicGymIscrizione(string uid);
         Task<List<User>> GetAllPerson();
         Task<Turno> GetTurni(string uidPalestra);
-        Task AddTurno (string uidTurno, string palestraIscrizione, bool lunMat, bool lunPom, bool marMat, bool marPom, bool merMat, bool merPom, bool gioMat, bool gioPom, bool venMat, bool venPom, bool sabMat, bool sabPom, bool domMat, bool domPom);
+        Task AddTurno (string uidTurno, string palestraIscrizione, string Capienza, bool lunMat, bool lunPom, bool marMat, bool marPom, bool merMat, bool merPom, bool gioMat, bool gioPom, bool venMat, bool venPom, bool sabMat, bool sabPom, bool domMat, bool domPom);
         Task UpdateTurno(Turno t);
         Task followGym(string uidU, string uidG);
         Task unfollowGym(string uidU);

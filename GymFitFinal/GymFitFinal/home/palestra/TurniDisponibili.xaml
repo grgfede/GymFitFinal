@@ -21,93 +21,296 @@
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="0.9"/>
 
-            <Frame BackgroundColor="#FFFFFF"
+            <Frame Margin="0,10,0,0"
+                   BackgroundColor="#FFFFFF"
                    AbsoluteLayout.LayoutBounds="0.5, 0.83, 0.9, 0.65"
                    AbsoluteLayout.LayoutFlags="All"
                    CornerRadius="5"
-                   Opacity="0.7"
-                   ></Frame>
+                   Opacity="0.7"/>
 
             <ScrollView  
                    BackgroundColor="Transparent"
                    AbsoluteLayout.LayoutBounds="0.51, 0.82, 0.97, 0.63"
                    AbsoluteLayout.LayoutFlags="All">
 
-                <StackLayout Margin="25" Spacing="20" >
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Giorno: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Fascia Oraria: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="----------------------------------------------- ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Giorno: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Fascia Oraria: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="----------------------------------------------- ">
-                    </Label>
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Giorno: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Fascia Oraria: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="----------------------------------------------- ">
-                    </Label>
+                <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="20,20,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Giorno: ">
-                    </Label>
 
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="Fascia Oraria: ">
-                    </Label>
-
-                    <Label 
-                   FontFamily="Montserrat-Regular.ttf#Montserrat"
-                   FontSize="Medium"
-                   Text="----------------------------------------------- ">
-                    </Label>
+                    <Label Margin="0,10,0,0"
+                           HorizontalOptions="CenterAndExpand"
+                           Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Font="30"
+                           TextColor="#2D3047"
+                           Text="Turni Disponibili"
+                           FontFamily="BebasKai.ttf#BebasKai"/>
 
 
-                </StackLayout>
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="1"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Lunedì"/>
+
+                    <CheckBox x:Name="chkLunMat"
+                              Margin="10,0,0,0"
+                              IsEnabled="False"
+                              Grid.Row="2"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkLunPom"
+                              IsEnabled="False"
+                              Grid.Row="2"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="2"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="3"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Martedì"/>
+
+                    <CheckBox x:Name="chkMarMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="4"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkMarPom"
+                              IsEnabled="False"
+                              Grid.Row="4"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="4"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="5"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Mercoledì"/>
+
+                    <CheckBox x:Name="chkMerMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="6"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="6"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="40,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkMerPom"
+                              IsEnabled="False"
+                              Grid.Row="6"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="6"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+
+
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="7"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Giovedì"/>
+
+                    <CheckBox x:Name="chkGioMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="8"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="8"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkGioPom"
+                              IsEnabled="False"
+                              Grid.Row="8"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="8"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="9"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Venerdì"/>
+
+                    <CheckBox x:Name="chkVenMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="10"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="10"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkVenPom"
+                              IsEnabled="False"
+                              Grid.Row="10"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="10"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+
+
+
+                    <Label HorizontalOptions="Center"
+                               Grid.Row="11"
+                               Grid.ColumnSpan="2"
+                               FontFamily="BebasKai.ttf#Bold"
+                               Text="Sabato"/>
+
+                    <CheckBox x:Name="chkSabMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="12"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="12"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkSabPom"
+                              IsEnabled="False"
+                              Grid.Row="12"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="12"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+
+
+
+
+
+                    <Label HorizontalOptions="Center"
+                           Grid.Row="13"
+                           Grid.ColumnSpan="2"
+                           FontFamily="BebasKai.ttf#Bold"
+                           Text="Domenica"/>
+
+                    <CheckBox x:Name="chkDomMat"
+                              IsEnabled="False"
+                              Margin="10,0,0,0"
+                              Grid.Row="14"
+                              Grid.Column="0"/>
+
+                    <Label Grid.Row="14"
+                           Grid.Column="0"
+                           Text="Mattina"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+
+                    <CheckBox x:Name="chkDomPom"
+                              IsEnabled="False"
+                              Grid.Row="14"
+                              Grid.Column="1"/>
+
+                    <Label Grid.Row="14"
+                           Grid.Column="1"
+                           Text="Pomeriggio"
+                           VerticalOptions="Center"
+                           Margin="50,0,0,0"
+                           FontFamily="BebasKai.ttf"/>
+                </Grid>
             </ScrollView>
 
         </AbsoluteLayout>

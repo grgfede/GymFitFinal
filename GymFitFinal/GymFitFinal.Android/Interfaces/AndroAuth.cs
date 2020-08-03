@@ -355,13 +355,14 @@ namespace GymFitFinal.Droid.Interfaces
             }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
         }
 
-        public async Task AddTurno(string uidTurno, string palestraIscrizione, bool lunMat, bool lunPom, bool marMat, bool marPom, bool merMat, bool merPom, bool gioMat, bool gioPom, bool venMat, bool venPom, bool sabMat, bool sabPom, bool domMat, bool domPom)
+        public async Task AddTurno(string uidTurno, string palestraIscrizione, string Capienza, bool lunMat, bool lunPom, bool marMat, bool marPom, bool merMat, bool merPom, bool gioMat, bool gioPom, bool venMat, bool venPom, bool sabMat, bool sabPom, bool domMat, bool domPom)
         {
             string childTurno = "turni/" + uidTurno;
 
 
             await firebase.Child(childTurno).PutAsync(new Turno() { uidTurno = uidTurno,
                                                                     PalestraIscrizione = palestraIscrizione,
+                                                                    Capienza = Capienza,
                                                                     LunMat = lunMat,
                                                                     LunPom = lunPom,
                                                                     MarMat = marMat,
@@ -458,7 +459,8 @@ namespace GymFitFinal.Droid.Interfaces
                  SabMat = item.Object.SabMat,
                  SabPom = item.Object.SabPom,
                  PalestraIscrizione = item.Object.PalestraIscrizione,
-                 uidTurno = item.Object.uidTurno
+                 uidTurno = item.Object.uidTurno,
+                 Capienza = item.Object.Capienza
              }).ToList();
 
 

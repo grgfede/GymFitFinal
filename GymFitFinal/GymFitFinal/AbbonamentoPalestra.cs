@@ -6,6 +6,10 @@ namespace GymFitFinal
 {
     public class AbbonamentoPalestra
     {
+        public override string ToString()
+        {
+            return TipoAbbonamento;
+        }
         public string uid { get; set; }
         public string TipoAbbonamento { get; set; }
         public double Costo { get; set; }

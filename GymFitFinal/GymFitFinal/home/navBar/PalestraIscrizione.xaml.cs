@@ -126,7 +126,7 @@ namespace GymFitFinal.home.navBar
 
         private async void TurniDisponibili(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TurniDisponibili());
+            await Navigation.PushAsync(new TurniDisponibili(Gym.uid));
         }
 
 

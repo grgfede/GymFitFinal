@@ -20,23 +20,24 @@ namespace GymFitFinal.home.palestra.abbonamento
         {
             InitializeComponent();
             _auth = DependencyService.Get<IFirebaseAuthenticator>();
-            //getSubs();
+            getSubs();
         }
 
         public async void getSubs()
         {
             List<AbbonamentoPalestra> allSubGym = await _auth.getSubGym();
+            List<AbbonamentoPalestra> sub = new List<AbbonamentoPalestra>();
             if (allSubGym != null)
             {
-                int i = 0;
                 foreach (AbbonamentoPalestra e in allSubGym)
                 {
-                    i += 1;
-                    DisplayAlert("a", Convert.ToString(i), "ik");
-                    Label l = new Label { Text = "prova" };
-                    stack.Children.Add(l);
+                    if (String.Equals(e.uidPalestra, uid))
+                    {
+                        sub.Add(e);
+                    }
+                   
                 }
-               
+                lstAbbonamenti.ItemsSource = sub;
             }
               
         }

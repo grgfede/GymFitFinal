@@ -22,5 +22,6 @@ namespace GymFitFinal
         public bool SabPom { get; set; }
         public bool DomMat { get; set; }
         public bool DomPom { get; set; }
+        public string Capienza { get; set; }
     }
 }

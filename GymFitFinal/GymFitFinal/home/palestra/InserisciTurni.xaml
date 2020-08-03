@@ -10,6 +10,38 @@
             <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
                 <StackLayout BackgroundColor="#FACO5E" Opacity="0.8">
 
+
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="20,20,20,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.RowSpan="2"
+                               Grid.ColumnSpan="2"
+                               BackgroundColor="#FFFFFF"
+                               Opacity="0.9"
+                               CornerRadius="10"/>
+
+                        <Label Margin="0,10,0,0"
+                               HorizontalOptions="CenterAndExpand"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="2"
+                               Font="30"
+                               TextColor="#2D3047"
+                               Text="Capienza Massima"
+                               FontFamily="BebasKai.ttf#BebasKai"/>
+                        <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                            <Label HorizontalOptions="Center"
+                               FontFamily="BebasKai.ttf#Bold"
+                               Text="Inserisci capienza massima di persone per turno"/>
+                            <Entry x:Name="txtCapienza" HorizontalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="80"/> 
+                        </StackLayout>
+                    </Grid>
+
                     <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="20,20,20,20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
@@ -278,6 +310,7 @@
                                Margin="50,0,0,0"
                                FontFamily="BebasKai.ttf"/>
                     </Grid>
+
                     <Button BackgroundColor="White"
                             Font="Bold,14"
                             TextColor="#FACO5E"

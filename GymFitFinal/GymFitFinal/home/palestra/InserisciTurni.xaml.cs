@@ -49,6 +49,7 @@ namespace GymFitFinal.home.palestra
                 chkSabPom.IsChecked = turno.SabPom;
                 chkDomMat.IsChecked = turno.DomMat;
                 chkDomPom.IsChecked = turno.DomPom;
+                txtCapienza.Text = turno.Capienza;
             }
         }
 
@@ -71,6 +72,7 @@ namespace GymFitFinal.home.palestra
             if (turno != null)
             {
                 bool LunMat, LunPom, MarMat, MarPom, MerMat, MerPom, GioMat, GioPom, VenMat, VenPom, SabMat, SabPom, DomMat, DomPom;
+                string capienza = txtCapienza.Text;
                 turno.LunMat = chkLunMat.IsChecked;
                 turno.LunPom = chkLunPom.IsChecked;
                 turno.MarMat = chkMarMat.IsChecked;
@@ -85,6 +87,7 @@ namespace GymFitFinal.home.palestra
                 turno.SabPom = chkSabPom.IsChecked;
                 turno.DomMat = chkDomMat.IsChecked;
                 turno.DomPom = chkDomPom.IsChecked;
+                turno.Capienza = capienza;
                 await _auth.UpdateTurno(turno).ContinueWith(async task =>
                 {
                     if (!task.IsFaulted)
@@ -98,7 +101,7 @@ namespace GymFitFinal.home.palestra
             {
                 //Se il turno cercato nel database non esiste, lo creo
                 bool LunMat, LunPom, MarMat, MarPom, MerMat, MerPom, GioMat, GioPom, VenMat, VenPom, SabMat, SabPom, DomMat, DomPom;
-                string PalestraIscrizione, uidTurno;
+                string PalestraIscrizione, uidTurno, capienza;
                 LunMat = chkLunMat.IsChecked;
                 LunPom = chkLunPom.IsChecked;
                 MarMat = chkMarMat.IsChecked;
@@ -113,10 +116,11 @@ namespace GymFitFinal.home.palestra
                 SabPom = chkSabPom.IsChecked;
                 DomMat = chkDomMat.IsChecked;
                 DomPom = chkDomPom.IsChecked;
+                capienza = txtCapienza.Text;
                 PalestraIscrizione = uidPalestra;
                 uidTurno = RandomString(28);
 
-                await _auth.AddTurno(uidTurno, PalestraIscrizione, LunMat, LunPom, MarMat, MarPom, MerMat, MerPom, GioMat, GioPom, VenMat, VenPom, SabMat, SabPom, DomMat, DomPom).ContinueWith(async task =>
+                await _auth.AddTurno(uidTurno, PalestraIscrizione, capienza, LunMat, LunPom, MarMat, MarPom, MerMat, MerPom, GioMat, GioPom, VenMat, VenPom, SabMat, SabPom, DomMat, DomPom).ContinueWith(async task =>
                 {
                     if (!task.IsFaulted)
                     {

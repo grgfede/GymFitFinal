@@ -12,9 +12,9 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
-            <StackLayout x:Name="stack">
-                <ListView x:Name="listaAbbonamentiGym"></ListView>
-            </StackLayout>
+            <ListView x:Name="lstAbbonamenti">
+                
+            </ListView>           
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
