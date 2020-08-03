@@ -7,7 +7,7 @@
              BackgroundColor="#FACO5E"
              x:Class="GymFitFinal.home.palestra.abbonamento.subManager">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="add_sub.png" Clicked="addSub"/>
+        <ToolbarItem IconImageSource="addSub.png" Clicked="addSub"/>
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>

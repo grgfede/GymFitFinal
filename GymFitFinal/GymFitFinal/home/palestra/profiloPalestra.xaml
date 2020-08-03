@@ -35,7 +35,7 @@
                    WidthRequest="300"
                    VerticalOptions="End"
                    HorizontalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.51,0.26,0.9,0.3" 
+                   AbsoluteLayout.LayoutBounds="0.51,0.20,0.9,0.4" 
                    AbsoluteLayout.LayoutFlags="All"
                    BackgroundColor="#FFFFFF"
                    BorderColor="#FF9F1C"
@@ -49,7 +49,7 @@
                     BorderWidth="1"
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="giorni"
-                    AbsoluteLayout.LayoutBounds="0.30,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutBounds="0.25,0.45,0.5,0.1"
                     AbsoluteLayout.LayoutFlags="All"/>
             
             <Button HorizontalOptions="Center"
@@ -59,7 +59,7 @@
                     BorderWidth="1"
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="orari"
-                    AbsoluteLayout.LayoutBounds="0.50,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutBounds="0.50,0.45,0.5,0.1"
                     AbsoluteLayout.LayoutFlags="All"
                     Clicked="orariPopup"/>
             
@@ -70,7 +70,7 @@
                     BorderWidth="1"
                     FontFamily="Montserrat-Light.ttf#Montserrat"
                     Text="mappa"
-                    AbsoluteLayout.LayoutBounds="0.70,0.41,0.5,0.1"
+                    AbsoluteLayout.LayoutBounds="0.75,0.45,0.5,0.1"
                     AbsoluteLayout.LayoutFlags="All"
                     Clicked="openMap"/>
 
@@ -89,7 +89,7 @@
                    Text="Dove siamo: "
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   AbsoluteLayout.LayoutBounds="0.5, 0.30, 0.5, 0.15"
+                   AbsoluteLayout.LayoutBounds="0.4, 0.33, 0.7, 0.15"
                    AbsoluteLayout.LayoutFlags="All"
                    Font="14"
                    TextColor="#000000"
@@ -108,8 +108,9 @@
             <Image 
                    VerticalOptions="Start"
                    HorizontalOptions="Center"
-                   Source="membership.png" 
-                   AbsoluteLayout.LayoutBounds="0.15,0.62,0.17,0.1"
+                   Source="addTurni.png" 
+                   Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0.15,0.65,0.17,0.1"
                    AbsoluteLayout.LayoutFlags="All"/>
 
             <Button 
@@ -121,8 +122,16 @@
                    FontFamily="Montserrat-Light.ttf#Montserrat"
                    Text="Inserisci turni"
                    Padding="80,0,0,0"
-                Clicked="InserisciTurni"
-                   AbsoluteLayout.LayoutBounds="0.5,0.62,1.1,0.13"
+                   Clicked="InserisciTurni"
+                   AbsoluteLayout.LayoutBounds="0.5,0.65,1.1,0.13"
+                   AbsoluteLayout.LayoutFlags="All"/>
+
+            <Image 
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   Source="subManager.png" 
+                   Opacity="0.7"
+                   AbsoluteLayout.LayoutBounds="0.15,0.82,0.17,0.1"
                    AbsoluteLayout.LayoutFlags="All"/>
 
             <Button 
@@ -132,12 +141,11 @@
                    Opacity="0.7"
                    BorderWidth="2"
                    FontFamily="Montserrat-Light.ttf#Montserrat"
-                   Text="Inserisci abbonamento"
+                   Text="Gestisci abbonamento"
                    Padding="80,0,0,0"
                    Clicked="subManager"
-                   AbsoluteLayout.LayoutBounds="0.5,0.82,1.1,0.13"
+                   AbsoluteLayout.LayoutBounds="0.5,0.83,1.1,0.13"
                    AbsoluteLayout.LayoutFlags="All"/>
-
 
         </AbsoluteLayout>
     </ContentPage.Content>

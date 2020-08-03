@@ -32,8 +32,6 @@
                    CornerRadius="3">
             </Frame>
 
-           
-
             <Button HorizontalOptions="FillAndExpand"
                     BackgroundColor="Transparent"
                     BorderColor="#2D3047"
