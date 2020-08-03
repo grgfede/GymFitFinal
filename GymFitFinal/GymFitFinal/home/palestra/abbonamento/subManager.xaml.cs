@@ -42,7 +42,17 @@ namespace GymFitFinal.home.palestra.abbonamento
               
         }
 
-        
+
+
+
+        public async void lvItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var myListView = (ListView)sender;
+            var myItem = myListView.SelectedItem;
+            AbbonamentoPalestra a1 = (AbbonamentoPalestra)myItem;
+            await Navigation.PushAsync(new home.palestra.abbonamento.CreatedSub(a1.uid));
+        }
+
 
         public void addSub(Object sender, EventArgs e)
         {
