@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="#FACO5E"
+             x:Class="GymFitFinal.home.palestra.abbonamento.CreatedSub">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+
+
+            <Frame BackgroundColor="#FFFFFF"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.55, 0.9, 0.35"
+                   AbsoluteLayout.LayoutFlags="All"
+                   CornerRadius="5"
+                   Opacity="0.7"
+                   ></Frame>
+
+            <Image Source="ic_abbonamento.png" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   AbsoluteLayout.LayoutBounds="0.42, 0.05, 0.9, 0.35"
+                   AbsoluteLayout.LayoutFlags="All"
+                   Opacity="0.9"/>
+
+
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.4"
+                   AbsoluteLayout.LayoutFlags="All"
+                   HorizontalOptions="Center"
+                   x:Name="lblNoSub"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium"
+                   IsVisible="False"
+                   Text="Non hai nessun abbonamento attivo! "/>
+
+
+            <Label AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblTipoAbbonamento"
+                   Text="{Binding TipoAbbonamentoUtente}"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium">
+            </Label>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 1.15, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblCosto"
+                   Text="{Binding prova}"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium">
+            </Label>
+            <Label AbsoluteLayout.LayoutBounds="0.5, 1.35, 0.8, 0.6"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="lblDescrizione"
+                   Text="{Binding Descrizione}"
+                   FontFamily="Montserrat-Regular.ttf#Montserrat"
+                   FontSize="Medium">
+            </Label>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
