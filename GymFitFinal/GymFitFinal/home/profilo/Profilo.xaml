@@ -81,7 +81,7 @@
             <Image 
                        VerticalOptions="Start"
                        HorizontalOptions="Center"
-                       Source="membership.png" 
+                       Source="abbonamento.png" 
                        AbsoluteLayout.LayoutBounds="0.15,0.62,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 
@@ -101,7 +101,7 @@
             <Image 
                        VerticalOptions="Start"
                        HorizontalOptions="Center"
-                       Source="gym.png" 
+                       Source="prenotazioni.png" 
                        AbsoluteLayout.LayoutBounds="0.15,0.79,0.17,0.1"
                        AbsoluteLayout.LayoutFlags="All"/>
 

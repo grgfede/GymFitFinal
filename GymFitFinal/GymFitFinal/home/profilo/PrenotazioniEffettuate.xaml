@@ -14,10 +14,11 @@
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="#64B5F6">
 
-            <Image Source="ic_prenotazioni.png" 
+            <Image Source="pesi2.png" 
                    HorizontalOptions="Center"
                    VerticalOptions="Start"
-                   AbsoluteLayout.LayoutBounds="0.42, 0.015, 0.9, 0.35"
+                   Scale="1.7"
+                   AbsoluteLayout.LayoutBounds="0.42, 0.16, 0.9, 0.45"
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="0.9"/>
 

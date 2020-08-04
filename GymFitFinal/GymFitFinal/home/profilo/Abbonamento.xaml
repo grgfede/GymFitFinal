@@ -22,10 +22,11 @@
                    Opacity="0.7"
                    ></Frame>
         
-            <Image Source="ic_abbonamento.png" 
+            <Image Source="pesi.png" 
+                   Scale="1.7"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"
-                   AbsoluteLayout.LayoutBounds="0.42, 0.05, 0.9, 0.35"
+                   AbsoluteLayout.LayoutBounds="0.42, 0.25, 0.9, 0.45"
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="0.9"/>
 
