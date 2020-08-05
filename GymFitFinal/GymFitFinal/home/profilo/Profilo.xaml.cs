@@ -98,6 +98,15 @@ namespace GymFitFinal.home.navBar
             var person = await _auth.GetPerson(uid);
             if (person != null)
             {
+                string abbonamentoIscrizione = person.AbbonamentoIscrizione;
+                var abbonamento = await _auth.GetSub(abbonamentoIscrizione);
+                if (abbonamento != null)
+                {
+                    lblScadenzaAbbonamentoData.Text = abbonamento.DataFine;
+                } else
+                {
+                    lblScadenza.Text = "Nessun abbonamento sottoscritto.";
+                }
                 lblNomeCognome.Text = person.Nome + " ";
                 lblNomeCognome.Text += person.Cognome;
                 App.loggedUser = person;
