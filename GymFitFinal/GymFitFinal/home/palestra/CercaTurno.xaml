@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"  
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.home.palestra.CercaTurno">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+        <controls:Calendar Padding="10,0,10,0"   
+                   SelectedBorderWidth="4"   
+                           AbsoluteLayout.LayoutBounds="0.5,0.1,0.9,0.6"
+                         AbsoluteLayout.LayoutFlags="All"
+                   DisabledBorderColor="Black"  
+                   ShowNumberOfWeek="false"  
+                   StartDay="Monday"  
+                   TitleLabelTextColor="Purple"  
+                   TitleLeftArrowTextColor="Blue"  
+                   SelectedDate="{Binding Date}"  
+                   SpecialDates="{Binding Attendances}"  
+                   DateCommand="{Binding DateChosen}"/>
+    
+
+    <Button 
+                         HorizontalOptions="FillAndExpand"
+                         BackgroundColor="#FACO5E"
+                         FontFamily="Montserrat-Bold.ttf#Montserrat"
+                         Text="prenota"
+                         TextColor="White"
+                         CornerRadius="20"
+                         Font="Bold,16"
+                         AbsoluteLayout.LayoutBounds="0.5,0.75,0.5,0.1"
+                         AbsoluteLayout.LayoutFlags="All"
+                        />
+    </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

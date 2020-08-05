@@ -118,9 +118,10 @@
                          BorderWidth="2"
                          FontFamily="Montserrat-Light.ttf#Montserrat"
                          Text=" cerca turno"
-                Padding="80,0,0,0"
+                         Padding="80,0,0,0"
                          AbsoluteLayout.LayoutBounds="0.5,0.80,1.1,0.13"
-                         AbsoluteLayout.LayoutFlags="All"/>
+                         AbsoluteLayout.LayoutFlags="All"
+                         Clicked="CercaTurno"/>
 
         </AbsoluteLayout>
     </ContentPage.Content>
