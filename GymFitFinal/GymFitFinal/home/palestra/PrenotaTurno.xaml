@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GymFitFinal.home.palestra.PrenotaTurno">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation   
+                      PositionIn="Center"  
+                      PositionOut="Center"  
+                      ScaleIn="1.2"  
+                      ScaleOut="0.8"  
+                      DurationIn="400"  
+                      DurationOut="300"  
+                      EasingIn="SinOut"  
+                      EasingOut="SinIn"  
+      HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout  VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="5" Padding="25,25" BackgroundColor="#64B5F6" >
+            <StackLayout Padding="10">
+                <Label Padding="0, 0, 0, 15" Text="Crea Abbonamento" TextColor="Black" FontSize="22" HorizontalOptions="Center"></Label>
+                <ScrollView>
+                    
+                </ScrollView>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

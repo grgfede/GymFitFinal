@@ -65,6 +65,9 @@
     <EmbeddedResource Update="home\palestra\OrariPopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="home\palestra\PrenotaTurno.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
 
     <EmbeddedResource Update="home\palestra\profiloPalestra.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

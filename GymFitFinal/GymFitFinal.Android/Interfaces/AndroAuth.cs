@@ -394,6 +394,12 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
+        public async Task AddPrenotazione(TurnoPrenotato prenotazione)
+        {
+            string childGym = "turnoPrenotato/" + prenotazione.uid;
+            await firebase.Child(childGym).PutAsync(new TurnoPrenotato() { uid = prenotazione.uid, uidUtente = prenotazione.uidUtente, uidPalestra = prenotazione.uidPalestra, DataPrenotazione = prenotazione.DataPrenotazione }); //Il metodo PutAsync non genera un nodo padre random, ma segue il percorso dato da me
+        }
+
         public async Task addSubGym(string uid, string tipoAbbonamento, string descrizione, double costo)
         {
             string childSubGym = "abbonamentoPalestra/" + uid;

@@ -23,6 +23,7 @@ namespace GymFitFinal.Interfaces
         Task AddSub(string tipoAbbonamento, double costo, string dataI, string dataF, string uidAbbonamento, string uidUtente);
         Task AddGym(string nome, string citta, string indirizzo, string telefono, string IM, string FM, string IP, string FP, string uid);
         Task addSubGym(string uid, string tipoAbbonamento, string descrizione, double costo);
+        Task AddPrenotazione(TurnoPrenotato turno);
         Task<List<AbbonamentoPalestra>> getSubGym();
         Task<Gym> GetGym(string uid);
         Task<List<Gym>> GetAllGym();
