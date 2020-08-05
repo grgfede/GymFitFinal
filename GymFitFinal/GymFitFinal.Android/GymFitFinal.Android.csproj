@@ -119,6 +119,9 @@
     <PackageReference Include="Xamarin.GooglePlayServices.Auth">
       <Version>60.1142.1</Version>
     </PackageReference>
+    <PackageReference Include="XamForms.Controls.Calendar">
+      <Version>1.1.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\AndroAuth.cs" />
@@ -307,6 +310,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ice_cream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\manubrio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

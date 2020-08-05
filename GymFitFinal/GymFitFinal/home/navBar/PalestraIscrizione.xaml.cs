@@ -129,6 +129,11 @@ namespace GymFitFinal.home.navBar
             await Navigation.PushAsync(new TurniDisponibili(Gym.uid));
         }
 
+        private async void CercaTurno(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CercaTurno());
+        }
+
 
         private async void orariPopup(object sender, EventArgs e)
         {

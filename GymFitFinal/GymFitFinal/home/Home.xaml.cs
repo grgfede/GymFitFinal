@@ -82,26 +82,26 @@ namespace GymFitFinal.home
                     //SE TROVO UNA PALESTRA, SALVO LA VARIABILE APP COME TRUE
                     App.isGym = true;
                     //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER LE PALESTRE
-                    Children.Add(new palestra.profiloPalestra() { Title = "Palestra", IconImageSource = "navbarProfile.png" });             //MOSTRA LA PAGINA PROFILOPALESTRA
+                    Children.Add(new palestra.profiloPalestra() { Title = "Palestra", IconImageSource = "bicipite.png" });             //MOSTRA LA PAGINA PROFILOPALESTRA
                 } 
             } else {
                 //SE L'UTENTE E' ISCRITTO AD UNA PALESTRA
                 if (person.PalestraIscrizione != null)
                 {
-                    Children.Add(new navBar.PalestraIscrizione(person.PalestraIscrizione) {Title = "Palestra", IconImageSource = "navbarProfile.png" });        //MOSTRA LA PAGINA PALESTRAISCRIZIONE
+                    Children.Add(new navBar.PalestraIscrizione(person.PalestraIscrizione) {Title = "Palestra", IconImageSource = "manubrio.png" });        //MOSTRA LA PAGINA PALESTRAISCRIZIONE
                     //RECUPERO LE INFO DELLA PALESTRA A CUI E' ISCRITTO E MOSTRO LE INFO DELLA PALESTRA
                     gymIscrizione = await _auth.GetGym(person.PalestraIscrizione);
                 }
                 else
                 {
                     //ALTIRMENTI, SE L'UTENTE NON E' ISCRITTO AD UNA PALESTRA, VISUALIZZO IL BOT
-                    Children.Add(new navBar.Palestra() { Title = "Palestra", IconImageSource = "navbarProfile.png" });                      //MOSTRA LA PAGINA PALESTRA(Il bot)
+                    Children.Add(new navBar.Palestra() { Title = "Palestra", IconImageSource = "chat.png" });                      //MOSTRA LA PAGINA PALESTRA(Il bot)
 
                 }
                 //AGGIUNGO NEL TABBED PAGE, LA PAGINA DI PROFILO PER GLI UTENTI
 
                 App.isGym = false;
-                Children.Add(new home.navBar.Profilo() { Title = "Palestra", IconImageSource = "navbarProfile.png" });      //MOSTRA LA PAGINA PROFILO (utente)
+                Children.Add(new home.navBar.Profilo() { Title = "Profilo", IconImageSource = "navbarProfile.png" });      //MOSTRA LA PAGINA PROFILO (utente)
             }
         }
 
