@@ -40,6 +40,8 @@ namespace GymFitFinal.Droid.Interfaces
         private readonly string ChildNameSub = "abbonamenti";
         private readonly string ChildNameSubGym2 = "abbonamentoPalestra";
         private readonly string ChildNameTurno = "turni";
+        private readonly string ChildNameTurnoPrenotato = "turnoPrenotato";
+
 
 
         readonly FirebaseClient firebase = new FirebaseClient("https://gymfitt-2b845.firebaseio.com/");
@@ -511,6 +513,32 @@ namespace GymFitFinal.Droid.Interfaces
                 .Child(ChildName)
                 .OnceAsync<User>();
             return allPersons.FirstOrDefault(a => a.Uid == uid);
+        }
+
+
+        public async Task<List<TurnoPrenotato>> GetAllTurnoPrenotato()
+        {
+            return (await firebase
+            .Child(ChildNameTurnoPrenotato)
+             .OnceAsync<TurnoPrenotato>()).Select(item => new TurnoPrenotato
+             {
+                uid = item.Object.uid,
+                DataPrenotazione = item.Object.DataPrenotazione,
+                uidPalestra = item.Object.uidPalestra,
+                uidUtente = item.Object.uidUtente
+             }).ToList();
+
+
+        }
+
+
+        public async Task<TurnoPrenotato> GetTurnoPrenotato(string uidUtente)
+        {
+            var allPersons = await GetAllTurnoPrenotato();
+            await firebase
+                .Child(ChildNameTurnoPrenotato)
+                .OnceAsync<TurnoPrenotato>();
+            return allPersons.FirstOrDefault(a => a.uidUtente == uidUtente);
         }
 
 

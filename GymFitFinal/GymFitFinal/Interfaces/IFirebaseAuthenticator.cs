@@ -30,6 +30,7 @@ namespace GymFitFinal.Interfaces
         Task<List<Gym>> GetGymByName(string name);
         Task<List<Gym>> GetGymByCity(string city);
         Task<User> GetPerson(string uid);
+        Task<TurnoPrenotato> GetTurnoPrenotato(string uidUtente);
         Task<Abbomamento> GetSub(string uidSub);
         Task<AbbonamentoPalestra> GetSubGymSpecific(string uidSub);
         Task<string> getProfilePic();

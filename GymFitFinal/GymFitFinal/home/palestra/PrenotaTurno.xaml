@@ -25,7 +25,57 @@
             <StackLayout Padding="10">
                 <Label Padding="0, 0, 0, 15" Text="Crea Abbonamento" TextColor="Black" FontSize="22" HorizontalOptions="Center"></Label>
                 <ScrollView>
-                    
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center" Margin="20,0,20,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.9*" />
+                            <ColumnDefinition Width="0.9*" />
+                            <ColumnDefinition Width="0.9*" />
+                            <ColumnDefinition Width="0.9*" />
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="chkMat"
+                                     Margin="0,0,0,0"
+                                     Grid.Row="0"
+                                     Grid.Column="0"/>
+
+                        <Label x:Name="lblMat"
+                               HorizontalOptions="Center"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               FontFamily="BebasKai.ttf#Bold"
+                               Text="Mattina"/>
+                        
+                        <CheckBox x:Name="chkPom"
+                                     Margin="0,0,0,0"
+                                     Grid.Row="0"
+                                     Grid.Column="3"/>
+
+                        <Label x:Name="lblPom"
+                               HorizontalOptions="Center"
+                               Grid.Row="0"
+                               Grid.Column="4"
+                               FontFamily="BebasKai.ttf#Bold"
+                               Text="Pomeriggio"/>
+
+                        <Button
+                            x:Name="btnPopup"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="5"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#FACO5E"
+                            FontFamily="Montserrat-Bold.ttf#Montserrat"
+                            Text="Prenota"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Font="Bold,16"
+                            Clicked="prenotaTurno"/>
+                    </Grid>
+
+
                 </ScrollView>
             </StackLayout>
         </Frame>

@@ -16,6 +16,7 @@ namespace GymFitFinal
         public static bool IsUserLoggedIn { get; set; }
 
         public static string uidAbbonamentoPalestra;
+        internal static string giornoscelto;
 
         public static string nome { get; set; }
         public static string uid { get; set; }
