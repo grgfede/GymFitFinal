@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace GymFitFinal.home
                 _auth = DependencyService.Get<IFirebaseAuthenticator>();
                 //VERIFICO SE CHI SI E' LOGGATO E' UTENTE O PALESTRA
                 getInfo(uid);
+                checkTurnoPrenotato(uid);
                 //checkSub(App.loggedUser.AbbonamentoIscrizione);
             } else
             {
@@ -43,15 +45,40 @@ namespace GymFitFinal.home
 
         }
 
+
+        public async void checkTurnoPrenotato(string uidS)
+        {
+            var turnoPrenotato = await _auth.GetTurnoPrenotato(uidS);
+            if (turnoPrenotato != null)
+            {
+                string dataFine = turnoPrenotato.DataPrenotazione;
+                DateTime dataFineConvert = DateTime.ParseExact(dataFine, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                DateTime now = DateTime.Now;
+                
+                if (dataFineConvert < now)
+                {
+                    await _auth.DeleteTurnoPrenotato(turnoPrenotato.uid).ContinueWith(async task =>
+                    {
+                        if (task.IsFaulted)
+                        {
+                            DisplayAlert("PRova", "errore", "Ok");
+                        }
+                    });
+                }
+            }
+        }
+
+
+
         public async void checkSub(string uidS)
         {
             var sub = await _auth.GetSub(uidS);
             if (sub != null)
             {
-                string dataF = sub.DataFine;
-                DateTime dt1 = DateTime.Parse(dataF);
-                DateTime dt2 = DateTime.Now;
-                if (dt1.Date < dt2.Date)
+                string dataFine = sub.DataFine;
+                DateTime dataFineConvert = DateTime.ParseExact(dataFine, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                DateTime now = DateTime.Now;
+                if (dataFineConvert < now)
                 {
                     DisplayAlert("PROVA", "peova", "Ok");
                     await _auth.DeleteSub(uidS).ContinueWith(async task =>

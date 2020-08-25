@@ -532,6 +532,8 @@ namespace GymFitFinal.Droid.Interfaces
         }
 
 
+       
+
         public async Task<TurnoPrenotato> GetTurnoPrenotato(string uidUtente)
         {
             var allPersons = await GetAllTurnoPrenotato();
@@ -681,6 +683,11 @@ namespace GymFitFinal.Droid.Interfaces
         public async Task DeleteSub(string uidS)
         {
             await firebase.Child(ChildNameSub).Child(uidS).DeleteAsync();
+        }
+
+        public async Task DeleteTurnoPrenotato(string uidS)
+        {
+            await firebase.Child(ChildNameTurnoPrenotato).Child(uidS).DeleteAsync();
         }
 
 
