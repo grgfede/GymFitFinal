@@ -13,6 +13,7 @@
     <ContentPage.Content>
 
 
+        
         <WebView Source="https://gymfitbot.000webhostapp.com/"/> 
     </ContentPage.Content>
 </ContentPage>
