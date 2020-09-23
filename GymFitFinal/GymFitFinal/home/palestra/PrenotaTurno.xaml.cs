@@ -45,7 +45,8 @@ namespace GymFitFinal.home.palestra
                 prenotazione.uidPalestra = uidPalestra;
                 await _auth.AddPrenotazione(prenotazione).ContinueWith(async task =>
                 {
-                    DisplayAlert("Complimenti", "Prenotazione avvenuta con successo", "ok");
+                    await DisplayAlert("Complimenti", "Prenotazione avvenuta con successo", "ok");
+                    Navigation.PopAsync();
                 });
             }
         }

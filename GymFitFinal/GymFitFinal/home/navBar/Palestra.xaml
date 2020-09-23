@@ -11,8 +11,8 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
 
-        <WebView Source="https://console.dialogflow.com/api-client/demo/embedded/2ed9e6fa-d689-4e59-a009-02c7bfa73786"/> 
+
+        <WebView Source="https://gymfitbot.000webhostapp.com/"/> 
     </ContentPage.Content>
 </ContentPage>
